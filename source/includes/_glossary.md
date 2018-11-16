@@ -19,20 +19,29 @@ The Glossary of specific names, objects and functions referenced by Artos. Exhau
 * **Aventus Protocol** is composed of Ethereum _smart contracts_ that allow for the creation and validation of _events_, the issuance and sale of tickets in primary and secondary ticket markets (customisable by the event organisers), and the distribution of ticket sale revenue and market/event fees between the event organizers, ticket promoters, market matchers, attendees, etc.
 * **Aventus Registry** tracks third parties using the _Protocol_, _events_ listed, and algorithmic parameters related to fees and time periods
 * **AVT** the token used in the _Aventus Protocol_, originally reffered to as an AventCoin
+
+
 ## B
 * **Bronze** is a new music format built on the blockchain [More info](http://bronze.ai.s3-website.eu-west-2.amazonaws.com/)
 * **Business Unit** is any kind of client of Aventus (promoters, ticket sellers, etc.)
+
+
 ## C
 * **Challenge (Proposal)** The _Aventus Community_ can _challenge_ the legitimacy of an _AvEntity_ on the _Protocol_ by adding a deposit and voting on it using a _stake_ of AVT
 * **Client** see _Business Unit_
 * **Command** is an _activity_ that asynchronously requests an action from a service. These activities are usually sent directly to the service's _queue_
 * **Customer** our _business unit_'s clients
+
+
 ## D
+
 * **DAO** (Decentralized Autonomous Organization) aims to hard-code certain company rules allowing an organization to exist without typical top-down hierarchical leadership structure via the blockchain. They rely on _smart contracts_, or pre-programmed rules that describe what can happen in the defined system. Rules of the DAO can be amended via a _governance proposal_
 * **ÐApps** (Decentralized Applications) are digital applications or programs that run on the _Ethereum_ blockchain
 * **Delegate Calls** Execute the code of another contract, but with the state (storage) of the calling contract. [More info](https://zupzup.org/smart-contract-interaction/)
 * **Deposit** the AVT attached to the creation of a _Governance Proposal_ or _Event Challenge_
 * **Deposit Fund** the section in the voting wallet _ÐApp_ that supports the initiation of a _Governance Proposal_ or _Event Challenges_ by a member of the _Aventus Community_. Once a deposit is used against either of these, the price of that deposit becomes locked within the fund until the proposal is complete
+
+
 ## E
 * **ENS** is the equivalent of common DNS on the Ethereum network. [More info](https://medium.com/the-ethereum-name-service/a-beginners-guide-to-buying-an-ens-domain-3ccac2bdc770)
 * **ERC20** token standard describes the functions and events (solidity) that an Ethereum token contract has to implement
