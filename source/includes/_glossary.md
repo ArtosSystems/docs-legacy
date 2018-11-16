@@ -51,20 +51,32 @@ The Glossary of specific names, objects and functions referenced by Artos. Exhau
 * **Event (Solidity)** is an _activity_ that notifies to any listener that something happened on the originating service. This activities are usually published to a _topic_
 * **Event Owner** the rightsholder of an _event (aventus)_, or more accurately the specific Ethereum address of said rightsholder
 * **EVM Code** is the binary code of Ethereum contracts compiled from _Solidity_ which is then executable by the Ethereum Virtual Machine. [More info](https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-(EVM)-Awesome-List)
+
+
 ## G
 * **Ganache** is a Node.js based Ethereum client for testing and development (previously referred to as 'testRPC'). [More info](http://truffleframework.com/ganache/)
 * **Gas** is the _ether_ execution fee for every operation made on the Ethereum network. [More info](https://blockgeeks.com/guides/ethereum-gas-step-by-step-guide/)
 * **Governance Proposal** _Aventus Community members_ can propose governance changes to the algorithmic parameters (_Magic Numbers_) on the _Parameter Registry_ and vote on whether they are applied using a _stake_ of AVT
+
+
 ## H
 * **Hashing** takes an input string of any length and gives out an encrypted output of a deterministic fixed length string. [Give it a go here :P](https://emn178.github.io/online-tools/keccak_256.html)
+
+
 ## I
 * **IMS** (Inventory Management Service) is a Scala application that can be used as an off-chain central store of inventory
+
+
 ## K
 * **KECCAK-256** is the cryptographic _hashing_ function used within _Ethereum_
+
+
 ## L
 * **Lambda** is an event-driven, serverless computing platform provided by Amazon as a part of the Amazon Web Services (AWS). It is a computing service that runs code in response to events and automatically manages the computing resources required by that code [More info](https://aws.amazon.com/lambda/)
 * **Libraries** in Ethereum are special types of contract which do not store data and cannot hold _ether_. They are are only required to be deployed once and their functions can then be called by any _smart contract_ via _delegate calls_. [More info](https://blog.aragon.one/library-driven-development-in-solidity-2bebcaf88736)
 * **Lobbying Period** is the 2 week time slot at the start of the proposal process where the _Aventus Community_ can externally discuss and debate a _Governance Proposal_ or _Event Challenge_, followed by the _Voting Period_
+
+
 ## M
 * **Magic Numbers** are the algorithmic parameters stored in the _Aventus Registry_
 * **Merkle Tree** is a tree constructed by _hashing_ paired binary data (the leaves), then pairing and _hashing_ the results until a single hash remains, which is known as the merkle root. A possible solution for blockchain transaction scaling. Our implementation is our newest virtue service: Modest.
@@ -72,6 +84,8 @@ The Glossary of specific names, objects and functions referenced by Artos. Exhau
 * **Migrations** in Truffle are Javascript files which help you deploy contracts to the Ethereum network. A history of migrations is recorded on-chain via the Migrations.sol contract. [More info](https://ethereum.stackexchange.com/questions/8299/what-are-truffle-migrations)
 * **Modest** The name of our Merkle Tree based scaling solution, see above.
 * **Multi-Signature Wallets** are used to safeguard ether or tokens held by an entity. [More info](https://medium.com/hellogold/ethereum-multi-signature-wallets-77ab926ab63b)
+
+
 ## N
 * **Node** is a piece of software that connects to other nodes, thus participating in the formation of the network. A node stores the blockchain, and a node can mine (but doesn't have to)
 ## O
@@ -82,13 +96,18 @@ The Glossary of specific names, objects and functions referenced by Artos. Exhau
 * **Private Key** In cryptography, a private key (secret key) is a variable that is used with an algorithm to encrypt and decrypt code
 * **Proxy Library Pattern** in _Solidity_ is a means to upgrade Solidity libraries via the use of _delegate calls_ and a library address storage intermediary. [More info](https://blog.zeppelin.solutions/proxy-libraries-in-solidity-79fbe4b970fd)
 [More detailed info](https://blog.zeppelinos.org/proxy-patterns/)
+
 ## Q
 * **Quorum** is the minimum number of _votes_ required to be allowed to perform an operation
 * **Queue** is an asynchronous message based communication system that aims to decouple different parts of the platform
+
+
 ## R
 * **Remix** is a simple, browser-based, IDE for _Solidity_ development. [More info](https://github.com/AventusSystems/wiki/Remix)
 * **Reservation Cancellation** is an operation performed when the client wants to remove a _ticket reservation_. It will invalidate the _ticket reservation_ and return the _tickets_ to the available pool. This should be executed when the _client_ cancels a _customer_'s _ticket_
 * **Reveal Period** is the 1 week time slot following a _Voting Period_ at the end of the proposal process where the _Aventus Community_ can reveal their vote by re-submitting a secret signed _vote_ on a _Governance Proposal_ or _Event Challenge_. Once all votes have been revealed then the proposal process can be concluded and _vote_ _stakes_ are tallied to decide a winner
+
+
 * **Rinkeby** is our public test network for the Protocol
 ## S
 * **Sale Channel** is an integrated sale point, it will belong to a _business unit_
@@ -98,6 +117,8 @@ The Glossary of specific names, objects and functions referenced by Artos. Exhau
 * **Solidity** is a contract-oriented programming language for writing smart contracts that runs on _EVM Code_. [More info](http://solidity.readthedocs.io/en/v0.4.24/)
 * **Stake** The AVT value stake laid down during voting on a _challenge proposal_ or _governance proposal_ which cannot be amended during a pending _vote_
 * **Stake Fund** is the section in the voting wallet _ÐApp_ that holds AVT _stake_
+
+
 ## T
 * **Ticket** is a unique identifier assigned to the purchaser of a _ticket_ (ticket owner) that allows access to an _event (aventus)_ which will have an allocation (eg. row and seat number) and price properties describing it's transfer conditions
 * **TicketKey** see: Secret
@@ -105,9 +126,13 @@ The Glossary of specific names, objects and functions referenced by Artos. Exhau
 * **Ticket Reservation** is a system entity that takes a set of _tickets_ permanently out of sale, this operation will be requested by the _client_ after the payment is taken
 * **Token Curated Registry** is a design pattern which provides a means of curating a list (such as a list of non-fraudulent events) via stake-weighted voting. [More info](https://medium.com/coinmonks/token-curated-registry-tcr-design-patterns-4de6d18efa15)
 * **Topic** is a message source to which applications can subscribe their own _queues_. Messages on a topic will be multicast to all the subscribed _queues_
+
+
 ## V
 * **Virtues** these are referencing our three servies to interact with the protocol: Honest, Patient & Modest.
 * **Vote** the _Aventus Community_ can vote during a _challenge proposal_ or _governance proposal_ by laying down a _stake_ of AVT with their vote choice
 * **Voting Period** is the 1 week time slot following a _Lobbying Period_ during the proposal process where the _Aventus Community_ can submit secret signed _votes_ on a _Governance Proposal_ or _Event Challenge_
+
+
 ## W
 * **Wei** is a base _ether_ denomination, like cents to dollars, equivalent to Bitcoin Satoshis [More info](http://ethdocs.org/en/latest/ether.html)
