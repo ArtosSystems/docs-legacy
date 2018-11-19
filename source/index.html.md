@@ -24,7 +24,7 @@ Welcome, to your bridge to Blockchain; Artos. We have developed the Aventus Prot
 
 Below you will find a general architecture diagram outlining our core services and where data is being processed from the point of entry via an endpoint. Each of these distinct products makes up the Artos ecosystem and we aim to continue to develop these as our implementation matures.
 
-![big](images/architecture-diagram.png)
+![big](images/architecture-diagram-transparent.png)
 
 As shown in the above architecture diagram our technology stack is built in layers on top of the blockchain and each product serves a purpose to ensure interaction via our endpoints is standardised and familiar for developers
 
