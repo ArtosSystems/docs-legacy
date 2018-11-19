@@ -1,0 +1,829 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="ruby">ruby</a>
+              <a href="#" data-language-name="python">python</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#before-you-begin" class="toc-h1 toc-link" data-title="Before You Begin">Before You Begin</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#getting-started" class="toc-h2 toc-link" data-title="Getting Started">Getting Started</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#the-ecosystem" class="toc-h1 toc-link" data-title="The Ecosystem">The Ecosystem</a>
+          </li>
+          <li>
+            <a href="#guides" class="toc-h1 toc-link" data-title="Guides">Guides</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-event" class="toc-h2 toc-link" data-title="Create Event">Create Event</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-event-list" class="toc-h2 toc-link" data-title="Retrieve Event List">Retrieve Event List</a>
+                  </li>
+                  <li>
+                    <a href="#delete-event" class="toc-h2 toc-link" data-title="Delete Event">Delete Event</a>
+                  </li>
+                  <li>
+                    <a href="#create-tickets" class="toc-h2 toc-link" data-title="Create Tickets">Create Tickets</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-ticket-list" class="toc-h2 toc-link" data-title="Retrieve Ticket List">Retrieve Ticket List</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-tickets" class="toc-h2 toc-link" data-title="Cancel Tickets">Cancel Tickets</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+          <li>
+            <a href="#glossary" class="toc-h1 toc-link" data-title="Glossary">Glossary</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#a" class="toc-h2 toc-link" data-title="A">A</a>
+                  </li>
+                  <li>
+                    <a href="#b" class="toc-h2 toc-link" data-title="B">B</a>
+                  </li>
+                  <li>
+                    <a href="#c" class="toc-h2 toc-link" data-title="C">C</a>
+                  </li>
+                  <li>
+                    <a href="#d" class="toc-h2 toc-link" data-title="D">D</a>
+                  </li>
+                  <li>
+                    <a href="#e" class="toc-h2 toc-link" data-title="E">E</a>
+                  </li>
+                  <li>
+                    <a href="#g" class="toc-h2 toc-link" data-title="G">G</a>
+                  </li>
+                  <li>
+                    <a href="#h" class="toc-h2 toc-link" data-title="H">H</a>
+                  </li>
+                  <li>
+                    <a href="#i" class="toc-h2 toc-link" data-title="I">I</a>
+                  </li>
+                  <li>
+                    <a href="#k" class="toc-h2 toc-link" data-title="K">K</a>
+                  </li>
+                  <li>
+                    <a href="#l" class="toc-h2 toc-link" data-title="L">L</a>
+                  </li>
+                  <li>
+                    <a href="#m" class="toc-h2 toc-link" data-title="M">M</a>
+                  </li>
+                  <li>
+                    <a href="#n" class="toc-h2 toc-link" data-title="N">N</a>
+                  </li>
+                  <li>
+                    <a href="#q" class="toc-h2 toc-link" data-title="Q">Q</a>
+                  </li>
+                  <li>
+                    <a href="#r" class="toc-h2 toc-link" data-title="R">R</a>
+                  </li>
+                  <li>
+                    <a href="#s" class="toc-h2 toc-link" data-title="S">S</a>
+                  </li>
+                  <li>
+                    <a href="#t" class="toc-h2 toc-link" data-title="T">T</a>
+                  </li>
+                  <li>
+                    <a href="#v" class="toc-h2 toc-link" data-title="V">V</a>
+                  </li>
+                  <li>
+                    <a href="#w" class="toc-h2 toc-link" data-title="W">W</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>UGH</p>
+
+<p>I can update from GH desktop, not atom. BUILD PLZ.</p>
+
+<p>Welcome, to your bridge to Blockchain; Artos. We have developed the Aventus Protocol on behalf of the Aventus Foundation.</p>
+
+<p>You access the RESTful API by sending HTTPS requests to specific URLs (endpoints) on the QRadar® SIEM Console. To send these requests, use the HTTP implementation that is built in to the programming language of your choice. Each request contains authentication information, and parameters that modify the request.</p>
+
+<p>Below you will find a general architecture diagram outlining our core services and where data is being processed from the point of entry via an endpoint. Each of these distinct products makes up the Artos ecosystem and we aim to continue to develop these as our implementation matures.</p>
+
+<p><img src="images/architecture-diagram.png" alt="big" /></p>
+
+<p>As shown in the above architecture diagram our technology stack is built in layers on top of the blockchain and each product serves a purpose to ensure interaction via our endpoints is standardised and familiar for developers</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"api_endpoint_here"</span>
+  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+</blockquote>
+
+<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+
+<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code>Authorization: meowmeowmeow</code></p>
+
+<aside class="notice">
+You must replace <code>meowmeowmeow</code> with your personal API key.
+</aside>
+<h1 id='before-you-begin'>Before You Begin</h1>
+<p>This guide acts as developer reference for integrating with Aventus Protocol RESTful API covering interaction with events and tickets hence any language and instructional information assumes an existing technical knowledge of interacting via an API and the typical practices involved.</p>
+
+<p>By sending HTTPS requests to specific URLs (endpoints) as a registered user you can easily harness the power of the Aventus Protocol allowing us to handle any corresponding complexity with writing and reading the Ethereum blockchain.</p>
+
+<p>An API endpoint contains the URL of the resource that you want to access and the action that you want to complete on that resource. The action is indicated by the HTTP method of the request: GET, POST, PUT, or DELETE.</p>
+
+<p>When you send an API request, the server returns an HTTP response. The HTTP response contains a status code to indicate whether the request succeeded and the details of the response in the response body. Most resources format this response as JavaScript Object Notation (JSON). You can use the JSON packages or libraries that are built in to the programming language that you use to extract the data.</p>
+<h2 id='getting-started'>Getting Started</h2>
+<!--- I suppose we should tell people how to build a testing environment on their own machine, step by step? --->
+
+<p>If this is your first time here, scan this section before digging deeper into the documentation. The sections after this page assume you know the basics about the Aventus Protocol. For further information, read our Whitepaper here.</p>
+
+<p>What you can do?
+- Create an Event (POST)
+- Retrieve Event List (GET)
+- Delete Event (DELETE)
+- Create Tickets (POST)
+- Retrieve Ticket List (GET)
+- Cancel Tickets (DELETE)
+- Send Ticket Links (POST)
+- Generate Doorlist (GET)</p>
+
+<!--- Differences between development environment and live?
+
+=============
+The exact things we're looking to do are...
+
+> HOW DO I SET UP AN EVENT (focus: setup)
+> HOW DO I ENSURE TICKETS ARE CONTAINED IN THIS
+> HOW DO I PUT THOSE TICKETS ON SALE
+> REMEMBER THAT THIS IS MODEST BY DEFAULT
+==============
+-->
+<h1 id='the-ecosystem'>The Ecosystem</h1>
+<!---
+What are these things doing, why, are they relevant to me
+Although users won't be accessing these services directly, this is a top level overview of what are the parts of the architecture diagram and what it means to them
+
+Either specific pages, or single overview page...
+--->
+
+<ul>
+<li><strong>Aventus Protocol</strong>
+
+<ul>
+<li>The Aventus Protocol is a global open standard for the exchange of tickets built upon the Ethereum blockchain composed of smart contracts that allow for the creation and validation of events, the issuance, sale and distribution of tickets in primary and secondary ticket markets (under parameters designed and customised by inventory holders and event organisers) and the allocation of defined proportions of ticket sale revenue between event organisers, ticket promoters, artists, secondary resellers, etc.</li>
+</ul></li>
+<li><em>Virtue Services</em>
+
+<ul>
+<li><strong>Patient</strong> is a queuing system. A way to manage a large requests that will write to the blockchain. Think of the IMS that sends large amounts of requests to the blockchain, but the blockchain itself is really slow. Patient manages (i.e. queues) the transactions that are being sent to the blockchain. A user of Patient doesn’t need to know how to interact with the protocol as it operates as a high level layer between the protocol and the client. Patient users also don’t need to care about smart contracts, transaction fee’s etc. It auto adjusts the price paid for gas depending on the level of congestion on the blockchain.</li>
+<li><strong>Honest</strong> is a public API that allows any kind of application to look up information on the protocol. Anything that resides on the protocol can be seen and consumed by Honest.</li>
+<li><strong>Modest</strong> The last, and largest of our virtue services. Modest, as the name suggests, is our scaling solution for the blockchain, but firstly for the Aventus Protocol itself. It utilises Merkle trees to allow much quicker, concurrent processing of objects to the blockchain.</li>
+</ul></li>
+<li><strong>AWS Lambdas</strong>
+
+<ul>
+<li>We employ the use of AWS Lambdas throughout the technology stack as serverless middleware between services. These aren&#39;t distinct services themselves but simply allow for horizontally scalable data processing throughout the system.</li>
+</ul></li>
+<li><strong>Ticket Wallet</strong>
+
+<ul>
+<li>The Aventus Ticket Wallet is a white-label mobile application acting as the user facing client for loading and viewing tickets issued by the event creator. Originally designed as a proof-of-concept to show our end-to-end solution including access control but is built in a modular fashion to allow third parties to brand their own wallet using our technology under the hood.</li>
+</ul></li>
+</ul>
+<h1 id='guides'>Guides</h1>
+<p>Aventus makes creating and managing events and tickets on the blockchain easy. Find the documentation, sample code, and developer tools you need to build exactly what you want, fast. We’ll handle the complexity of blockchain and the Aventus Protocol. Let’s get building!</p>
+<h2 id='create-event'>Create Event</h2>
+<p>The first thing we&#39;d recommend you do is create an event. Events are the foundation of any content on the Aventus Protocol and must be in place before tickets can be issued and thus comes first in this guided flow.</p>
+
+<p>Using our Aventus RESTful API, you can create events on the protocol direct from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
+  - Create a new event
+  - Set parameters for your event</p>
+
+<p>First, take note of the method, and sample request. In this example guide you&#39;ll be creating your new event for 8000 people.</p>
+<h2 id='retrieve-event-list'>Retrieve Event List</h2>
+<p>Now that you have created an event you may want to retrieve these details from the protocol in order to keep track of your live events.</p>
+
+<p>Using our Aventus RESTful API, you can query for a list of active events from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
+- See a list of active events</p>
+
+<p>First, take note of the method, and sample request. In this example guide you&#39;ll be retrieving the details of an event recently created.</p>
+<h2 id='delete-event'>Delete Event</h2>
+<p>Now that you have created an event you may want to cancel it if there was an error.</p>
+
+<p>Using our Aventus RESTful API, you can cancel an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
+- Cancel an event</p>
+
+<p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
+<h2 id='create-tickets'>Create Tickets</h2>
+<p>Now that you have created an event you can now generate and distribute tickets to customers</p>
+
+<p>Using our Aventus RESTful API, you can create new tickets for an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
+- Generate new tickets
+- Distribute tickets via email</p>
+
+<p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
+<h2 id='retrieve-ticket-list'>Retrieve Ticket List</h2>
+<p>Now that you have created an event with tickets you can now retrieve a list of tickets associated with an event and see the status of each ticket</p>
+
+<p>Using our Aventus RESTful API, you can fetch a list of tickets for an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
+- Fetch a list of tickets</p>
+
+<p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
+<h2 id='cancel-tickets'>Cancel Tickets</h2>
+<p>Now that you have a list of tickets for an event, you can now perform ticket management and cancel a specific ticket</p>
+
+<p>Using our Aventus RESTful API, you can specify a ticket to cancel from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
+- Cancel a ticket</p>
+
+<p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
+
+<!--- KEEP THE FUCKING KITTENS -AH --->
+<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
+<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
+  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all kittens.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET http://example.com/api/kittens</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>include_cats</td>
+<td>false</td>
+<td>If set to true, the result will also include cats.</td>
+</tr>
+<tr>
+<td>available</td>
+<td>true</td>
+<td>If set to false, the result will include kittens that have already been adopted.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
+<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
+  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific kitten.</p>
+
+<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the kitten to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
+<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
+  -X DELETE
+  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint deletes a specific kitten.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the kitten to delete</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<aside class="notice">
+This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+</aside>
+
+<p>The Aventus RESTful API uses the following error codes:</p>
+
+<!--- Specifically the errors relating to THIS guide. -->
+
+<table><thead>
+<tr>
+<th>HTTP response Code</th>
+<th>HTTP error category</th>
+<th>Typical Failure Case</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>BAD REQUEST</td>
+<td>One of the expected parameters is not present or in an incorrect format</td>
+</tr>
+<tr>
+<td>401</td>
+<td>UNAUTHORIZED</td>
+<td>Owner Proof does not correspond to an approved member on the protocol</td>
+</tr>
+<tr>
+<td>500</td>
+<td>INTERNAL SERVER ERROR</td>
+<td>Unexpected internal server error, our services are down</td>
+</tr>
+</tbody></table>
+<h1 id='glossary'>Glossary</h1>
+<aside class="notice">
+This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+</aside>
+
+<p>The Glossary of specific names, objects and functions referenced by Artos. Exhaustive.:</p>
+
+<!--- Specifically the errors relating to THIS guide. -->
+<h2 id='a'>A</h2>
+<ul>
+<li><strong>Access Control</strong> is the method of entry (along with security protocols) to an <em>event (aventus)</em>, granted by a <em>ticket</em></li>
+<li><strong>Activity</strong> is a message used to communicate between services of the system. It can take two forms; <em>service events</em> and <em>commands</em></li>
+<li><strong>Aragon</strong> is a platform for building blockchain companies (<em>DAOs</em>) on top of Ethereum. <a href="https://aragon.one/network/">More info</a></li>
+<li><strong>AvEntity</strong> is a catch-all term used internally to refer to <em>challenge</em>-able members on the <em>Protocol</em></li>
+<li><strong>Aventlink</strong> refers to the links produced by the <a href="https://github.com/AventusSystems/link-generator">Aventus Link Generator</a>, which creates links that our Ticket Wallet can consume.</li>
+<li><strong>Aventus Community</strong> is made up of <em>AVT</em> token holders</li>
+<li><strong>Aventus Protocol</strong> is composed of Ethereum <em>smart contracts</em> that allow for the creation and validation of <em>events</em>, the issuance and sale of tickets in primary and secondary ticket markets (customisable by the event organisers), and the distribution of ticket sale revenue and market/event fees between the event organizers, ticket promoters, market matchers, attendees, etc.</li>
+<li><strong>Aventus Registry</strong> tracks third parties using the <em>Protocol</em>, <em>events</em> listed, and algorithmic parameters related to fees and time periods</li>
+<li><strong>AVT</strong> the token used in the <em>Aventus Protocol</em>, originally reffered to as an AventCoin</li>
+</ul>
+<h2 id='b'>B</h2>
+<ul>
+<li><strong>Bronze</strong> is a new music format built on the blockchain <a href="http://bronze.ai.s3-website.eu-west-2.amazonaws.com/">More info</a></li>
+<li><strong>Business Unit</strong> is any kind of client of Aventus (promoters, ticket sellers, etc.)</li>
+</ul>
+<h2 id='c'>C</h2>
+<ul>
+<li><strong>Challenge (Proposal)</strong> The <em>Aventus Community</em> can <em>challenge</em> the legitimacy of an <em>AvEntity</em> on the <em>Protocol</em> by adding a deposit and voting on it using a <em>stake</em> of AVT</li>
+<li><strong>Client</strong> see <em>Business Unit</em></li>
+<li><strong>Command</strong> is an <em>activity</em> that asynchronously requests an action from a service. These activities are usually sent directly to the service&#39;s <em>queue</em></li>
+<li><strong>Customer</strong> our <em>business unit</em>&#39;s clients</li>
+</ul>
+<h2 id='d'>D</h2>
+<ul>
+<li><strong>DAO</strong> (Decentralized Autonomous Organization) aims to hard-code certain company rules allowing an organization to exist without typical top-down hierarchical leadership structure via the blockchain. They rely on <em>smart contracts</em>, or pre-programmed rules that describe what can happen in the defined system. Rules of the DAO can be amended via a <em>governance proposal</em></li>
+<li><strong>ÐApps</strong> (Decentralized Applications) are digital applications or programs that run on the <em>Ethereum</em> blockchain</li>
+<li><strong>Delegate Calls</strong> Execute the code of another contract, but with the state (storage) of the calling contract. <a href="https://zupzup.org/smart-contract-interaction/">More info</a></li>
+<li><strong>Deposit</strong> the AVT attached to the creation of a <em>Governance Proposal</em> or <em>Event Challenge</em></li>
+<li><strong>Deposit Fund</strong> the section in the voting wallet <em>ÐApp</em> that supports the initiation of a <em>Governance Proposal</em> or <em>Event Challenges</em> by a member of the <em>Aventus Community</em>. Once a deposit is used against either of these, the price of that deposit becomes locked within the fund until the proposal is complete</li>
+</ul>
+<h2 id='e'>E</h2>
+<ul>
+<li><strong>ENS</strong> is the equivalent of common DNS on the Ethereum network. <a href="https://medium.com/the-ethereum-name-service/a-beginners-guide-to-buying-an-ens-domain-3ccac2bdc770">More info</a></li>
+<li><strong>ERC20</strong> token standard describes the functions and events (solidity) that an Ethereum token contract has to implement</li>
+<li><strong>Ether</strong> is the name of the currency used within Ethereum. It is used to pay for computation within the <em>EVM</em>. This is done indirectly by purchasing <em>gas</em> for <em>ether</em></li>
+<li><strong>Ethereum</strong> is a decentralized platform for applications that run exactly as programmed without any chance of fraud, censorship or third-party interference. <a href="https://github.com/ethereum/wiki/wiki/White-Paper">More info</a></li>
+<li><strong>Event (Aventus)</strong> is an AFK physical ticketed event (eg. live music, sports game), with an <em>event owner</em>, title, location, date, ticket total and a deposit (for voting)</li>
+<li><strong>Event (Solidity)</strong> is an <em>activity</em> that notifies to any listener that something happened on the originating service. This activities are usually published to a <em>topic</em></li>
+<li><strong>Event Owner</strong> the rightsholder of an <em>event (aventus)</em>, or more accurately the specific Ethereum address of said rightsholder</li>
+<li><strong>EVM Code</strong> is the binary code of Ethereum contracts compiled from <em>Solidity</em> which is then executable by the Ethereum Virtual Machine. <a href="https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-(EVM)-Awesome-List">More info</a></li>
+</ul>
+<h2 id='g'>G</h2>
+<ul>
+<li><strong>Ganache</strong> is a Node.js based Ethereum client for testing and development (previously referred to as &#39;testRPC&#39;). <a href="http://truffleframework.com/ganache/">More info</a></li>
+<li><strong>Gas</strong> is the <em>ether</em> execution fee for every operation made on the Ethereum network. <a href="https://blockgeeks.com/guides/ethereum-gas-step-by-step-guide/">More info</a></li>
+<li><strong>Governance Proposal</strong> <em>Aventus Community members</em> can propose governance changes to the algorithmic parameters (<em>Magic Numbers</em>) on the <em>Parameter Registry</em> and vote on whether they are applied using a <em>stake</em> of AVT</li>
+</ul>
+<h2 id='h'>H</h2>
+<ul>
+<li><strong>Hashing</strong> takes an input string of any length and gives out an encrypted output of a deterministic fixed length string. <a href="https://emn178.github.io/online-tools/keccak_256.html">Give it a go here :P</a></li>
+</ul>
+<h2 id='i'>I</h2>
+<ul>
+<li><strong>IMS</strong> (Inventory Management Service) is a Scala application that can be used as an off-chain central store of inventory</li>
+</ul>
+<h2 id='k'>K</h2>
+<ul>
+<li><strong>KECCAK-256</strong> is the cryptographic <em>hashing</em> function used within <em>Ethereum</em></li>
+</ul>
+<h2 id='l'>L</h2>
+<ul>
+<li><strong>Lambda</strong> is an event-driven, serverless computing platform provided by Amazon as a part of the Amazon Web Services (AWS). It is a computing service that runs code in response to events and automatically manages the computing resources required by that code <a href="https://aws.amazon.com/lambda/">More info</a></li>
+<li><strong>Libraries</strong> in Ethereum are special types of contract which do not store data and cannot hold <em>ether</em>. They are are only required to be deployed once and their functions can then be called by any <em>smart contract</em> via <em>delegate calls</em>. <a href="https://blog.aragon.one/library-driven-development-in-solidity-2bebcaf88736">More info</a></li>
+<li><strong>Lobbying Period</strong> is the 2 week time slot at the start of the proposal process where the <em>Aventus Community</em> can externally discuss and debate a <em>Governance Proposal</em> or <em>Event Challenge</em>, followed by the <em>Voting Period</em></li>
+</ul>
+<h2 id='m'>M</h2>
+<ul>
+<li><strong>Magic Numbers</strong> are the algorithmic parameters stored in the <em>Aventus Registry</em></li>
+<li><strong>Merkle Tree</strong> is a tree constructed by <em>hashing</em> paired binary data (the leaves), then pairing and <em>hashing</em> the results until a single hash remains, which is known as the merkle root. A possible solution for blockchain transaction scaling. Our implementation is our newest virtue service: Modest.</li>
+<li><strong>MetaMask</strong> is a browser extension which enables you to interact with the any Ethereum blockchain without having to run a full <em>node</em>. <a href="https://metamask.io/##how-it-works">More info</a></li>
+<li><strong>Migrations</strong> in Truffle are Javascript files which help you deploy contracts to the Ethereum network. A history of migrations is recorded on-chain via the Migrations.sol contract. <a href="https://ethereum.stackexchange.com/questions/8299/what-are-truffle-migrations">More info</a></li>
+<li><strong>Modest</strong> The name of our Merkle Tree based scaling solution, see above.</li>
+<li><strong>Multi-Signature Wallets</strong> are used to safeguard ether or tokens held by an entity. <a href="https://medium.com/hellogold/ethereum-multi-signature-wallets-77ab926ab63b">More info</a></li>
+</ul>
+<h2 id='n'>N</h2>
+<ul>
+<li><strong>Node</strong> is a piece of software that connects to other nodes, thus participating in the formation of the network. A node stores the blockchain, and a node can mine (but doesn&#39;t have to)
+## O</li>
+<li><strong>Oraclize</strong> Blockchain <em>smart contracts</em> cannot access and directly fetch the data they require so an Oracle is a party which provides data. <a href="https://docs.oraclize.it/##home">More info</a>
+## P</li>
+<li><strong>Partial-lock voting</strong> is a token-based voting system where votes are hidden during a voting period before being revealed during the reveal period. As soon as one vote enters the reveal period all committed tokens are locked until all votes have been revealed. <a href="https://blog.colony.io/towards-better-ethereum-voting-protocols-7e54cb5a0119">More info</a></li>
+<li><strong>Plasma</strong> is a suggested mechanism for managing Ethereum child-chains, which can be used to process transactions off the Ethereum main-chain, in order to provide greater network transaction capacity and speed, and cost reduction. <a href="https://medium.com/@argongroup/ethereum-plasma-explained-608720d3c60e">More info</a></li>
+<li><strong>Private Key</strong> In cryptography, a private key (secret key) is a variable that is used with an algorithm to encrypt and decrypt code</li>
+<li><strong>Proxy Library Pattern</strong> in <em>Solidity</em> is a means to upgrade Solidity libraries via the use of <em>delegate calls</em> and a library address storage intermediary. <a href="https://blog.zeppelin.solutions/proxy-libraries-in-solidity-79fbe4b970fd">More info</a>
+<a href="https://blog.zeppelinos.org/proxy-patterns/">More detailed info</a></li>
+</ul>
+<h2 id='q'>Q</h2>
+<ul>
+<li><strong>Quorum</strong> is the minimum number of <em>votes</em> required to be allowed to perform an operation</li>
+<li><strong>Queue</strong> is an asynchronous message based communication system that aims to decouple different parts of the platform</li>
+</ul>
+<h2 id='r'>R</h2>
+<ul>
+<li><strong>Remix</strong> is a simple, browser-based, IDE for <em>Solidity</em> development. <a href="https://github.com/AventusSystems/wiki/Remix">More info</a></li>
+<li><strong>Reservation Cancellation</strong> is an operation performed when the client wants to remove a <em>ticket reservation</em>. It will invalidate the <em>ticket reservation</em> and return the <em>tickets</em> to the available pool. This should be executed when the <em>client</em> cancels a <em>customer</em>&#39;s <em>ticket</em></li>
+<li><p><strong>Reveal Period</strong> is the 1 week time slot following a <em>Voting Period</em> at the end of the proposal process where the <em>Aventus Community</em> can reveal their vote by re-submitting a secret signed <em>vote</em> on a <em>Governance Proposal</em> or <em>Event Challenge</em>. Once all votes have been revealed then the proposal process can be concluded and <em>vote</em> <em>stakes</em> are tallied to decide a winner</p></li>
+<li><p><strong>Rinkeby</strong> is our public test network for the Protocol</p>
+<h2 id='s'>S</h2></li>
+<li><p><strong>Sale Channel</strong> is an integrated sale point, it will belong to a <em>business unit</em></p></li>
+<li><p><strong>Schelling Point</strong> is from game theory, a solution people will tend to converge upon in the absence of communication, because it seems natural, special, or relevant to them. <a href="https://en.wikipedia.org/wiki/Focal_point_(game_theory)">More info</a></p></li>
+<li><p><strong>Secret</strong> is the term used to refer to the unique <em>ticket</em> reference required in the instance when the <em>access control</em> setup of a venue is not integrated with Aventus, meaning they will not perform any processing on the door. Anyone with the <em>secret</em> can gain entry to the venue so it is only known by the primary agent and the buyer of the ticket and not stored openly on the blockchain</p></li>
+<li><p><strong>Smart Contract</strong> is a self-executing contract with the terms of the agreement between buyer and seller being directly written into lines of code. <a href="https://www.coindesk.com/information/ethereum-smart-contracts-work/">More info</a></p></li>
+<li><p><strong>Solidity</strong> is a contract-oriented programming language for writing smart contracts that runs on <em>EVM Code</em>. <a href="http://solidity.readthedocs.io/en/v0.4.24/">More info</a></p></li>
+<li><p><strong>Stake</strong> The AVT value stake laid down during voting on a <em>challenge proposal</em> or <em>governance proposal</em> which cannot be amended during a pending <em>vote</em></p></li>
+<li><p><strong>Stake Fund</strong> is the section in the voting wallet <em>ÐApp</em> that holds AVT <em>stake</em></p></li>
+</ul>
+<h2 id='t'>T</h2>
+<ul>
+<li><strong>Ticket</strong> is a unique identifier assigned to the purchaser of a <em>ticket</em> (ticket owner) that allows access to an <em>event (aventus)</em> which will have an allocation (eg. row and seat number) and price properties describing it&#39;s transfer conditions</li>
+<li><strong>TicketKey</strong> see: Secret</li>
+<li><strong>Ticket Lock</strong> is a system entity that will ensure that the best <em>tickets</em> for the selection requested at the time of the <em>ticket reservation</em> will be allocated to the user. A ticket lock does not have a direct link to a particular allocation as that will be determined at the time the <em>ticket reservation</em> is created. It will only ensure that the <em>ticket reservation</em> can be executed at any time before the timeout occurs. This operation will be requested by the <em>client</em> prior to taking the payment</li>
+<li><strong>Ticket Reservation</strong> is a system entity that takes a set of <em>tickets</em> permanently out of sale, this operation will be requested by the <em>client</em> after the payment is taken</li>
+<li><strong>Token Curated Registry</strong> is a design pattern which provides a means of curating a list (such as a list of non-fraudulent events) via stake-weighted voting. <a href="https://medium.com/coinmonks/token-curated-registry-tcr-design-patterns-4de6d18efa15">More info</a></li>
+<li><strong>Topic</strong> is a message source to which applications can subscribe their own <em>queues</em>. Messages on a topic will be multicast to all the subscribed <em>queues</em></li>
+</ul>
+<h2 id='v'>V</h2>
+<ul>
+<li><strong>Virtues</strong> these are referencing our three servies to interact with the protocol: Honest, Patient &amp; Modest.</li>
+<li><strong>Vote</strong> the <em>Aventus Community</em> can vote during a <em>challenge proposal</em> or <em>governance proposal</em> by laying down a <em>stake</em> of AVT with their vote choice</li>
+<li><strong>Voting Period</strong> is the 1 week time slot following a <em>Lobbying Period</em> during the proposal process where the <em>Aventus Community</em> can submit secret signed <em>votes</em> on a <em>Governance Proposal</em> or <em>Event Challenge</em></li>
+</ul>
+<h2 id='w'>W</h2>
+<ul>
+<li><strong>Wei</strong> is a base <em>ether</em> denomination, like cents to dollars, equivalent to Bitcoin Satoshis <a href="http://ethdocs.org/en/latest/ether.html">More info</a></li>
+</ul>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="ruby">ruby</a>
+                <a href="#" data-language-name="python">python</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
