@@ -166,6 +166,21 @@ Using our Aventus RESTful API, you can query for a list of active events from yo
 
 First, take note of the method, and sample request. In this example guide you'll be retrieving the details of an event recently created.
 
+### HTTP Request
+
+`GET http://example.com/api/kittens`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+include_cats | false | If set to true, the result will also include cats.
+available | true | If set to false, the result will include kittens that have already been adopted.
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
 ## Delete Event
 Now that you have created an event you may want to cancel it if there was an error.
 
@@ -173,6 +188,21 @@ Using our Aventus RESTful API, you can cancel an event you created from your lan
 - Cancel an event
 
 First, take note of the method, and sample request. In this example guide you'll be cancelling an event you recently created.
+
+### HTTP Request
+
+`GET http://example.com/api/kittens`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+include_cats | false | If set to true, the result will also include cats.
+available | true | If set to false, the result will include kittens that have already been adopted.
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
 
 ## Create Tickets
 Now that you have created an event you can now generate and distribute tickets to customers
@@ -183,6 +213,21 @@ Using our Aventus RESTful API, you can create new tickets for an event you creat
 
 First, take note of the method, and sample request. In this example guide you'll be cancelling an event you recently created.
 
+### HTTP Request
+
+`GET http://example.com/api/kittens`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+include_cats | false | If set to true, the result will also include cats.
+available | true | If set to false, the result will include kittens that have already been adopted.
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
 ## Retrieve Ticket List
 Now that you have created an event with tickets you can now retrieve a list of tickets associated with an event and see the status of each ticket
 
@@ -191,6 +236,21 @@ Using our Aventus RESTful API, you can fetch a list of tickets for an event you 
 
 First, take note of the method, and sample request. In this example guide you'll be cancelling an event you recently created.
 
+### HTTP Request
+
+`GET http://example.com/api/kittens`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+include_cats | false | If set to true, the result will also include cats.
+available | true | If set to false, the result will include kittens that have already been adopted.
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
 ## Cancel Tickets
 Now that you have a list of tickets for an event, you can now perform ticket management and cancel a specific ticket
 
@@ -198,6 +258,21 @@ Using our Aventus RESTful API, you can specify a ticket to cancel from your lang
 - Cancel a ticket
 
 First, take note of the method, and sample request. In this example guide you'll be cancelling an event you recently created.
+
+### HTTP Request
+
+`GET http://example.com/api/kittens`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+include_cats | false | If set to true, the result will also include cats.
+available | true | If set to false, the result will include kittens that have already been adopted.
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
 
 <!--- KEEP THE FUCKING KITTENS -AH --->
 
