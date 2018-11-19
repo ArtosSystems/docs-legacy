@@ -22,7 +22,7 @@ search: true
 
 UGH
 
-I can update from GH desktop, not atom.
+I can update from GH desktop, not atom. BUILD PLZ.
 
 Welcome, to your bridge to Blockchain; Artos. We have developed the Aventus Protocol on behalf of the Aventus Foundation.
 
