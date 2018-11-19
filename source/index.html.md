@@ -24,6 +24,8 @@ UGH
 
 I can update from GH desktop, not atom. BUILD PLZ. Realy f'ing build plox.
 
+I'm loosing the will to live. build ye bastard
+
 Welcome, to your bridge to Blockchain; Artos. We have developed the Aventus Protocol on behalf of the Aventus Foundation.
 
 You access the RESTful API by sending HTTPS requests to specific URLs (endpoints) on the QRadar® SIEM Console. To send these requests, use the HTTP implementation that is built in to the programming language of your choice. Each request contains authentication information, and parameters that modify the request.
