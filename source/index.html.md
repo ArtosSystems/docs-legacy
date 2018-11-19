@@ -141,6 +141,21 @@ Using our Aventus RESTful API, you can create events on the protocol direct from
 
 First, take note of the method, and sample request. In this example guide you'll be creating your new event for 8000 people.
 
+### HTTP Request
+
+`GET http://example.com/api/kittens`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+include_cats | false | If set to true, the result will also include cats.
+available | true | If set to false, the result will include kittens that have already been adopted.
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
 ## Retrieve Event List
 Now that you have created an event you may want to retrieve these details from the protocol in order to keep track of your live events.
 
