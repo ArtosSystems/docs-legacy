@@ -225,15 +225,13 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
+            <a href="#before-you-begin" class="toc-h1 toc-link" data-title="Before You Begin">Before You Begin</a>
+          </li>
+          <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#before-you-begin" class="toc-h1 toc-link" data-title="Before You Begin">Before You Begin</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#getting-started" class="toc-h2 toc-link" data-title="Getting Started">Getting Started</a>
-                  </li>
-              </ul>
+            <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting Started">Getting Started</a>
           </li>
           <li>
             <a href="#the-ecosystem" class="toc-h1 toc-link" data-title="The Ecosystem">The Ecosystem</a>
@@ -347,22 +345,26 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>UGH</p>
-
-<p>I can update from GH desktop, not atom. BUILD PLZ. Realy f&#39;ing build plox.</p>
-
-<p>I&#39;m loosing the will to live. build ye bastard</p>
-
 <p>Welcome, to your bridge to Blockchain; Artos. We have developed the Aventus Protocol on behalf of the Aventus Foundation.</p>
-
-<p>You access the RESTful API by sending HTTPS requests to specific URLs (endpoints) on the QRadar® SIEM Console. To send these requests, use the HTTP implementation that is built in to the programming language of your choice. Each request contains authentication information, and parameters that modify the request.</p>
 
 <p>Below you will find a general architecture diagram outlining our core services and where data is being processed from the point of entry via an endpoint. Each of these distinct products makes up the Artos ecosystem and we aim to continue to develop these as our implementation matures.</p>
 
 <p><img src="images/architecture-diagram.png" alt="big" /></p>
 
 <p>As shown in the above architecture diagram our technology stack is built in layers on top of the blockchain and each product serves a purpose to ensure interaction via our endpoints is standardised and familiar for developers</p>
+<h1 id='before-you-begin'>Before You Begin</h1>
+<p>This guide acts as developer reference for integrating with Aventus Protocol RESTful API covering interaction with events and tickets hence any language and instructional information assumes an existing technical knowledge of interacting via an API and the typical practices involved.</p>
+
+<p>By sending HTTPS requests to specific URLs (endpoints) as a registered user you can easily harness the power of the Aventus Protocol allowing us to handle any corresponding complexity with writing and reading the Ethereum blockchain.</p>
+
+<p>An API endpoint contains the URL of the resource that you want to access and the action that you want to complete on that resource. The action is indicated by the HTTP method of the request: GET, POST, PUT, or DELETE.</p>
+
+<p>When you send an API request, the server returns an HTTP response. The HTTP response contains a status code to indicate whether the request succeeded and the details of the response in the response body. Most resources format this response as JavaScript Object Notation (JSON). You can use the JSON packages or libraries that are built in to the programming language that you use to extract the data.</p>
 <h1 id='authentication'>Authentication</h1>
+<p>All requests to the Aventus APIs go over the web. Essentially this means that any system that can speak to the web, can speak to our APIs. Any and all language specific libraries and SDKs provided are really just wrappers which are providing some convenience and linguistic niceties to help you work with a simple, RESTful API.</p>
+
+<p>Aventus will create an Auth0 login for you to use, and thereafter: the Aventus API requires a header authorisation key/value pair for each request.</p>
+
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
@@ -392,15 +394,7 @@ curl <span class="s2">"api_endpoint_here"</span>
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
-<h1 id='before-you-begin'>Before You Begin</h1>
-<p>This guide acts as developer reference for integrating with Aventus Protocol RESTful API covering interaction with events and tickets hence any language and instructional information assumes an existing technical knowledge of interacting via an API and the typical practices involved.</p>
-
-<p>By sending HTTPS requests to specific URLs (endpoints) as a registered user you can easily harness the power of the Aventus Protocol allowing us to handle any corresponding complexity with writing and reading the Ethereum blockchain.</p>
-
-<p>An API endpoint contains the URL of the resource that you want to access and the action that you want to complete on that resource. The action is indicated by the HTTP method of the request: GET, POST, PUT, or DELETE.</p>
-
-<p>When you send an API request, the server returns an HTTP response. The HTTP response contains a status code to indicate whether the request succeeded and the details of the response in the response body. Most resources format this response as JavaScript Object Notation (JSON). You can use the JSON packages or libraries that are built in to the programming language that you use to extract the data.</p>
-<h2 id='getting-started'>Getting Started</h2>
+<h1 id='getting-started'>Getting Started</h1>
 <!--- I suppose we should tell people how to build a testing environment on their own machine, step by step? --->
 
 <p>If this is your first time here, scan this section before digging deeper into the documentation. The sections after this page assume you know the basics about the Aventus Protocol. For further information, read our Whitepaper here.</p>
