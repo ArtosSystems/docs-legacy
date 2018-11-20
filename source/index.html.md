@@ -84,14 +84,15 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 If this is your first time here, scan this section before digging deeper into the documentation. The sections after this page assume you know the basics about the Aventus Protocol. For further information, read our Whitepaper here.
 
 What you can do?
-* Create an Event (POST)
-* Retrieve Event List (GET)
-* Delete Event (DELETE)
-* Create Tickets (POST)
-* Retrieve Ticket List (GET)
-* Cancel Tickets (DELETE)
-* Send Ticket Links (POST)
-* Generate Doorlist (GET)
+
+- Create an Event (POST)
+- Retrieve Event List (GET)
+- Delete Event (DELETE)
+- Create Tickets (POST)
+- Retrieve Ticket List (GET)
+- Cancel Tickets (DELETE)
+- Send Ticket Links (POST)
+- Generate Doorlist (GET)
 
 <!--- Differences between development environment and live?
 
