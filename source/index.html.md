@@ -22,11 +22,11 @@ search: true
 
 Welcome, to your bridge to Blockchain; Artos. We have developed the Aventus Protocol on behalf of the Aventus Foundation.
 
-Below you will find a general architecture diagram outlining our core services and where data is being processed from the point of entry via an endpoint. Each of these distinct products makes up the Artos ecosystem and we aim to continue to develop these as our implementation matures.
+Below you will find a general architecture diagram outlining our core services and where data is being processed from the point of entry via our API endpoints. Each of these distinct products makes up the Artos ecosystem and we aim to continue to develop these as our implementation matures.
 
 ![big](images/architecture-diagram-transparent.png)
 
-As shown in the above architecture diagram our technology stack is built in layers on top of the blockchain and each product serves a purpose to ensure interaction via our endpoints is standardised and familiar for developers
+As shown in the above architecture diagram our technology stack is built in layers on top of the blockchain and each product serves a purpose to ensure interaction via our endpoints is standardised and familiar for developers.
 
 # Before You Begin
 This guide acts as developer reference for integrating with Aventus Protocol RESTful API covering interaction with events and tickets hence any language and instructional information assumes an existing technical knowledge of interacting via an API and the typical practices involved.
@@ -71,9 +71,7 @@ let api = kittn.authorize('meowmeowmeow');
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Aventus expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: meowmeowmeow`
 
