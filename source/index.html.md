@@ -160,7 +160,7 @@ _The following will create an event with the start date of x_
 ```
 
 ### Sample Response
-_The following is the expected response for creating an event with the start date of x_2
+The following is the expected response for creating an event with the start date of x_2
 
 ```
 Insert Example Response here
@@ -175,20 +175,41 @@ Using our Aventus RESTful API, you can query for a list of active events from yo
 
 First, take note of the method, and sample request. In this example guide you'll be retrieving the details of an event recently created.
 
-### HTTP Request
+### Method: `GET`
 
-`GET http://example.com/api/kittens`
+`GET /events`
 
-### Query Parameters
+```
+{
+	eventId: number
+  ownerProof: string
+}
+```
 
-Parameter | Default | Description
+### Request Headers
+
+Parameter | Type | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+eventId* | number | event ID for reference
+ownerProof | string | Proof the user has permission
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+### Sample request
+The following will retrieve a list of active events
+
+```
+{
+  eventId: number
+  ownerProof: string
+}
+```
+
+### Sample Response
+The following is the expected response for asking for a list of active events
+
+```
+Insert Example Response here
+```
+
 
 ## Delete Event
 Now that you have created an event you may want to cancel it if there was an error.
