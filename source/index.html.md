@@ -125,14 +125,14 @@ First, take note of the method, and sample request. In this example guide you'll
 
 `POST /events`
 
-```
+```json
 {
-	eventDesc: string
-	eventSupportURL: string
-	onSaleTime: number
-	offSaleTime: number
-	averageTicketPriceInUSCents: string (0x[0-9a-f]{64})
-  ownerProof: string
+	"eventDesc": "string",
+	"eventSupportURL": "string",
+	"onSaleTime": number,
+	"offSaleTime": number,
+	"averageTicketPriceInUSCents": "string" (0x[0-9a-f]{64}),
+  "ownerProof": "string"
 }
 ```
 
@@ -151,14 +151,16 @@ ownerProof | string | Proof the user has permission
 _The following will create an event with the start date of x_
 
 ```json
-{
-	eventDesc: Kendrick Lamar, Brixton Academy, London, 18+
-	eventSupportURL: www.kendricklamar.com/tour
-	onSaleTime: 21/02/2019
-	offSaleTime: 31/03/2019
-	averageTicketPriceInUSCents: 100
-  ownerProof: f4780e2d9f6
+[
+  {
+	"eventDesc": "Kendrick Lamar, Brixton Academy, London, 18+",
+	"eventSupportURL": "www.kendricklamar.com/tour",
+	"onSaleTime": "21/02/2019",
+	"offSaleTime": "31/03/2019",
+	"averageTicketPriceInUSCents": 100,
+  "ownerProof": "f4780e2d9f6"
 }
+]
 ```
 
 ### Sample Response
@@ -181,10 +183,10 @@ First, take note of the method, and sample request. In this example guide you'll
 
 `GET /events`
 
-```
+```json
 {
-	eventId: number
-  ownerProof: string
+	"eventId": "number"
+  "ownerProof": "string"
 }
 ```
 
@@ -198,10 +200,10 @@ ownerProof | string | Proof the user has permission
 ### Sample request
 The following will retrieve a list of active events
 
-```
+```json
 {
-  eventId: number
-  ownerProof: string
+  "eventId": number,
+  "ownerProof": string
 }
 ```
 
@@ -227,8 +229,8 @@ First, take note of the method, and sample request. In this example guide you'll
 
 ```json
 {
-	eventId: number
-  ownerProof: string
+	"eventId": number,
+  "ownerProof": "string"
 }
 ```
 
@@ -242,10 +244,10 @@ ownerProof | string | Proof the user has permission
 ### Sample request
 The following will delete an event
 
-```
+```json
 {
-  eventId: number
-  ownerProof: string
+  "eventId": number,
+  "ownerProof": "string"
 }
 ```
 
@@ -271,9 +273,9 @@ First, take note of the method, and sample request. In this example guide you'll
 
 ```json
 {
-	eventId: number
-  ticketQuantity: number
-  ownerProof: string
+	"eventId": number,
+  "ticketQuantity": number,
+  "ownerProof": "string"
 }
 ```
 
@@ -287,10 +289,10 @@ ownerProof | string | Proof the user has permission
 ### Sample request
 The following will create a number of tickets for a specific event
 
-```
+```json
 {
-  eventId: number
-  ownerProof: string
+  "eventId": number,
+  "ownerProof": "string"
 }
 ```
 
@@ -315,8 +317,8 @@ First, take note of the method, and sample request. In this example guide you'll
 
 ```JSON
 {
-	eventId: number
-  ownerProof: string
+	"eventId": number,
+  "ownerProof": "string"
 }
 ```
 
@@ -330,10 +332,10 @@ ownerProof | string | Proof the user has permission
 ### Sample request
 The following will retrieve a list of tickets for a specified event
 
-```
+```json
 {
-  eventId: number
-  ownerProof: string
+  "eventId": number,
+  "ownerProof": "string"
 }
 ```
 
@@ -356,11 +358,11 @@ First, take note of the method, and sample request. In this example guide you'll
 
 `DELETE /events`
 
-```
+```json
 {
-	eventId: number
-  ticketId: number
-  ownerProof: string
+	"eventId": number,
+  "ticketId": number,
+  "ownerProof": "string"
 }
 ```
 
@@ -374,11 +376,11 @@ ownerProof | string | Proof the user has permission
 ### Sample request
 The following will cancel a specified ticket for a specified event
 
-```
+```json
 {
-  eventId: number
-  ticketId: number
-  ownerProof: string
+  "eventId": number,
+  "ticketId": number,
+  "ownerProof": string
 }
 ```
 
@@ -398,9 +400,9 @@ blurb
 
 ```json
 {
-	eventId: number
-  ticketId: number
-  ownerProof: string
+	"eventId": number,
+  "ticketId": number,
+  "ownerProof": "string"
 }
 ```
 
@@ -416,9 +418,9 @@ The following will send out ticket link emails for specified tickets
 
 ```json
 {
-  eventId: number
-  ticketId: number
-  ownerProof: string
+  "eventId": number,
+  "ticketId": number,
+  "ownerProof": "string"
 }
 ```
 
@@ -439,8 +441,8 @@ blurb
 
 ```json
 {
-	eventId: number
-  ownerProof: string
+	"eventId": "number",
+  "ownerProof": "string"
 }
 ```
 
@@ -454,10 +456,10 @@ ownerProof | string | Proof the user has permission
 ### Sample request
 The following will generate a CSV doorlist for a specified event
 
-```
+```json
 {
-  eventId: number
-  ownerProof: string
+  "eventId": number,
+  "ownerProof": "string"
 }
 ```
 
