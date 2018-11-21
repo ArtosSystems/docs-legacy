@@ -175,6 +175,7 @@ Insert Example Response here
 Now that you have created an event you may want to retrieve these details from the protocol in order to keep track of your live events.
 
 Using our Aventus RESTful API, you can query for a list of active events from your language of choice. In this guide, we'll explore how you can use the Aventus API to:
+
 - See a list of active events
 
 First, take note of the method, and sample request. In this example guide you'll be retrieving the details of an event recently created.
@@ -219,6 +220,7 @@ Insert Example Response here
 Now that you have created an event you may want to cancel it if there was an error.
 
 Using our Aventus RESTful API, you can cancel an event you created from your language of choice. In this guide, we'll explore how you can use the Aventus API to:
+
 - Cancel an event
 
 First, take note of the method, and sample request. In this example guide you'll be cancelling an event you recently created.
@@ -262,6 +264,7 @@ Insert Example Response here
 Now that you have created an event you can now generate and distribute tickets to customers
 
 Using our Aventus RESTful API, you can create new tickets for an event you created from your language of choice. In this guide, we'll explore how you can use the Aventus API to:
+
 - Generate new tickets
 - Distribute tickets via email
 
@@ -307,6 +310,7 @@ Insert Example Response here
 Now that you have created an event with tickets you can now retrieve a list of tickets associated with an event and see the status of each ticket
 
 Using our Aventus RESTful API, you can fetch a list of tickets for an event you created from your language of choice. In this guide, we'll explore how you can use the Aventus API to:
+
 - Fetch a list of tickets
 
 First, take note of the method, and sample request. In this example guide you'll be retrieving a list of ticket for an event you recently created.
@@ -350,6 +354,7 @@ Insert Example Response here
 Now that you have a list of tickets for an event, you can now perform ticket management and cancel a specific ticket
 
 Using our Aventus RESTful API, you can specify a ticket to cancel from your language of choice. In this guide, we'll explore how you can use the Aventus API to:
+
 - Cancel a ticket
 
 First, take note of the method, and sample request. In this example guide you'll be cancelling tickets for an event you recently created.
