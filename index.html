@@ -573,9 +573,13 @@ Either specific pages, or single overview page...
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be retrieving the details of an event recently created.</p>
 <h3 id='method-get'>Method: <code>GET</code></h3>
 <p><code>GET /events</code></p>
+
+<blockquote>
+<p>Sample Request: The following will retrieve a list of active events</p>
+</blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
-  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='request-headers-2'>Request Headers</h3>
 <table><thead>
@@ -597,14 +601,6 @@ Either specific pages, or single overview page...
 </tr>
 </tbody></table>
 
-<blockquote>
-<p>Sample Request: The following will retrieve a list of active events</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Sample Response: The following is the expected response for asking for a list of active events</p>
 </blockquote>
@@ -660,6 +656,10 @@ Either specific pages, or single overview page...
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be creating tickets for an event you recently created.</p>
 <h3 id='method-post-2'>Method: <code>POST</code></h3>
 <p><code>POST /events</code></p>
+
+<blockquote>
+<p>Sample Request: The following will create a number of tickets for a specific event</p>
+</blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ticketQuantity"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
@@ -686,14 +686,6 @@ Either specific pages, or single overview page...
 </tbody></table>
 
 <blockquote>
-<p>Sample Request: The following will create a number of tickets for a specific event</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
 <p>Sample Response: The following is the expected response for creating a number of tickets for a specific event</p>
 </blockquote>
 <pre class="highlight plaintext"><code>Insert Example Response here
@@ -706,6 +698,10 @@ Either specific pages, or single overview page...
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be retrieving a list of ticket for an event you recently created.</p>
 <h3 id='method-get-2'>Method: <code>GET</code></h3>
 <p><code>GET /events</code></p>
+
+<blockquote>
+<p>Sample Request: The following will retrieve a list of tickets for a specified event</p>
+</blockquote>
 <pre class="highlight plaintext"><code>{
     "eventId": number,
   "ownerProof": "string"
@@ -729,14 +725,10 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-request'>Sample request</h3>
-<p>The following will retrieve a list of tickets for a specified event</p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='sample-response-2'>Sample Response</h3>
-<p>The following is the expected response for retrieving a list of tickets for a specified event</p>
+
+<blockquote>
+<p>Sample Response: The following is the expected response for retrieving a list of tickets for a specified event</p>
+</blockquote>
 <pre class="highlight plaintext"><code>Insert Example Response here
 </code></pre><h2 id='cancel-tickets'>Cancel Tickets</h2>
 <p>Now that you have a list of tickets for an event, you can now perform ticket management and cancel a specific ticket</p>
@@ -747,6 +739,10 @@ Either specific pages, or single overview page...
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling tickets for an event you recently created.</p>
 <h3 id='method-delete-2'>Method: <code>DELETE</code></h3>
 <p><code>DELETE /events</code></p>
+
+<blockquote>
+<p>Sample request: The following will cancel a specified ticket for a specified event</p>
+</blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
@@ -771,14 +767,7 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-request-2'>Sample request</h3>
-<p>The following will cancel a specified ticket for a specified event</p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='sample-response-3'>Sample Response</h3>
+<h3 id='sample-response-2'>Sample Response</h3>
 <p>The following is the expected response for cancelling a specified ticket for a specified event</p>
 <pre class="highlight plaintext"><code>Insert Example Response here
 </code></pre><h2 id='send-ticket-links'>Send Ticket Links</h2>
@@ -809,14 +798,14 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-request-3'>Sample request</h3>
+<h3 id='sample-request'>Sample request</h3>
 <p>The following will send out ticket link emails for specified tickets</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='sample-response-4'>Sample Response</h3>
+</span></code></pre><h3 id='sample-response-3'>Sample Response</h3>
 <p>The following is the expected response for sending out ticket link emails for specified tickets</p>
 <pre class="highlight plaintext"><code>Insert Example Response here
 </code></pre><h2 id='generate-doorlist'>Generate Doorlist</h2>
@@ -846,13 +835,13 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-request-4'>Sample request</h3>
+<h3 id='sample-request-2'>Sample request</h3>
 <p>The following will generate a CSV doorlist for a specified event</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='sample-response-5'>Sample Response</h3>
+</span></code></pre><h3 id='sample-response-4'>Sample Response</h3>
 <p>The following is the expected response for generating a CSV doorlist for a specified event</p>
 <pre class="highlight plaintext"><code>Insert Example Response here
 </code></pre>
