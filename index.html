@@ -319,6 +319,12 @@
                     <a href="#n" class="toc-h2 toc-link" data-title="N">N</a>
                   </li>
                   <li>
+                    <a href="#o" class="toc-h2 toc-link" data-title="O">O</a>
+                  </li>
+                  <li>
+                    <a href="#p" class="toc-h2 toc-link" data-title="P">P</a>
+                  </li>
+                  <li>
                     <a href="#q" class="toc-h2 toc-link" data-title="Q">Q</a>
                   </li>
                   <li>
@@ -887,6 +893,10 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The ID of the kitten to retrieve</td>
 </tr>
 </tbody></table>
+
+<aside class="notice">
+This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+</aside>
 <h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
   -X DELETE
   -H <span class="s2">"Authorization: meowmeowmeow"</span>
@@ -915,10 +925,6 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
 <p>The Aventus RESTful API uses the following error codes:</p>
 
 <!--- Specifically the errors relating to THIS guide. -->
@@ -947,13 +953,9 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 </tbody></table>
 <h1 id='glossary'>Glossary</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
+<p>The Glossary of specific names, objects and functions referenced by Artos</p>
 
-<p>The Glossary of specific names, objects and functions referenced by Artos. Exhaustive.:</p>
-
-<!--- Specifically the errors relating to THIS guide. -->
+<!--- Specifically relating to the errors connected to THIS guide. -->
 <h2 id='a'>A</h2>
 <ul>
 <li><strong>Access Control</strong> is the method of entry (along with security protocols) to an <em>event (aventus)</em>, granted by a <em>ticket</em></li>
@@ -1032,10 +1034,14 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </ul>
 <h2 id='n'>N</h2>
 <ul>
-<li><strong>Node</strong> is a piece of software that connects to other nodes, thus participating in the formation of the network. A node stores the blockchain, and a node can mine (but doesn&#39;t have to)
-## O</li>
-<li><strong>Oraclize</strong> Blockchain <em>smart contracts</em> cannot access and directly fetch the data they require so an Oracle is a party which provides data. <a href="https://docs.oraclize.it/##home">More info</a>
-## P</li>
+<li><strong>Node</strong> is a piece of software that connects to other nodes, thus participating in the formation of the network. A node stores the blockchain, and a node can mine (but doesn&#39;t have to)</li>
+</ul>
+<h2 id='o'>O</h2>
+<ul>
+<li><strong>Oraclize</strong> Blockchain <em>smart contracts</em> cannot access and directly fetch the data they require so an Oracle is a party which provides data. <a href="https://docs.oraclize.it/##home">More info</a></li>
+</ul>
+<h2 id='p'>P</h2>
+<ul>
 <li><strong>Partial-lock voting</strong> is a token-based voting system where votes are hidden during a voting period before being revealed during the reveal period. As soon as one vote enters the reveal period all committed tokens are locked until all votes have been revealed. <a href="https://blog.colony.io/towards-better-ethereum-voting-protocols-7e54cb5a0119">More info</a></li>
 <li><strong>Plasma</strong> is a suggested mechanism for managing Ethereum child-chains, which can be used to process transactions off the Ethereum main-chain, in order to provide greater network transaction capacity and speed, and cost reduction. <a href="https://medium.com/@argongroup/ethereum-plasma-explained-608720d3c60e">More info</a></li>
 <li><strong>Private Key</strong> In cryptography, a private key (secret key) is a variable that is used with an algorithm to encrypt and decrypt code</li>
@@ -1051,16 +1057,18 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 <ul>
 <li><strong>Remix</strong> is a simple, browser-based, IDE for <em>Solidity</em> development. <a href="https://github.com/AventusSystems/wiki/Remix">More info</a></li>
 <li><strong>Reservation Cancellation</strong> is an operation performed when the client wants to remove a <em>ticket reservation</em>. It will invalidate the <em>ticket reservation</em> and return the <em>tickets</em> to the available pool. This should be executed when the <em>client</em> cancels a <em>customer</em>&#39;s <em>ticket</em></li>
-<li><p><strong>Reveal Period</strong> is the 1 week time slot following a <em>Voting Period</em> at the end of the proposal process where the <em>Aventus Community</em> can reveal their vote by re-submitting a secret signed <em>vote</em> on a <em>Governance Proposal</em> or <em>Event Challenge</em>. Once all votes have been revealed then the proposal process can be concluded and <em>vote</em> <em>stakes</em> are tallied to decide a winner</p></li>
-<li><p><strong>Rinkeby</strong> is our public test network for the Protocol</p>
-<h2 id='s'>S</h2></li>
-<li><p><strong>Sale Channel</strong> is an integrated sale point, it will belong to a <em>business unit</em></p></li>
-<li><p><strong>Schelling Point</strong> is from game theory, a solution people will tend to converge upon in the absence of communication, because it seems natural, special, or relevant to them. <a href="https://en.wikipedia.org/wiki/Focal_point_(game_theory)">More info</a></p></li>
-<li><p><strong>Secret</strong> is the term used to refer to the unique <em>ticket</em> reference required in the instance when the <em>access control</em> setup of a venue is not integrated with Aventus, meaning they will not perform any processing on the door. Anyone with the <em>secret</em> can gain entry to the venue so it is only known by the primary agent and the buyer of the ticket and not stored openly on the blockchain</p></li>
-<li><p><strong>Smart Contract</strong> is a self-executing contract with the terms of the agreement between buyer and seller being directly written into lines of code. <a href="https://www.coindesk.com/information/ethereum-smart-contracts-work/">More info</a></p></li>
-<li><p><strong>Solidity</strong> is a contract-oriented programming language for writing smart contracts that runs on <em>EVM Code</em>. <a href="http://solidity.readthedocs.io/en/v0.4.24/">More info</a></p></li>
-<li><p><strong>Stake</strong> The AVT value stake laid down during voting on a <em>challenge proposal</em> or <em>governance proposal</em> which cannot be amended during a pending <em>vote</em></p></li>
-<li><p><strong>Stake Fund</strong> is the section in the voting wallet <em>ÐApp</em> that holds AVT <em>stake</em></p></li>
+<li><strong>Reveal Period</strong> is the 1 week time slot following a <em>Voting Period</em> at the end of the proposal process where the <em>Aventus Community</em> can reveal their vote by re-submitting a secret signed <em>vote</em> on a <em>Governance Proposal</em> or <em>Event Challenge</em>. Once all votes have been revealed then the proposal process can be concluded and <em>vote</em> <em>stakes</em> are tallied to decide a winner</li>
+<li><strong>Rinkeby</strong> is our public test network for the Protocol</li>
+</ul>
+<h2 id='s'>S</h2>
+<ul>
+<li><strong>Sale Channel</strong> is an integrated sale point, it will belong to a <em>business unit</em></li>
+<li><strong>Schelling Point</strong> is from game theory, a solution people will tend to converge upon in the absence of communication, because it seems natural, special, or relevant to them. <a href="https://en.wikipedia.org/wiki/Focal_point_(game_theory)">More info</a></li>
+<li><strong>Secret</strong> is the term used to refer to the unique <em>ticket</em> reference required in the instance when the <em>access control</em> setup of a venue is not integrated with Aventus, meaning they will not perform any processing on the door. Anyone with the <em>secret</em> can gain entry to the venue so it is only known by the primary agent and the buyer of the ticket and not stored openly on the blockchain</li>
+<li><strong>Smart Contract</strong> is a self-executing contract with the terms of the agreement between buyer and seller being directly written into lines of code. <a href="https://www.coindesk.com/information/ethereum-smart-contracts-work/">More info</a></li>
+<li><strong>Solidity</strong> is a contract-oriented programming language for writing smart contracts that runs on <em>EVM Code</em>. <a href="http://solidity.readthedocs.io/en/v0.4.24/">More info</a></li>
+<li><strong>Stake</strong> The AVT value stake laid down during voting on a <em>challenge proposal</em> or <em>governance proposal</em> which cannot be amended during a pending <em>vote</em></li>
+<li><strong>Stake Fund</strong> is the section in the voting wallet <em>ÐApp</em> that holds AVT <em>stake</em></li>
 </ul>
 <h2 id='t'>T</h2>
 <ul>
