@@ -219,20 +219,40 @@ Using our Aventus RESTful API, you can cancel an event you created from your lan
 
 First, take note of the method, and sample request. In this example guide you'll be cancelling an event you recently created.
 
-### HTTP Request
+### Method: `DELETE`
 
-`GET http://example.com/api/kittens`
+`DELETE /events`
 
-### Query Parameters
+```
+{
+	eventId: number
+  ownerProof: string
+}
+```
 
-Parameter | Default | Description
+### Request Headers
+
+Parameter | Type | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+eventId* | number | event ID for reference
+ownerProof | string | Proof the user has permission
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+### Sample request
+The following will delete an event
+
+```
+{
+  eventId: number
+  ownerProof: string
+}
+```
+
+### Sample Response
+The following is the expected response for deleting an event
+
+```
+Insert Example Response here
+```
 
 ## Create Tickets
 Now that you have created an event you can now generate and distribute tickets to customers
@@ -241,22 +261,43 @@ Using our Aventus RESTful API, you can create new tickets for an event you creat
 - Generate new tickets
 - Distribute tickets via email
 
-First, take note of the method, and sample request. In this example guide you'll be cancelling an event you recently created.
+First, take note of the method, and sample request. In this example guide you'll be creating tickets for an event you recently created.
 
-### HTTP Request
+### Method: `POST`
 
-`GET http://example.com/api/kittens`
+`POST /events`
 
-### Query Parameters
+```
+{
+	eventId: number
+  ticketQuantity: number
+  ownerProof: string
+}
+```
 
-Parameter | Default | Description
+### Request Headers
+
+Parameter | Type | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+eventId* | number | event ID for reference
+ownerProof | string | Proof the user has permission
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+### Sample request
+The following will create a number of tickets for a specific event
+
+```
+{
+  eventId: number
+  ownerProof: string
+}
+```
+
+### Sample Response
+The following is the expected response for creating a number of tickets for a specific event
+
+```
+Insert Example Response here
+```
 
 ## Retrieve Ticket List
 Now that you have created an event with tickets you can now retrieve a list of tickets associated with an event and see the status of each ticket
@@ -264,22 +305,42 @@ Now that you have created an event with tickets you can now retrieve a list of t
 Using our Aventus RESTful API, you can fetch a list of tickets for an event you created from your language of choice. In this guide, we'll explore how you can use the Aventus API to:
 - Fetch a list of tickets
 
-First, take note of the method, and sample request. In this example guide you'll be cancelling an event you recently created.
+First, take note of the method, and sample request. In this example guide you'll be retrieving a list of ticket for an event you recently created.
 
-### HTTP Request
+### Method: `GET`
 
-`GET http://example.com/api/kittens`
+`GET /events`
 
-### Query Parameters
+```
+{
+	eventId: number
+  ownerProof: string
+}
+```
 
-Parameter | Default | Description
+### Request Headers
+
+Parameter | Type | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+eventId* | number | event ID for reference
+ownerProof | string | Proof the user has permission
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+### Sample request
+The following will retrieve a list of tickets for a specified event
+
+```
+{
+  eventId: number
+  ownerProof: string
+}
+```
+
+### Sample Response
+The following is the expected response for retrieving a list of tickets for a specified event
+
+```
+Insert Example Response here
+```
 
 ## Cancel Tickets
 Now that you have a list of tickets for an event, you can now perform ticket management and cancel a specific ticket
@@ -287,24 +348,129 @@ Now that you have a list of tickets for an event, you can now perform ticket man
 Using our Aventus RESTful API, you can specify a ticket to cancel from your language of choice. In this guide, we'll explore how you can use the Aventus API to:
 - Cancel a ticket
 
-First, take note of the method, and sample request. In this example guide you'll be cancelling an event you recently created.
+First, take note of the method, and sample request. In this example guide you'll be cancelling tickets for an event you recently created.
 
-### HTTP Request
+### Method: `DELETE`
 
-`GET http://example.com/api/kittens`
+`DELETE /events`
 
-### Query Parameters
+```
+{
+	eventId: number
+  ticketId: number
+  ownerProof: string
+}
+```
 
-Parameter | Default | Description
+### Request Headers
+
+Parameter | Type | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+eventId* | number | event ID for reference
+ownerProof | string | Proof the user has permission
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+### Sample request
+The following will cancel a specified ticket for a specified event
 
-<!--- KEEP THE FUCKING KITTENS -AH --->
+```
+{
+  eventId: number
+  ticketId: number
+  ownerProof: string
+}
+```
+
+### Sample Response
+The following is the expected response for cancelling a specified ticket for a specified event
+
+```
+Insert Example Response here
+```
+
+## Send Ticket Links
+blurb
+
+### Method: `POST`
+
+`POST /events`
+
+```
+{
+	eventId: number
+  ticketId: number
+  ownerProof: string
+}
+```
+
+### Request Headers
+
+Parameter | Type | Description
+--------- | ------- | -----------
+eventId* | number | event ID for reference
+ownerProof | string | Proof the user has permission
+
+### Sample request
+The following will send out ticket link emails for specified tickets
+
+```
+{
+  eventId: number
+  ticketId: number
+  ownerProof: string
+}
+```
+
+### Sample Response
+The following is the expected response for sending out ticket link emails for specified tickets
+
+```
+Insert Example Response here
+```
+
+
+## Generate Doorlist
+blurb
+
+### Method: `GET`
+
+`GET /events`
+
+```
+{
+	eventId: number
+  ownerProof: string
+}
+```
+
+### Request Headers
+
+Parameter | Type | Description
+--------- | ------- | -----------
+eventId* | number | event ID for reference
+ownerProof | string | Proof the user has permission
+
+### Sample request
+The following will generate a CSV doorlist for a specified event
+
+```
+{
+  eventId: number
+  ownerProof: string
+}
+```
+
+### Sample Response
+The following is the expected response for generating a CSV doorlist for a specified event
+
+```
+Insert Example Response here
+```
+
+
+
+
+
+<!--- YOU ARE NOW ENTERING... KITTENS --->
 
 # Kittens
 
