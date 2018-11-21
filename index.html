@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;]">
+  <body class="index" data-languages="[&quot;json&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,7 +211,7 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="json">json</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -496,6 +496,10 @@ Either specific pages, or single overview page...
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be creating your new event for 8000 people.</p>
 <h3 id='method-post'>Method: <code>POST</code></h3>
 <p><code>POST /events</code></p>
+
+<blockquote>
+<p>The following is an empty sample request</p>
+</blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"eventDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"eventSupportURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -543,8 +547,10 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-request'>Sample request</h3>
-<p><em>The following will create an event with the start date of x</em></p>
+
+<blockquote>
+<p>The following will create an event with the start date of x_</p>
+</blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"eventDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kendrick Lamar, Brixton Academy, London, 18+"</span><span class="p">,</span><span class="w">
@@ -561,11 +567,8 @@ Either specific pages, or single overview page...
 </code></pre><h2 id='retrieve-event-list'>Retrieve Event List</h2>
 <p>Now that you have created an event you may want to retrieve these details from the protocol in order to keep track of your live events.</p>
 
-<p>Using our Aventus RESTful API, you can query for a list of active events from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:</p>
-
-<ul>
-<li>See a list of active events</li>
-</ul>
+<p>Using our Aventus RESTful API, you can query for a list of active events from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
+- See a list of active events</p>
 
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be retrieving the details of an event recently created.</p>
 <h3 id='method-get'>Method: <code>GET</code></h3>
@@ -593,7 +596,7 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-request-2'>Sample request</h3>
+<h3 id='sample-request'>Sample request</h3>
 <p>The following will retrieve a list of active events</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
@@ -605,11 +608,8 @@ Either specific pages, or single overview page...
 </code></pre><h2 id='delete-event'>Delete Event</h2>
 <p>Now that you have created an event you may want to cancel it if there was an error.</p>
 
-<p>Using our Aventus RESTful API, you can cancel an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:</p>
-
-<ul>
-<li>Cancel an event</li>
-</ul>
+<p>Using our Aventus RESTful API, you can cancel an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
+- Cancel an event</p>
 
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
 <h3 id='method-delete'>Method: <code>DELETE</code></h3>
@@ -637,7 +637,7 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-request-3'>Sample request</h3>
+<h3 id='sample-request-2'>Sample request</h3>
 <p>The following will delete an event</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
@@ -649,12 +649,9 @@ Either specific pages, or single overview page...
 </code></pre><h2 id='create-tickets'>Create Tickets</h2>
 <p>Now that you have created an event you can now generate and distribute tickets to customers</p>
 
-<p>Using our Aventus RESTful API, you can create new tickets for an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:</p>
-
-<ul>
-<li>Generate new tickets</li>
-<li>Distribute tickets via email</li>
-</ul>
+<p>Using our Aventus RESTful API, you can create new tickets for an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
+- Generate new tickets
+- Distribute tickets via email</p>
 
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be creating tickets for an event you recently created.</p>
 <h3 id='method-post-2'>Method: <code>POST</code></h3>
@@ -683,7 +680,7 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-request-4'>Sample request</h3>
+<h3 id='sample-request-3'>Sample request</h3>
 <p>The following will create a number of tickets for a specific event</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
@@ -695,11 +692,8 @@ Either specific pages, or single overview page...
 </code></pre><h2 id='retrieve-ticket-list'>Retrieve Ticket List</h2>
 <p>Now that you have created an event with tickets you can now retrieve a list of tickets associated with an event and see the status of each ticket</p>
 
-<p>Using our Aventus RESTful API, you can fetch a list of tickets for an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:</p>
-
-<ul>
-<li>Fetch a list of tickets</li>
-</ul>
+<p>Using our Aventus RESTful API, you can fetch a list of tickets for an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
+- Fetch a list of tickets</p>
 
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be retrieving a list of ticket for an event you recently created.</p>
 <h3 id='method-get-2'>Method: <code>GET</code></h3>
@@ -727,7 +721,7 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-request-5'>Sample request</h3>
+<h3 id='sample-request-4'>Sample request</h3>
 <p>The following will retrieve a list of tickets for a specified event</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
@@ -739,11 +733,8 @@ Either specific pages, or single overview page...
 </code></pre><h2 id='cancel-tickets'>Cancel Tickets</h2>
 <p>Now that you have a list of tickets for an event, you can now perform ticket management and cancel a specific ticket</p>
 
-<p>Using our Aventus RESTful API, you can specify a ticket to cancel from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:</p>
-
-<ul>
-<li>Cancel a ticket</li>
-</ul>
+<p>Using our Aventus RESTful API, you can specify a ticket to cancel from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
+- Cancel a ticket</p>
 
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling tickets for an event you recently created.</p>
 <h3 id='method-delete-2'>Method: <code>DELETE</code></h3>
@@ -772,7 +763,7 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-request-6'>Sample request</h3>
+<h3 id='sample-request-5'>Sample request</h3>
 <p>The following will cancel a specified ticket for a specified event</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
@@ -810,7 +801,7 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-request-7'>Sample request</h3>
+<h3 id='sample-request-6'>Sample request</h3>
 <p>The following will send out ticket link emails for specified tickets</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
@@ -847,7 +838,7 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-request-8'>Sample request</h3>
+<h3 id='sample-request-7'>Sample request</h3>
 <p>The following will generate a CSV doorlist for a specified event</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
@@ -1218,7 +1209,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="json">json</a>
           </div>
       </div>
     </div>
