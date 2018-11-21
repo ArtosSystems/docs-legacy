@@ -446,36 +446,74 @@ Either specific pages, or single overview page...
 <h2 id='create-event'>Create Event</h2>
 <p>The first thing we&#39;d recommend you do is create an event. Events are the foundation of any content on the Aventus Protocol and must be in place before tickets can be issued and thus comes first in this guided flow.</p>
 
-<p>Using our Aventus RESTful API, you can create events on the protocol direct from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
-  - Create a new event
-  - Set parameters for your event</p>
+<p>Using our Aventus RESTful API, you can create events on the protocol direct from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:</p>
+
+<ul>
+<li>Create a new event</li>
+<li>Set parameters for your event</li>
+</ul>
 
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be creating your new event for 8000 people.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<h3 id='method-post'>Method: <code>POST</code></h3><h3 id='endpoint-event-create'>Endpoint: <code>/event/create</code></h3><h3 id='request-headers'>Request Headers</h3><pre class="highlight plaintext"><code>Insert Example Headers here
+</code></pre><h3 id='sample-request'>Sample request</h3>
+<p><em>The following will create an event with the start date of x</em></p>
+<pre class="highlight plaintext"><code>Insert Example Request here
+</code></pre><h3 id='sample-response'>Sample Response</h3>
+<p>_The following is the expected response for creating an event with the start date of x_2</p>
+<pre class="highlight plaintext"><code>Insert Example Response here
+</code></pre><h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Example</th>
+<th>Format</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>Description</td>
+<td>Kendrick Lamar, Brixton Academy, London, 18+</td>
+<td>String</td>
+<td>-</td>
+<td>The event info</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>Support URL</td>
+<td>www.kendricklamar.com/tour</td>
+<td>String</td>
+<td>-</td>
+<td>Evidence of legitimacy</td>
+</tr>
+<tr>
+<td>On Sale Time</td>
+<td>21/02/2019</td>
+<td>Date</td>
+<td>-</td>
+<td>Date ticket sales start</td>
+</tr>
+<tr>
+<td>Off Sale Time</td>
+<td>31/03/2019</td>
+<td>Date</td>
+<td>-</td>
+<td>Date ticket sales stop</td>
+</tr>
+<tr>
+<td>Average Ticket Price</td>
+<td>$100</td>
+<td>Integer</td>
+<td>-</td>
+<td>Average Ticket Price</td>
+</tr>
+<tr>
+<td>Owner Proof</td>
+<td>f4780e2d9f6</td>
+<td>String</td>
+<td>-</td>
+<td>Proof</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 <h2 id='retrieve-event-list'>Retrieve Event List</h2>
 <p>Now that you have created an event you may want to retrieve these details from the protocol in order to keep track of your live events.</p>
 
@@ -483,7 +521,7 @@ Remember — a happy kitten is an authenticated kitten!
 - See a list of active events</p>
 
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be retrieving the details of an event recently created.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code>GET http://example.com/api/kittens</code></p>
 <h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
@@ -515,7 +553,7 @@ Remember — a happy kitten is an authenticated kitten!
 - Cancel an event</p>
 
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET http://example.com/api/kittens</code></p>
 <h3 id='query-parameters-3'>Query Parameters</h3>
 <table><thead>
@@ -548,7 +586,7 @@ Remember — a happy kitten is an authenticated kitten!
 - Distribute tickets via email</p>
 
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET http://example.com/api/kittens</code></p>
 <h3 id='query-parameters-4'>Query Parameters</h3>
 <table><thead>
@@ -580,7 +618,7 @@ Remember — a happy kitten is an authenticated kitten!
 - Fetch a list of tickets</p>
 
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET http://example.com/api/kittens</code></p>
 <h3 id='query-parameters-5'>Query Parameters</h3>
 <table><thead>
@@ -612,7 +650,7 @@ Remember — a happy kitten is an authenticated kitten!
 - Cancel a ticket</p>
 
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET http://example.com/api/kittens</code></p>
 <h3 id='query-parameters-6'>Query Parameters</h3>
 <table><thead>
@@ -663,7 +701,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request-7'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET http://example.com/api/kittens</code></p>
 <h3 id='query-parameters-7'>Query Parameters</h3>
 <table><thead>
@@ -705,7 +743,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>This endpoint retrieves a specific kitten.</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-8'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -732,7 +770,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-9'>HTTP Request</h3>
+<h3 id='http-request-8'>HTTP Request</h3>
 <p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
