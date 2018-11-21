@@ -113,25 +113,46 @@ Aventus makes creating and managing events and tickets on the blockchain easy. F
 The first thing we'd recommend you do is create an event. Events are the foundation of any content on the Aventus Protocol and must be in place before tickets can be issued and thus comes first in this guided flow.
 
 Using our Aventus RESTful API, you can create events on the protocol direct from your language of choice. In this guide, we'll explore how you can use the Aventus API to:
+
   - Create a new event
   - Set parameters for your event
 
 First, take note of the method, and sample request. In this example guide you'll be creating your new event for 8000 people.
 
-### HTTP Request
+### Method: `POST`
 
-`GET http://example.com/api/kittens`
+### Endpoint: `/event/create`
+
+### Request Headers
+
+```
+Insert Example Headers here
+```
+
+### Sample request
+_The following will create an event with the start date of x_
+
+```
+Insert Example Request here
+```
+
+### Sample Response
+_The following is the expected response for creating an event with the start date of x_2
+
+```
+Insert Example Response here
+```
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+Parameter | Example | Format | Default | Description
+--------- | ------- | ------ | ------- |-----------
+Description | Kendrick Lamar, Brixton Academy, London, 18+ | String | - | The event info
+Support URL | www.kendricklamar.com/tour | String | - | Evidence of legitimacy
+On Sale Time | 21/02/2019 | Date | - | Date ticket sales start
+Off Sale Time | 31/03/2019 | Date | - | Date ticket sales stop
+Average Ticket Price |	$100 | Integer | - | Average Ticket Price
+Owner Proof | f4780e2d9f6 | String | - | Proof
 
 ## Retrieve Event List
 Now that you have created an event you may want to retrieve these details from the protocol in order to keep track of your live events.
