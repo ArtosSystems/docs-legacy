@@ -130,6 +130,7 @@ First, take note of the method, and sample request. In this example guide you'll
 	onSaleTime: number
 	offSaleTime: number
 	averageTicketPriceInUSCents: string (0x[0-9a-f]{64})
+  ownerProof: string
 }
 ```
 
@@ -139,15 +140,23 @@ Parameter | Type | Description
 --------- | ------- | -----------
 eventDesc* | string | A brief description of the event you are hosting, 200 characters maximum.
 eventSupportURL* | string | If your event has a supporting link, to say the event on the artist website, please place here..
-onSaleTime*  | number  |  The time that tickets will go on sale. Seconds since Epoc.
-offSaleTime*  | number  |  The time that tickets will go off sale. Seconds since Epoc.
-averageTicketPriceInUSCents*  | string   | Required format is:  `0x[0-9a-f]{64}`
+onSaleTime* | number  | The time that tickets will go on sale. Seconds since Epoc.
+offSaleTime* | number |  The time that tickets will go off sale. Seconds since Epoc.
+averageTicketPriceInUSCents* | string | Required format is:  `0x[0-9a-f]{64}`
+ownerProof | string | Proof the user has permission
 
 ### Sample request
 _The following will create an event with the start date of x_
 
 ```
-Insert Example Request here
+{
+	eventDesc: Kendrick Lamar, Brixton Academy, London, 18+
+	eventSupportURL: www.kendricklamar.com/tour
+	onSaleTime: 21/02/2019
+	offSaleTime: 31/03/2019
+	averageTicketPriceInUSCents: 100
+  ownerProof: f4780e2d9f6
+}
 ```
 
 ### Sample Response
@@ -157,16 +166,6 @@ _The following is the expected response for creating an event with the start dat
 Insert Example Response here
 ```
 
-### Query Parameters
-
-Parameter | Example | Format | Default | Description
---------- | ------- | ------ | ------- |-----------
-Description | Kendrick Lamar, Brixton Academy, London, 18+ | String | - | The event info
-Support URL | www.kendricklamar.com/tour | String | - | Evidence of legitimacy
-On Sale Time | 21/02/2019 | Date | - | Date ticket sales start
-Off Sale Time | 31/03/2019 | Date | - | Date ticket sales stop
-Average Ticket Price |	$100 | Integer | - | Average Ticket Price
-Owner Proof | f4780e2d9f6 | String | - | Proof
 
 ## Retrieve Event List
 Now that you have created an event you may want to retrieve these details from the protocol in order to keep track of your live events.
