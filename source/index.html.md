@@ -120,14 +120,27 @@ First, take note of the method, and sample request. In this example guide you'll
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`POST /events`
+
+```
+{
+	eventDesc: string
+	eventSupportURL: string
+	onSaleTime: number
+	offSaleTime: number
+	averageTicketPriceInUSCents: string (0x[0-9a-f]{64})
+}
+```
 
 ### Query Parameters
 
-Parameter | Default | Description
+Parameter | Type | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+eventDesc* | string | A brief description of the event you are hosting, 200 characters maximum.
+eventSupportURL* | string | If your event has a supporting link, to say the event on the artist website, please place here..
+onSaleTime*  | number  |  The time that tickets will go on sale. Seconds since Epoc.
+offSaleTime*  | number  |  The time that tickets will go off sale. Seconds since Epoc.
+averageTicketPriceInUSCents*  | string   | Required format is:  `0x[0-9a-f]{64}`
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
