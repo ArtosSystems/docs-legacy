@@ -462,6 +462,7 @@ Either specific pages, or single overview page...
     onSaleTime: number
     offSaleTime: number
     averageTicketPriceInUSCents: string (0x[0-9a-f]{64})
+  ownerProof: string
 }
 </code></pre><h3 id='request-headers'>Request Headers</h3>
 <table><thead>
@@ -496,67 +497,26 @@ Either specific pages, or single overview page...
 <td>string</td>
 <td>Required format is:  <code>0x[0-9a-f]{64}</code></td>
 </tr>
+<tr>
+<td>ownerProof</td>
+<td>string</td>
+<td>Proof the user has permission</td>
+</tr>
 </tbody></table>
 <h3 id='sample-request'>Sample request</h3>
 <p><em>The following will create an event with the start date of x</em></p>
-<pre class="highlight plaintext"><code>Insert Example Request here
+<pre class="highlight plaintext"><code>{
+    eventDesc: Kendrick Lamar, Brixton Academy, London, 18+
+    eventSupportURL: www.kendricklamar.com/tour
+    onSaleTime: 21/02/2019
+    offSaleTime: 31/03/2019
+    averageTicketPriceInUSCents: 100
+  ownerProof: f4780e2d9f6
+}
 </code></pre><h3 id='sample-response'>Sample Response</h3>
 <p>_The following is the expected response for creating an event with the start date of x_2</p>
 <pre class="highlight plaintext"><code>Insert Example Response here
-</code></pre><h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Example</th>
-<th>Format</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Description</td>
-<td>Kendrick Lamar, Brixton Academy, London, 18+</td>
-<td>String</td>
-<td>-</td>
-<td>The event info</td>
-</tr>
-<tr>
-<td>Support URL</td>
-<td>www.kendricklamar.com/tour</td>
-<td>String</td>
-<td>-</td>
-<td>Evidence of legitimacy</td>
-</tr>
-<tr>
-<td>On Sale Time</td>
-<td>21/02/2019</td>
-<td>Date</td>
-<td>-</td>
-<td>Date ticket sales start</td>
-</tr>
-<tr>
-<td>Off Sale Time</td>
-<td>31/03/2019</td>
-<td>Date</td>
-<td>-</td>
-<td>Date ticket sales stop</td>
-</tr>
-<tr>
-<td>Average Ticket Price</td>
-<td>$100</td>
-<td>Integer</td>
-<td>-</td>
-<td>Average Ticket Price</td>
-</tr>
-<tr>
-<td>Owner Proof</td>
-<td>f4780e2d9f6</td>
-<td>String</td>
-<td>-</td>
-<td>Proof</td>
-</tr>
-</tbody></table>
-<h2 id='retrieve-event-list'>Retrieve Event List</h2>
+</code></pre><h2 id='retrieve-event-list'>Retrieve Event List</h2>
 <p>Now that you have created an event you may want to retrieve these details from the protocol in order to keep track of your live events.</p>
 
 <p>Using our Aventus RESTful API, you can query for a list of active events from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
@@ -565,7 +525,7 @@ Either specific pages, or single overview page...
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be retrieving the details of an event recently created.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters-2'>Query Parameters</h3>
+<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -597,7 +557,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters-3'>Query Parameters</h3>
+<h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -630,7 +590,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters-4'>Query Parameters</h3>
+<h3 id='query-parameters-3'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -662,7 +622,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters-5'>Query Parameters</h3>
+<h3 id='query-parameters-4'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -694,7 +654,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters-6'>Query Parameters</h3>
+<h3 id='query-parameters-5'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -745,7 +705,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>This endpoint retrieves all kittens.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters-7'>Query Parameters</h3>
+<h3 id='query-parameters-6'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
