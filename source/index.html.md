@@ -150,7 +150,7 @@ averageTicketPriceInUSCents* | string | Required format is:  `0x[0-9a-f]{64}`
 ownerProof | string | Proof the user has permission
 
 
-> The following will create an event with the start date of x_
+> The following sample request has inputs for a potential event
 
 ```json
 [
@@ -199,8 +199,7 @@ Parameter | Type | Description
 eventId* | number | event ID for reference
 ownerProof | string | Proof the user has permission
 
-### Sample request
-The following will retrieve a list of active events
+> Sample Request: The following will retrieve a list of active events
 
 ```json
 {
@@ -209,8 +208,7 @@ The following will retrieve a list of active events
 }
 ```
 
-### Sample Response
-The following is the expected response for asking for a list of active events
+> Sample Response: The following is the expected response for asking for a list of active events
 
 ```
 Insert Example Response here
@@ -229,6 +227,8 @@ First, take note of the method, and sample request. In this example guide you'll
 
 `DELETE /events`
 
+> Sample Request
+
 ```json
 {
 	"eventId": number,
@@ -243,18 +243,8 @@ Parameter | Type | Description
 eventId* | number | event ID for reference
 ownerProof | string | Proof the user has permission
 
-### Sample request
-The following will delete an event
 
-```json
-{
-  "eventId": number,
-  "ownerProof": "string"
-}
-```
-
-### Sample Response
-The following is the expected response for deleting an event
+> Sample Response
 
 ```
 Insert Example Response here
@@ -288,8 +278,7 @@ Parameter | Type | Description
 eventId* | number | event ID for reference
 ownerProof | string | Proof the user has permission
 
-### Sample request
-The following will create a number of tickets for a specific event
+> Sample Request: The following will create a number of tickets for a specific event
 
 ```json
 {
@@ -298,8 +287,7 @@ The following will create a number of tickets for a specific event
 }
 ```
 
-### Sample Response
-The following is the expected response for creating a number of tickets for a specific event
+> Sample Response: The following is the expected response for creating a number of tickets for a specific event
 
 ```
 Insert Example Response here
