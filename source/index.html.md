@@ -150,7 +150,7 @@ ownerProof | string | Proof the user has permission
 ### Sample request
 _The following will create an event with the start date of x_
 
-```
+```json
 {
 	eventDesc: Kendrick Lamar, Brixton Academy, London, 18+
 	eventSupportURL: www.kendricklamar.com/tour
@@ -225,7 +225,7 @@ First, take note of the method, and sample request. In this example guide you'll
 
 `DELETE /events`
 
-```
+```json
 {
 	eventId: number
   ownerProof: string
@@ -269,7 +269,7 @@ First, take note of the method, and sample request. In this example guide you'll
 
 `POST /events`
 
-```
+```json
 {
 	eventId: number
   ticketQuantity: number
@@ -313,7 +313,7 @@ First, take note of the method, and sample request. In this example guide you'll
 
 `GET /events`
 
-```
+```JSON
 {
 	eventId: number
   ownerProof: string
@@ -396,7 +396,7 @@ blurb
 
 `POST /events`
 
-```
+```json
 {
 	eventId: number
   ticketId: number
@@ -414,7 +414,7 @@ ownerProof | string | Proof the user has permission
 ### Sample request
 The following will send out ticket link emails for specified tickets
 
-```
+```json
 {
   eventId: number
   ticketId: number
@@ -437,7 +437,7 @@ blurb
 
 `GET /events`
 
-```
+```json
 {
 	eventId: number
   ownerProof: string
