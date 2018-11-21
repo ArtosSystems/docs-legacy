@@ -472,9 +472,9 @@ Insert Example Response here
 
 <!--- YOU ARE NOW ENTERING... KITTENS --->
 
-# Kittens
+# Here Be Kittens
 
-## Get All Kittens
+## Get All Kittens (retaining as nice format example)
 
 
 ```shell
