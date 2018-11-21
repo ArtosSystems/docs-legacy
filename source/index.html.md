@@ -6,7 +6,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='https://github.com/AventusProtocolFoundation/protocol'>Aventus Protocol on GitHub</a>
 
 includes:
   - errors
@@ -19,11 +19,13 @@ search: true
 
 Welcome, to your bridge to Blockchain; Artos. We have developed the Aventus Protocol on behalf of the Aventus Foundation.
 
-Below you will find a general architecture diagram outlining our core services and where data is being processed from the point of entry via our API endpoints. Each of these distinct products makes up the Artos ecosystem and we aim to continue to develop these as our implementation matures.
+Below you will find a general architecture diagram outlining our core services and where data is being processed from the point of entry via our RESTful API. Each of these distinct products makes up the Artos Systems ecosystem and we aim to continue to develop these as our implementation matures.
 
 ![big](images/architecture-diagram-transparent.png)
 
 As shown in the above architecture diagram our technology stack is built in layers on top of the blockchain and each product serves a purpose to ensure interaction via our endpoints is standardised and familiar for developers.
+
+This API documentation aims to make interacting the the Aventus Protocol as simple and straightforward as possible.
 
 # Before You Begin
 This guide acts as developer reference for integrating with Aventus Protocol RESTful API covering interaction with events and tickets hence any language and instructional information assumes an existing technical knowledge of interacting via an API and the typical practices involved.
