@@ -185,10 +185,12 @@ First, take note of the method, and sample request. In this example guide you'll
 
 `GET /events`
 
+> Sample Request: The following will retrieve a list of active events
+
 ```json
 {
-	"eventId": "number"
-  "ownerProof": "string"
+  "eventId": number,
+  "ownerProof": string
 }
 ```
 
@@ -199,14 +201,7 @@ Parameter | Type | Description
 eventId* | number | event ID for reference
 ownerProof | string | Proof the user has permission
 
-> Sample Request: The following will retrieve a list of active events
 
-```json
-{
-  "eventId": number,
-  "ownerProof": string
-}
-```
 
 > Sample Response: The following is the expected response for asking for a list of active events
 
@@ -263,6 +258,8 @@ First, take note of the method, and sample request. In this example guide you'll
 
 `POST /events`
 
+> Sample Request: The following will create a number of tickets for a specific event
+
 ```json
 {
 	"eventId": number,
@@ -278,14 +275,6 @@ Parameter | Type | Description
 eventId* | number | event ID for reference
 ownerProof | string | Proof the user has permission
 
-> Sample Request: The following will create a number of tickets for a specific event
-
-```json
-{
-  "eventId": number,
-  "ownerProof": "string"
-}
-```
 
 > Sample Response: The following is the expected response for creating a number of tickets for a specific event
 
@@ -305,6 +294,8 @@ First, take note of the method, and sample request. In this example guide you'll
 
 `GET /events`
 
+> Sample Request: The following will retrieve a list of tickets for a specified event
+
 ```JSON
 {
 	"eventId": number,
@@ -319,18 +310,8 @@ Parameter | Type | Description
 eventId* | number | event ID for reference
 ownerProof | string | Proof the user has permission
 
-### Sample request
-The following will retrieve a list of tickets for a specified event
 
-```json
-{
-  "eventId": number,
-  "ownerProof": "string"
-}
-```
-
-### Sample Response
-The following is the expected response for retrieving a list of tickets for a specified event
+> Sample Response: The following is the expected response for retrieving a list of tickets for a specified event
 
 ```
 Insert Example Response here
@@ -348,6 +329,8 @@ First, take note of the method, and sample request. In this example guide you'll
 
 `DELETE /events`
 
+> Sample request: The following will cancel a specified ticket for a specified event
+
 ```json
 {
 	"eventId": number,
@@ -363,16 +346,6 @@ Parameter | Type | Description
 eventId* | number | event ID for reference
 ownerProof | string | Proof the user has permission
 
-### Sample request
-The following will cancel a specified ticket for a specified event
-
-```json
-{
-  "eventId": number,
-  "ticketId": number,
-  "ownerProof": string
-}
-```
 
 ### Sample Response
 The following is the expected response for cancelling a specified ticket for a specified event
