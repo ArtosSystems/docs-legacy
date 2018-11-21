@@ -254,6 +254,12 @@
                   <li>
                     <a href="#cancel-tickets" class="toc-h2 toc-link" data-title="Cancel Tickets">Cancel Tickets</a>
                   </li>
+                  <li>
+                    <a href="#send-ticket-links" class="toc-h2 toc-link" data-title="Send Ticket Links">Send Ticket Links</a>
+                  </li>
+                  <li>
+                    <a href="#generate-doorlist" class="toc-h2 toc-link" data-title="Generate Doorlist">Generate Doorlist</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -564,130 +570,243 @@ Either specific pages, or single overview page...
 - Cancel an event</p>
 
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<h3 id='method-delete'>Method: <code>DELETE</code></h3>
+<p><code>DELETE /events</code></p>
+<pre class="highlight plaintext"><code>{
+    eventId: number
+  ownerProof: string
+}
+</code></pre><h3 id='request-headers-3'>Request Headers</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>eventId*</td>
+<td>number</td>
+<td>event ID for reference</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>ownerProof</td>
+<td>string</td>
+<td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='create-tickets'>Create Tickets</h2>
+<h3 id='sample-request-3'>Sample request</h3>
+<p>The following will delete an event</p>
+<pre class="highlight plaintext"><code>{
+  eventId: number
+  ownerProof: string
+}
+</code></pre><h3 id='sample-response-3'>Sample Response</h3>
+<p>The following is the expected response for deleting an event</p>
+<pre class="highlight plaintext"><code>Insert Example Response here
+</code></pre><h2 id='create-tickets'>Create Tickets</h2>
 <p>Now that you have created an event you can now generate and distribute tickets to customers</p>
 
 <p>Using our Aventus RESTful API, you can create new tickets for an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
 - Generate new tickets
 - Distribute tickets via email</p>
 
-<p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters-2'>Query Parameters</h3>
+<p>First, take note of the method, and sample request. In this example guide you&#39;ll be creating tickets for an event you recently created.</p>
+<h3 id='method-post-2'>Method: <code>POST</code></h3>
+<p><code>POST /events</code></p>
+<pre class="highlight plaintext"><code>{
+    eventId: number
+  ticketQuantity: number
+  ownerProof: string
+}
+</code></pre><h3 id='request-headers-4'>Request Headers</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>eventId*</td>
+<td>number</td>
+<td>event ID for reference</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>ownerProof</td>
+<td>string</td>
+<td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='retrieve-ticket-list'>Retrieve Ticket List</h2>
+<h3 id='sample-request-4'>Sample request</h3>
+<p>The following will create a number of tickets for a specific event</p>
+<pre class="highlight plaintext"><code>{
+  eventId: number
+  ownerProof: string
+}
+</code></pre><h3 id='sample-response-4'>Sample Response</h3>
+<p>The following is the expected response for creating a number of tickets for a specific event</p>
+<pre class="highlight plaintext"><code>Insert Example Response here
+</code></pre><h2 id='retrieve-ticket-list'>Retrieve Ticket List</h2>
 <p>Now that you have created an event with tickets you can now retrieve a list of tickets associated with an event and see the status of each ticket</p>
 
 <p>Using our Aventus RESTful API, you can fetch a list of tickets for an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
 - Fetch a list of tickets</p>
 
-<p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters-3'>Query Parameters</h3>
+<p>First, take note of the method, and sample request. In this example guide you&#39;ll be retrieving a list of ticket for an event you recently created.</p>
+<h3 id='method-get-2'>Method: <code>GET</code></h3>
+<p><code>GET /events</code></p>
+<pre class="highlight plaintext"><code>{
+    eventId: number
+  ownerProof: string
+}
+</code></pre><h3 id='request-headers-5'>Request Headers</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>eventId*</td>
+<td>number</td>
+<td>event ID for reference</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>ownerProof</td>
+<td>string</td>
+<td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='cancel-tickets'>Cancel Tickets</h2>
+<h3 id='sample-request-5'>Sample request</h3>
+<p>The following will retrieve a list of tickets for a specified event</p>
+<pre class="highlight plaintext"><code>{
+  eventId: number
+  ownerProof: string
+}
+</code></pre><h3 id='sample-response-5'>Sample Response</h3>
+<p>The following is the expected response for retrieving a list of tickets for a specified event</p>
+<pre class="highlight plaintext"><code>Insert Example Response here
+</code></pre><h2 id='cancel-tickets'>Cancel Tickets</h2>
 <p>Now that you have a list of tickets for an event, you can now perform ticket management and cancel a specific ticket</p>
 
 <p>Using our Aventus RESTful API, you can specify a ticket to cancel from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
 - Cancel a ticket</p>
 
-<p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters-4'>Query Parameters</h3>
+<p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling tickets for an event you recently created.</p>
+<h3 id='method-delete-2'>Method: <code>DELETE</code></h3>
+<p><code>DELETE /events</code></p>
+<pre class="highlight plaintext"><code>{
+    eventId: number
+  ticketId: number
+  ownerProof: string
+}
+</code></pre><h3 id='request-headers-6'>Request Headers</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>eventId*</td>
+<td>number</td>
+<td>event ID for reference</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>ownerProof</td>
+<td>string</td>
+<td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-<!--- KEEP THE FUCKING KITTENS -AH --->
+<h3 id='sample-request-6'>Sample request</h3>
+<p>The following will cancel a specified ticket for a specified event</p>
+<pre class="highlight plaintext"><code>{
+  eventId: number
+  ticketId: number
+  ownerProof: string
+}
+</code></pre><h3 id='sample-response-6'>Sample Response</h3>
+<p>The following is the expected response for cancelling a specified ticket for a specified event</p>
+<pre class="highlight plaintext"><code>Insert Example Response here
+</code></pre><h2 id='send-ticket-links'>Send Ticket Links</h2>
+<p>blurb</p>
+<h3 id='method-post-3'>Method: <code>POST</code></h3>
+<p><code>POST /events</code></p>
+<pre class="highlight plaintext"><code>{
+    eventId: number
+  ticketId: number
+  ownerProof: string
+}
+</code></pre><h3 id='request-headers-7'>Request Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>eventId*</td>
+<td>number</td>
+<td>event ID for reference</td>
+</tr>
+<tr>
+<td>ownerProof</td>
+<td>string</td>
+<td>Proof the user has permission</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-7'>Sample request</h3>
+<p>The following will send out ticket link emails for specified tickets</p>
+<pre class="highlight plaintext"><code>{
+  eventId: number
+  ticketId: number
+  ownerProof: string
+}
+</code></pre><h3 id='sample-response-7'>Sample Response</h3>
+<p>The following is the expected response for sending out ticket link emails for specified tickets</p>
+<pre class="highlight plaintext"><code>Insert Example Response here
+</code></pre><h2 id='generate-doorlist'>Generate Doorlist</h2>
+<p>blurb</p>
+<h3 id='method-get-3'>Method: <code>GET</code></h3>
+<p><code>GET /events</code></p>
+<pre class="highlight plaintext"><code>{
+    eventId: number
+  ownerProof: string
+}
+</code></pre><h3 id='request-headers-8'>Request Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>eventId*</td>
+<td>number</td>
+<td>event ID for reference</td>
+</tr>
+<tr>
+<td>ownerProof</td>
+<td>string</td>
+<td>Proof the user has permission</td>
+</tr>
+</tbody></table>
+<h3 id='sample-request-8'>Sample request</h3>
+<p>The following will generate a CSV doorlist for a specified event</p>
+<pre class="highlight plaintext"><code>{
+  eventId: number
+  ownerProof: string
+}
+</code></pre><h3 id='sample-response-8'>Sample Response</h3>
+<p>The following is the expected response for generating a CSV doorlist for a specified event</p>
+<pre class="highlight plaintext"><code>Insert Example Response here
+</code></pre>
+<!--- YOU ARE NOW ENTERING... KITTENS --->
 <h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
   -H <span class="s2">"Authorization: meowmeowmeow"</span>
 </code></pre>
@@ -712,9 +831,9 @@ Remember — a happy kitten is an authenticated kitten!
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters-5'>Query Parameters</h3>
+<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -754,7 +873,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>This endpoint retrieves a specific kitten.</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -781,7 +900,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-7'>HTTP Request</h3>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
