@@ -44,7 +44,7 @@ Publishing your API documentation couldn't be more simple.
 1. Make sure you're working on a fork in your own account, not our original repo: `git remote show origin`
 2. Commit your changes to the markdown source: `git commit -a -m "Update index.md"`
 3. Push the markdown source changes to GitHub: `git push`
-4. Run ``./deploy.sh`
+4. Run `./deploy.sh`
 
 NOTE: Using the git way, you should not make changes to your repo on github.com for example.
 
