@@ -418,7 +418,7 @@ curl <span class="s2">"api_endpoint_here"</span>
 <p><code>Authorization: meowmeowmeow</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+As of now, there is no need to authenticate. Please see this section in the future for authentication details.
 </aside>
 <h1 id='getting-started'>Getting Started</h1>
 <!--- I suppose we should tell people how to build a testing environment on their own machine, step by step? --->
@@ -769,15 +769,21 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-response'>Sample Response</h3>
-<p>The following is the expected response for cancelling a specified ticket for a specified event</p>
+
+<blockquote>
+<p>Sample Response: The following is the expected response for cancelling a specified ticket for a specified event</p>
+</blockquote>
 <pre class="highlight plaintext"><code>Insert Example Response here
 </code></pre><h2 id='send-ticket-links'>Send Ticket Links</h2>
 <p>blurb</p>
 <h3 id='method-post-3'>Method: <code>POST</code></h3>
 <p><code>POST /events</code></p>
+
+<blockquote>
+<p>Sample request: The following will send out ticket link emails for specified tickets</p>
+</blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -801,15 +807,6 @@ Either specific pages, or single overview page...
 </tr>
 </tbody></table>
 
-<blockquote>
-<p>Sample request: The following will send out ticket link emails for specified tickets</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <blockquote>
 <p>Sample Response: The following is the expected response for sending out ticket link emails for specified tickets</p>
 </blockquote>
@@ -981,9 +978,9 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 <td>One of the expected parameters is not present or in an incorrect format</td>
 </tr>
 <tr>
-<td>401</td>
+<td>4014</td>
 <td>UNAUTHORIZED</td>
-<td>Owner Proof does not correspond to an approved member on the protocol</td>
+<td>Resource not found</td>
 </tr>
 <tr>
 <td>500</td>
