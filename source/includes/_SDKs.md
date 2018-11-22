@@ -14,6 +14,6 @@ We will begin to list and provide code snippets for our high level SDKs in this 
 As we begin to add more high level SDKs, this will be the place to find them.
 
 <aside class="notice">
-As of now, this section is a placeholder. As we update our products to include SDKs for developers, we will place them in this section.
+As of now, this section is a placeholder. As we update our products to include SDKs for developers, we will place them in this section.<br/ >
 <iframe src="https://giphy.com/embed/ToMjGpjwk1MxyYRcQnK" width="480" height="283" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/shiba-inu-moon-pls-hello-trampoline-ToMjGpjwk1MxyYRcQnK">via GIPHY</a></p>
 </aside>
