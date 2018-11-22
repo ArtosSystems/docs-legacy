@@ -62,6 +62,7 @@
 The mandatory, unique proofs required by all Event and Ticket transactions on the protocol.
 
 Naming format: [function name + authorising role + "Proof"]
+
 * **createEventEventOwnerProof**
 * **cancelEventEventOwnerProof**
 * **sellTicketVendorProof**
