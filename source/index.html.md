@@ -165,8 +165,7 @@ ownerProof | string | Proof the user has permission
 ]
 ```
 
-### Sample Response
-The following is the expected response for creating an event with the start date of x_2
+> Sample Response: The following is the expected response for the sample event above
 
 ```
 Insert Example Response here
@@ -376,8 +375,7 @@ Parameter | Type | Description
 eventId* | number | event ID for reference
 ownerProof | string | Proof the user has permission
 
-### Sample request
-The following will send out ticket link emails for specified tickets
+> Sample request: The following will send out ticket link emails for specified tickets
 
 ```json
 {
@@ -387,8 +385,7 @@ The following will send out ticket link emails for specified tickets
 }
 ```
 
-### Sample Response
-The following is the expected response for sending out ticket link emails for specified tickets
+> Sample Response: The following is the expected response for sending out ticket link emails for specified tickets
 
 ```
 Insert Example Response here
@@ -402,9 +399,11 @@ blurb
 
 `GET /events`
 
+> Sample request: The following will generate a CSV doorlist for a specified event
+
 ```json
 {
-	"eventId": "number",
+  "eventId": number,
   "ownerProof": "string"
 }
 ```
@@ -416,18 +415,9 @@ Parameter | Type | Description
 eventId* | number | event ID for reference
 ownerProof | string | Proof the user has permission
 
-### Sample request
-The following will generate a CSV doorlist for a specified event
 
-```json
-{
-  "eventId": number,
-  "ownerProof": "string"
-}
-```
 
-### Sample Response
-The following is the expected response for generating a CSV doorlist for a specified event
+> Sample Response: The following is the expected response for generating a CSV doorlist for a specified event
 
 ```
 Insert Example Response here
