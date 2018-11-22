@@ -575,9 +575,12 @@ As of now, there is no need to authenticate. Please see this section in the futu
 <p>Sample Request: The following will create a number of tickets for a specific event</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ticketQuantity"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="s2">"vendorReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='request-headers-4'>Request Headers</h3>
 <table><thead>
@@ -588,14 +591,34 @@ As of now, there is no need to authenticate. Please see this section in the futu
 </tr>
 </thead><tbody>
 <tr>
-<td>eventId*</td>
-<td>number</td>
-<td>event ID for reference</td>
+<td>vendorReference*</td>
+<td>string</td>
+<td>something</td>
 </tr>
 <tr>
-<td>ownerProof</td>
+<td>eventId</td>
 <td>string</td>
-<td>Proof the user has permission</td>
+<td></td>
+</tr>
+<tr>
+<td>payload</td>
+<td>string</td>
+<td>something</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>customer email address</td>
+</tr>
+<tr>
+<td>secret</td>
+<td>string</td>
+<td>something</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>something</td>
 </tr>
 </tbody></table>
 
