@@ -7,5 +7,5 @@ The Aventus RESTful API uses the following error codes:
 HTTP response Code | HTTP error category | Typical Failure Case
 -- | -- | --
 400 | BAD REQUEST | One of the expected parameters is not present or in an incorrect format
-401 | UNAUTHORIZED | Owner Proof does not correspond to an approved member on the protocol
+4014| UNAUTHORIZED | Resource not found
 500 | INTERNAL SERVER ERROR | Unexpected internal server error, our services are down

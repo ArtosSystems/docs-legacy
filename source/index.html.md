@@ -58,7 +58,7 @@ Aventus expects for the API key to be included in all API requests to the server
 `Authorization: meowmeowmeow`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+As of now, there is no need to authenticate. Please see this section in the future for authentication details.
 </aside>
 
 # Getting Started
@@ -346,8 +346,7 @@ eventId* | number | event ID for reference
 ownerProof | string | Proof the user has permission
 
 
-### Sample Response
-The following is the expected response for cancelling a specified ticket for a specified event
+> Sample Response: The following is the expected response for cancelling a specified ticket for a specified event
 
 ```
 Insert Example Response here
@@ -360,9 +359,11 @@ blurb
 
 `POST /events`
 
+> Sample request: The following will send out ticket link emails for specified tickets
+
 ```json
 {
-	"eventId": number,
+  "eventId": number,
   "ticketId": number,
   "ownerProof": "string"
 }
@@ -375,15 +376,7 @@ Parameter | Type | Description
 eventId* | number | event ID for reference
 ownerProof | string | Proof the user has permission
 
-> Sample request: The following will send out ticket link emails for specified tickets
 
-```json
-{
-  "eventId": number,
-  "ticketId": number,
-  "ownerProof": "string"
-}
-```
 
 > Sample Response: The following is the expected response for sending out ticket link emails for specified tickets
 
