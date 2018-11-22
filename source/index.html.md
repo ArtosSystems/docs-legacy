@@ -11,6 +11,8 @@ toc_footers:
 includes:
   - errors
   - glossary
+  - Wallet Modularisation
+  - SDKs
 
 search: true
 ---
