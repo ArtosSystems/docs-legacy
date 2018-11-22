@@ -1,84 +1,35 @@
 # Glossary
 
-## A
 * **Access Control** is the method of entry (along with security protocols) to an _event (aventus)_, granted by a _ticket_
 * **Aventus Community** is made up of _AVT_ token holders
 * **Aventus Protocol** is composed of Ethereum _smart contracts_ that allow for the creation and validation of _events_, the issuance and sale of tickets in primary and secondary ticket markets (customisable by the event organisers), and the distribution of ticket sale revenue and market/event fees between the event organizers, ticket promoters, market matchers, attendees, etc.
 * **Aventus Registry** tracks third parties using the _Protocol_, _events_ listed, and algorithmic parameters related to fees and time periods
 * **AVT** the token used in the _Aventus Protocol_, originally reffered to as an AventCoin
-
-## C
 * **Challenge (Proposal)** The _Aventus Community_ can _challenge_ the legitimacy of an _AvEntity_ on the _Protocol_ by adding a deposit and voting on it using a _stake_ of AVT
-
-## D
-* **ÐApps** (Decentralized Applications) are digital applications or programs that run on the _Ethereum_ blockchain
-* **Delegate Calls** Execute the code of another contract, but with the state (storage) of the calling contract. [More info](https://zupzup.org/smart-contract-interaction/)
 * **Deposit** the AVT attached to the creation of a _Governance Proposal_ or _Event Challenge_
 * **Deposit Fund** the section in the voting wallet _ÐApp_ that supports the initiation of a _Governance Proposal_ or _Event Challenges_ by a member of the _Aventus Community_. Once a deposit is used against either of these, the price of that deposit becomes locked within the fund until the proposal is complete
-
-## E
 * **Ether** is the name of the currency used within Ethereum. It is used to pay for computation within the _EVM_. This is done indirectly by purchasing _gas_ for _ether_
 * **Ethereum** is a decentralized platform for applications that run exactly as programmed without any chance of fraud, censorship or third-party interference. [More info](https://github.com/ethereum/wiki/wiki/White-Paper)
 * **Event (Aventus)** is an AFK physical ticketed event (eg. live music, sports game), with an _event owner_, title, location, date, ticket total and a deposit (for voting)
 * **Event (Solidity)** is an _activity_ that notifies to any listener that something happened on the originating service. This activities are usually published to a _topic_
 * **Event Owner** the rightsholder of an _event (aventus)_, or more accurately the specific Ethereum address of said rightsholder
-
-## G
 * **Ganache** is a Node.js based Ethereum client for testing and development (previously referred to as 'testRPC'). [More info](http://truffleframework.com/ganache/)
 * **Gas** is the _ether_ execution fee for every operation made on the Ethereum network. [More info](https://blockgeeks.com/guides/ethereum-gas-step-by-step-guide/)
 * **Governance Proposal** _Aventus Community members_ can propose governance changes to the algorithmic parameters (_Magic Numbers_) on the _Parameter Registry_ and vote on whether they are applied using a _stake_ of AVT
-
-## H
 * **Hashing** takes an input string of any length and gives out an encrypted output of a deterministic fixed length string. [Give it a go here :P](https://emn178.github.io/online-tools/keccak_256.html)
-
-## L
 * **Lambda** is an event-driven, serverless computing platform provided by Amazon as a part of the Amazon Web Services (AWS). It is a computing service that runs code in response to events and automatically manages the computing resources required by that code [More info](https://aws.amazon.com/lambda/)
 * **Libraries** in Ethereum are special types of contract which do not store data and cannot hold _ether_. They are are only required to be deployed once and their functions can then be called by any _smart contract_ via _delegate calls_. [More info](https://blog.aragon.one/library-driven-development-in-solidity-2bebcaf88736)
 * **Lobbying Period** is the 2 week time slot at the start of the proposal process where the _Aventus Community_ can externally discuss and debate a _Governance Proposal_ or _Event Challenge_, followed by the _Voting Period_
-
-## M
 * **Merkle Tree** is a tree constructed by _hashing_ paired binary data (the leaves), then pairing and _hashing_ the results until a single hash remains, which is known as the merkle root. A possible solution for blockchain transaction scaling. Our implementation is our newest virtue service: Modest.
 * **Modest** The name of our Merkle Tree based scaling solution, see above.
-
-## P
-* **Private Key** In cryptography, a private key (secret key) is a variable that is used with an algorithm to encrypt and decrypt code
-
-## R
 * **Reveal Period** is the 1 week time slot following a _Voting Period_ at the end of the proposal process where the _Aventus Community_ can reveal their vote by re-submitting a secret signed _vote_ on a _Governance Proposal_ or _Event Challenge_. Once all votes have been revealed then the proposal process can be concluded and _vote_ _stakes_ are tallied to decide a winner
-* **Rinkeby** is our public test network for the Protocol
-
-## S
+* **Rinkeby** is our public test Ethereum network for the Protocol
 * **Solidity** is a contract-oriented programming language for writing smart contracts that runs on _EVM Code_. [More info](http://solidity.readthedocs.io/en/v0.4.24/)
 * **Stake** The AVT value stake laid down during voting on a _challenge proposal_ or _governance proposal_ which cannot be amended during a pending _vote_
 * **Stake Fund** is the section in the voting wallet _ÐApp_ that holds AVT _stake_
-
-## T
 * **Ticket** is a unique identifier assigned to the purchaser of a _ticket_ (ticket owner) that allows access to an _event (aventus)_ which will have an allocation (eg. row and seat number) and price properties describing it's transfer conditions
-* **TicketKey** see: Secret
-
-## V
-* **Virtues** these are referencing our three servies to interact with the protocol: Honest, Patient & Modest.
 * **Vote** the _Aventus Community_ can vote during a _challenge proposal_ or _governance proposal_ by laying down a _stake_ of AVT with their vote choice
 * **Voting Period** is the 1 week time slot following a _Lobbying Period_ during the proposal process where the _Aventus Community_ can submit secret signed _votes_ on a _Governance Proposal_ or _Event Challenge_
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Roles
 * **Event Owner** The registered event owner. The only one who can create or cancel an event and the only one who can register/deregister roles on the event. Can also sell, resell or return (refund) tickets. Can also act as a _broker_.
