@@ -164,7 +164,7 @@ ownerProof | string | Proof the user has permission
 
 > Sample Response: The following is the expected response for the sample event above
 
-```
+```json
 Insert Example Response here
 ```
 
@@ -201,7 +201,7 @@ ownerProof | string | Proof the user has permission
 
 > Sample Response: The following is the expected response for asking for a list of active events
 
-```
+```json
 Insert Example Response here
 ```
 
@@ -237,7 +237,7 @@ ownerProof | string | Proof the user has permission
 
 > Sample Response
 
-```
+```json
 Insert Example Response here
 ```
 
@@ -274,7 +274,7 @@ ownerProof | string | Proof the user has permission
 
 > Sample Response: The following is the expected response for creating a number of tickets for a specific event
 
-```
+```json
 Insert Example Response here
 ```
 
@@ -309,7 +309,7 @@ ownerProof | string | Proof the user has permission
 
 > Sample Response: The following is the expected response for retrieving a list of tickets for a specified event
 
-```
+```json
 Insert Example Response here
 ```
 
@@ -345,7 +345,7 @@ ownerProof | string | Proof the user has permission
 
 > Sample Response: The following is the expected response for cancelling a specified ticket for a specified event
 
-```
+```json
 Insert Example Response here
 ```
 
@@ -377,7 +377,7 @@ ownerProof | string | Proof the user has permission
 
 > Sample Response: The following is the expected response for sending out ticket link emails for specified tickets
 
-```
+```json
 Insert Example Response here
 ```
 
@@ -409,7 +409,7 @@ ownerProof | string | Proof the user has permission
 
 > Sample Response: The following is the expected response for generating a CSV doorlist for a specified event
 
-```
+```json
 Insert Example Response here
 ```
 
