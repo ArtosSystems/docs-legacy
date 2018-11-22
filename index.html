@@ -220,6 +220,14 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#aventus-protocol" class="toc-h2 toc-link" data-title="Aventus Protocol">Aventus Protocol</a>
+                  </li>
+                  <li>
+                    <a href="#virtue-services" class="toc-h2 toc-link" data-title="Virtue Services">Virtue Services</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#before-you-begin" class="toc-h1 toc-link" data-title="Before You Begin">Before You Begin</a>
@@ -231,10 +239,7 @@
             <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting Started">Getting Started</a>
           </li>
           <li>
-            <a href="#the-ecosystem" class="toc-h1 toc-link" data-title="The Ecosystem">The Ecosystem</a>
-          </li>
-          <li>
-            <a href="#guides" class="toc-h1 toc-link" data-title="Guides">Guides</a>
+            <a href="#api-guides" class="toc-h1 toc-link" data-title="API Guides">API Guides</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#create-event" class="toc-h2 toc-link" data-title="Create Event">Create Event</a>
@@ -401,6 +406,18 @@
 <p><img src="images/architecture-diagram-aws.png" alt="big" /></p>
 
 <p>As shown in the above architecture diagram our technology stack is built in layers on top of the blockchain and each product serves a purpose to ensure interaction via our endpoints is standardised and familiar for developers.</p>
+<h3 id='aventus-protocol'>Aventus Protocol</h3>
+<p>The Aventus Protocol is a global open standard for the exchange of tickets built upon the Ethereum blockchain composed of smart contracts that allow for the creation and validation of events, the issuance, sale and distribution of tickets in primary and secondary ticket markets (under parameters designed and customised by inventory holders and event organisers) and the allocation of defined proportions of ticket sale revenue between event organisers, ticket promoters, artists, secondary resellers, etc.</p>
+<h3 id='virtue-services'>Virtue Services</h3><h4 id='patient'>Patient</h4>
+<p>Patient is a queuing system. A way to manage a large requests that will write to the blockchain. Think of the IMS that sends large amounts of requests to the blockchain, but the blockchain itself is really slow. Patient manages (i.e. queues) the transactions that are being sent to the blockchain. A user of Patient doesn’t need to know how to interact with the protocol as it operates as a high level layer between the protocol and the client. Patient users also don’t need to care about smart contracts, transaction fee’s etc. It auto adjusts the price paid for gas depending on the level of congestion on the blockchain.</p>
+<h4 id='honest'>Honest</h4>
+<p>Honest is a public API that allows any kind of application to look up information on the protocol. Anything that resides on the protocol can be seen and consumed by Honest.</p>
+<h4 id='modest'>Modest</h4>
+<p>The last, and largest of our virtue services. Modest, as the name suggests, is our scaling solution for the blockchain, but firstly for the Aventus Protocol itself. It utilises Merkle trees to allow much quicker, concurrent processing of objects to the blockchain.</p>
+<h4 id='aws-lambdas'>AWS Lambdas</h4>
+<p>We employ the use of AWS Lambdas throughout the technology stack as serverless middleware between services. These aren&#39;t distinct services themselves but simply allow for horizontally scalable data processing throughout the system.</p>
+<h4 id='ticket-wallet'>Ticket Wallet</h4>
+<p>The Aventus Ticket Wallet is a white-label mobile application acting as the user facing client for loading and viewing tickets issued by the event creator. Originally designed as a proof-of-concept to show our end-to-end solution including access control but is built in a modular fashion to allow third parties to brand their own wallet using our technology under the hood.</p>
 
 <p>This API documentation aims to make interacting the the Aventus Protocol as simple and straightforward as possible.</p>
 <h1 id='before-you-begin'>Before You Begin</h1>
@@ -435,8 +452,6 @@ curl <span class="s2">"api_endpoint_here"</span>
 As of now, there is no need to authenticate. Please see this section in the future for authentication details.
 </aside>
 <h1 id='getting-started'>Getting Started</h1>
-<!--- I suppose we should tell people how to build a testing environment on their own machine, step by step? --->
-
 <p>If this is your first time here, scan this section before digging deeper into the documentation. The sections after this page assume you know the basics about the Aventus Protocol. For further information, read our Whitepaper <a href="https://aventus.io/doc/whitepaper.pdf">here</a> or for a shorter read, our Lightpaper is <a href="https://aventus.io/doc/lightpaper.pdf">here</a>.</p>
 
 <p>What you can do?</p>
@@ -451,51 +466,7 @@ As of now, there is no need to authenticate. Please see this section in the futu
 <li>Send Ticket Links (POST)</li>
 <li>Generate Doorlist (GET)</li>
 </ul>
-
-<!--- Differences between development environment and live?
-
-=============
-The exact things we're looking to do are...
-
-> HOW DO I SET UP AN EVENT (focus: setup)
-> HOW DO I ENSURE TICKETS ARE CONTAINED IN THIS
-> HOW DO I PUT THOSE TICKETS ON SALE
-> REMEMBER THAT THIS IS MODEST BY DEFAULT
-==============
--->
-<h1 id='the-ecosystem'>The Ecosystem</h1>
-<!---
-What are these things doing, why, are they relevant to me
-Although users won't be accessing these services directly, this is a top level overview of what are the parts of the architecture diagram and what it means to them
-
-Either specific pages, or single overview page...
---->
-
-<ul>
-<li><strong>Aventus Protocol</strong>
-
-<ul>
-<li>The Aventus Protocol is a global open standard for the exchange of tickets built upon the Ethereum blockchain composed of smart contracts that allow for the creation and validation of events, the issuance, sale and distribution of tickets in primary and secondary ticket markets (under parameters designed and customised by inventory holders and event organisers) and the allocation of defined proportions of ticket sale revenue between event organisers, ticket promoters, artists, secondary resellers, etc.</li>
-</ul></li>
-<li><em>Virtue Services</em>
-
-<ul>
-<li><strong>Patient</strong> is a queuing system. A way to manage a large requests that will write to the blockchain. Think of the IMS that sends large amounts of requests to the blockchain, but the blockchain itself is really slow. Patient manages (i.e. queues) the transactions that are being sent to the blockchain. A user of Patient doesn’t need to know how to interact with the protocol as it operates as a high level layer between the protocol and the client. Patient users also don’t need to care about smart contracts, transaction fee’s etc. It auto adjusts the price paid for gas depending on the level of congestion on the blockchain.</li>
-<li><strong>Honest</strong> is a public API that allows any kind of application to look up information on the protocol. Anything that resides on the protocol can be seen and consumed by Honest.</li>
-<li><strong>Modest</strong> The last, and largest of our virtue services. Modest, as the name suggests, is our scaling solution for the blockchain, but firstly for the Aventus Protocol itself. It utilises Merkle trees to allow much quicker, concurrent processing of objects to the blockchain.</li>
-</ul></li>
-<li><strong>AWS Lambdas</strong>
-
-<ul>
-<li>We employ the use of AWS Lambdas throughout the technology stack as serverless middleware between services. These aren&#39;t distinct services themselves but simply allow for horizontally scalable data processing throughout the system.</li>
-</ul></li>
-<li><strong>Ticket Wallet</strong>
-
-<ul>
-<li>The Aventus Ticket Wallet is a white-label mobile application acting as the user facing client for loading and viewing tickets issued by the event creator. Originally designed as a proof-of-concept to show our end-to-end solution including access control but is built in a modular fashion to allow third parties to brand their own wallet using our technology under the hood.</li>
-</ul></li>
-</ul>
-<h1 id='guides'>Guides</h1>
+<h1 id='api-guides'>API Guides</h1>
 <p>Aventus makes creating and managing events and tickets on the blockchain easy. Find the documentation, sample code, and developer tools you need to build exactly what you want, fast. We’ll handle the complexity of blockchain and the Aventus Protocol. Let’s get building!</p>
 <h2 id='create-event'>Create Event</h2>
 <p>The first thing we&#39;d recommend you do is create an event. Events are the foundation of any content on the Aventus Protocol and must be in place before tickets can be issued and thus comes first in this guided flow.</p>
