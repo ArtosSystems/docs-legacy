@@ -561,8 +561,10 @@ Either specific pages, or single overview page...
   </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f4780e2d9f6"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h3 id='sample-response'>Sample Response</h3>
-<p>The following is the expected response for creating an event with the start date of x_2</p>
+</span></code></pre>
+<blockquote>
+<p>Sample Response: The following is the expected response for the sample event above</p>
+</blockquote>
 <pre class="highlight plaintext"><code>Insert Example Response here
 </code></pre><h2 id='retrieve-event-list'>Retrieve Event List</h2>
 <p>Now that you have created an event you may want to retrieve these details from the protocol in order to keep track of your live events.</p>
@@ -767,7 +769,7 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-response-2'>Sample Response</h3>
+<h3 id='sample-response'>Sample Response</h3>
 <p>The following is the expected response for cancelling a specified ticket for a specified event</p>
 <pre class="highlight plaintext"><code>Insert Example Response here
 </code></pre><h2 id='send-ticket-links'>Send Ticket Links</h2>
@@ -798,22 +800,30 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-request'>Sample request</h3>
-<p>The following will send out ticket link emails for specified tickets</p>
+
+<blockquote>
+<p>Sample request: The following will send out ticket link emails for specified tickets</p>
+</blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='sample-response-3'>Sample Response</h3>
-<p>The following is the expected response for sending out ticket link emails for specified tickets</p>
+</span></code></pre>
+<blockquote>
+<p>Sample Response: The following is the expected response for sending out ticket link emails for specified tickets</p>
+</blockquote>
 <pre class="highlight plaintext"><code>Insert Example Response here
 </code></pre><h2 id='generate-doorlist'>Generate Doorlist</h2>
 <p>blurb</p>
 <h3 id='method-get-3'>Method: <code>GET</code></h3>
 <p><code>GET /events</code></p>
+
+<blockquote>
+<p>Sample request: The following will generate a CSV doorlist for a specified event</p>
+</blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='request-headers-8'>Request Headers</h3>
@@ -835,14 +845,10 @@ Either specific pages, or single overview page...
 <td>Proof the user has permission</td>
 </tr>
 </tbody></table>
-<h3 id='sample-request-2'>Sample request</h3>
-<p>The following will generate a CSV doorlist for a specified event</p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='sample-response-4'>Sample Response</h3>
-<p>The following is the expected response for generating a CSV doorlist for a specified event</p>
+
+<blockquote>
+<p>Sample Response: The following is the expected response for generating a CSV doorlist for a specified event</p>
+</blockquote>
 <pre class="highlight plaintext"><code>Insert Example Response here
 </code></pre>
 <!--- YOU ARE NOW ENTERING... KITTENS --->
