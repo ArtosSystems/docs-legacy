@@ -252,7 +252,7 @@ First, take note of the method, and sample request. In this example guide you'll
 
 ### Method: `POST`
 
-`POST /events`
+`POST /tickets`
 
 > Sample Request: The following will create a number of tickets for a specific event
 
