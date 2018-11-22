@@ -375,6 +375,14 @@
           </li>
           <li>
             <a href="#sdks" class="toc-h1 toc-link" data-title="SDKs">SDKs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#aventus-js-aventus4s" class="toc-h2 toc-link" data-title="Aventus.JS/Aventus4S">Aventus.JS/Aventus4S</a>
+                  </li>
+                  <li>
+                    <a href="#high-level-sdks" class="toc-h2 toc-link" data-title="High Level SDKs">High Level SDKs</a>
+                  </li>
+              </ul>
           </li>
       </ul>
         <ul class="toc-footer">
@@ -1212,13 +1220,22 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 <li><strong>Inactive</strong> After sales period, waiting for endEvent to be called in order to release the deposit: a.k.a. Z O M B I E event</li>
 </ul>
 <h1 id='wallet-modularisation'>Wallet Modularisation</h1>
-<p>As described above, the Wallet is built in a modularised fashion</p>
+<p>As described above, the Wallet is built in a modularised fashion for clients to select the parts they need to achieve the functionality required for their product. This list is not exhaustive, and upon contacting Artos, we can discuss what your needs may be for future development.</p>
+
+<p>Today, the following functions are available to you:
+- Recieving/Displaying Tickets
+- Secondary Market functionality
+- Gift Ticket functionality</p>
 
 <aside class="notice">
-As of now, there is no need to authenticate. Please see this section in the future for authentication details.
+As of now, this section is a placeholder, we will return to this as we approach modularisation of our Ticket Wallet product.
 </aside>
 <h1 id='sdks'>SDKs</h1>
 <p>Alotta nonsense about SDKs we are offering.</p>
+<h2 id='aventus-js-aventus4s'>Aventus.JS/Aventus4S</h2>
+<p>Aventus.JS/4S are our low level SDKS. Essentially, this is the glue between the mainnet and other bits of software Artos have produced. We will include code snippets here to help you interact with the protocol directly.</p>
+<h2 id='high-level-sdks'>High Level SDKs</h2>
+<p>What we are relly referencing here is our Ticket Wallet modularisation project, which is available here.</p>
 
 <aside class="notice">
 As of now, this section is a placeholder. As we update our products to include SDKs for developers, we will place them in this section.
