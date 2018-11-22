@@ -72,7 +72,7 @@ $phone-width: $tablet-width - $nav-width !default; // min width before reverting
 @import url(//fonts.googleapis.com/css?family=Open+Sans);
 
 %default-font {
-  font-family: 'Open Sans', sans-serif; -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Open Sans', sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
 }
 
