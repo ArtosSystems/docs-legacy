@@ -417,7 +417,7 @@ Insert Example Response here
 
 
 
-<!--- YOU ARE NOW ENTERING... KITTENS --->
+<!--- YOU ARE NOW ENTERING... KITTENs
 
 # Here Be Kittens
 
@@ -538,3 +538,6 @@ This endpoint deletes a specific kitten.
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete
+
+
+ --->
