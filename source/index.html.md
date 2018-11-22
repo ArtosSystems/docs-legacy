@@ -258,9 +258,12 @@ First, take note of the method, and sample request. In this example guide you'll
 
 ```json
 {
-	"eventId": number,
-  "ticketQuantity": number,
-  "ownerProof": "string"
+	"vendorReference": "string",
+  "eventId": "string",
+  "payload": "string",
+  "email": "string",
+	"secret": "string",
+	"status": "string"
 }
 ```
 
@@ -268,8 +271,12 @@ First, take note of the method, and sample request. In this example guide you'll
 
 Parameter | Type | Description
 --------- | ------- | -----------
-eventId* | number | event ID for reference
-ownerProof | string | Proof the user has permission
+vendorReference* | string | something
+eventId  | string  |
+payload | string | something
+email  |  string |  customer email address
+secret  |  string |  something
+status  | string  |  something
 
 
 > Sample Response: The following is the expected response for creating a number of tickets for a specific event
