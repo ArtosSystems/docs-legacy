@@ -5,11 +5,13 @@ As described above, the Wallet is built in a modularised fashion for clients to 
 Today, the following functions are available to you:
 
 Wallet Core:
+
 - Recieving/Displaying Tickets
 - Create Ticket SDK
 - Key Pair Management
 
 Wallet Optional:
+
 - Secondary Market functionality
 - Gift Ticket functionality
 - Dynamic QR Code
@@ -21,7 +23,7 @@ When thinking about the wallet, consider the following options for delivery:
 1. Our App (the white label app Artos deliver to the app stores)
   - **Our App, Our Modules**
   - AVT Capable Wallet
-  - Delivers minimum viable ticket 
+  - Delivers minimum viable ticket
 1. Your App (client app within the app stores)
   - 2a. **Your app, our modules**
   - 2b. **Your app, your modules, our modules**
