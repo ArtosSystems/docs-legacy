@@ -2,6 +2,8 @@
 
 As described above, the Wallet is built in a modularised fashion for clients to select the parts they need to achieve the functionality required for their product. This list is not exhaustive, and upon contacting Artos, we can discuss what your needs may be for future development.
 
+The guiding principle is that you may either want to reskin a version of our wallet (see option 2a) or use a version of our wallet with modules you may want to build yourself (2b/c). Or, you might just want to use our own wallet with no additional functionality.
+
 Today, the following functions are available to you:
 
 Wallet Core:
