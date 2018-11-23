@@ -31,9 +31,9 @@ When thinking about the wallet, consider the following options for delivery:
   - 2b. **Your app, your modules, our modules**
   - 2c. **Your app, your modules, our SDK**
 
-All of our modules will have preset UI/UX requirements.
+All of our modules will have preset UI/UX requirements and outputs, limited to specific communication with other modules that will be clearly defined.
 
-We will in the future moddularise the single door version of the Access Control Solution SDK.
+As a further note on modulurisation of our apps, we will in the future moddularise the single door version of the Access Control Solution SDK.
 
 <aside class="notice">
 As of now, this section is a placeholder, we will return to this as we approach modularisation of our Ticket Wallet product.
