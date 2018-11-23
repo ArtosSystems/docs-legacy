@@ -141,8 +141,8 @@ Parameter | Type | Description
 --------- | ------- | -----------
 eventDesc* | string | A brief description of the event you are hosting, 200 characters maximum.
 eventSupportURL* | string | If your event has a supporting link, to say the event on the artist website, please place here..
-onSaleTime* | number  | The time that tickets will go on sale. Seconds since Epoc.
-offSaleTime* | number |  The time that tickets will go off sale. Seconds since Epoc.
+onSaleTime* | number  | The time that tickets will go on sale. Seconds since Epoch.
+offSaleTime* | number |  The time that tickets will go off sale. Seconds since Epoch.
 averageTicketPriceInUSCents* | string | Required format is:  `0x[0-9a-f]{64}`
 ownerProof | string | Proof the user has permission
 
@@ -154,8 +154,8 @@ ownerProof | string | Proof the user has permission
   {
 	"eventDesc": "Kendrick Lamar, Brixton Academy, London, 18+",
 	"eventSupportURL": "www.kendricklamar.com/tour",
-	"onSaleTime": "21/02/2019",
-	"offSaleTime": "31/03/2019",
+	"onSaleTime": "1574500752",
+	"offSaleTime": "1573250035",
 	"averageTicketPriceInUSCents": 100,
   "ownerProof": "f4780e2d9f6"
 }
