@@ -441,12 +441,12 @@ As of now, there is no need to authenticate. Please see this section in the futu
 <tr>
 <td>onSaleTime*</td>
 <td>number</td>
-<td>The time that tickets will go on sale. Seconds since Epoc.</td>
+<td>The time that tickets will go on sale. Seconds since Epoch.</td>
 </tr>
 <tr>
 <td>offSaleTime*</td>
 <td>number</td>
-<td>The time that tickets will go off sale. Seconds since Epoc.</td>
+<td>The time that tickets will go off sale. Seconds since Epoch.</td>
 </tr>
 <tr>
 <td>averageTicketPriceInUSCents*</td>
@@ -467,8 +467,8 @@ As of now, there is no need to authenticate. Please see this section in the futu
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"eventDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kendrick Lamar, Brixton Academy, London, 18+"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"eventSupportURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.kendricklamar.com/tour"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"onSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21/02/2019"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"offSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"31/03/2019"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"onSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1574500752"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"offSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1573250035"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"averageTicketPriceInUSCents"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f4780e2d9f6"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -912,11 +912,40 @@ ID | The ID of the kitten to delete
 
 <p>Today, the following functions are available to you:</p>
 
+<p>Wallet Core:
+- Recieving/Displaying Tickets
+- Create Ticket SDK
+- Key Pair Management</p>
+
+<p>Wallet Optional:
+- Secondary Market functionality
+- Gift Ticket functionality
+- Dynamic QR Code
+- Secure Pin Entry (tbc)
+- Onboarding (tbc)</p>
+
+<p>When thinking about the wallet, consider the following options for delivery:</p>
+
+<ol>
+<li>Our App (the white label app Artos deliver to the app stores)
+
 <ul>
-<li>Recieving/Displaying Tickets</li>
-<li>Secondary Market functionality</li>
-<li>Gift Ticket functionality</li>
-</ul>
+<li><strong>Our App, Our Modules</strong></li>
+<li>AVT Capable Wallet</li>
+<li>Delivers minimum viable ticket </li>
+</ul></li>
+<li>Your App (client app within the app stores)
+
+<ul>
+<li>2a. <strong>Your app, our modules</strong></li>
+<li>2b. <strong>Your app, your modules, our modules</strong></li>
+<li>2c. <strong>Your app, your modules, our SDK</strong></li>
+</ul></li>
+</ol>
+
+<p>All of our modules will have preset UI/UX requirements.</p>
+
+<p>We will in the future moddularise the single door version of the Access Control Solution SDK.</p>
 
 <aside class="notice">
 As of now, this section is a placeholder, we will return to this as we approach modularisation of our Ticket Wallet product.
