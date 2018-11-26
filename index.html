@@ -274,7 +274,7 @@
               </ul>
           </li>
           <li>
-            <a href="#wallet-modularisation" class="toc-h1 toc-link" data-title="Wallet Modularisation">Wallet Modularisation</a>
+            <a href="#ticket-wallet-modules" class="toc-h1 toc-link" data-title="Ticket Wallet Modules">Ticket Wallet Modules</a>
           </li>
           <li>
             <a href="#sdks" class="toc-h1 toc-link" data-title="SDKs">SDKs</a>
@@ -355,6 +355,8 @@
 <p>An API endpoint contains the URL of the resource that you want to access and the action that you want to complete on that resource. The action is indicated by the HTTP method of the request: GET, POST, PUT, or DELETE.</p>
 
 <p>When you send an API request, the server returns an HTTP response. The HTTP response contains a status code to indicate whether the request succeeded and the details of the response in the response body. Most resources format this response as JavaScript Object Notation (JSON). You can use the JSON packages or libraries that are built in to the programming language that you use to extract the data.</p>
+
+<p>Finally, Sandboxing abilities will be added to this document as we move towards completing our <kbd>Enterprise Grade</kbd> epic during Quarter 1.</p>
 <h1 id='authentication'>Authentication</h1>
 <p>All requests to the Aventus APIs go over the web. Essentially this means that any system that can speak to the web, can speak to our APIs. Any and all language specific libraries and SDKs provided are really just wrappers which are providing some convenience and linguistic niceties to help you work with a simple, RESTful API.</p>
 
@@ -907,7 +909,7 @@ ID | The ID of the kitten to delete
 
 
  --->
-<h1 id='wallet-modularisation'>Wallet Modularisation</h1>
+<h1 id='ticket-wallet-modules'>Ticket Wallet Modules</h1>
 <p>As described above, the Wallet is built in a modularised fashion for clients to select the parts they need to achieve the functionality required for their product. This list of modules described further down is not exhaustive, and upon contacting Artos, we can discuss what your needs may be for future development.</p>
 
 <p>The guiding principle is that you may either want to reskin a version of our wallet (see option 2a) or use a version of our wallet with modules (potential existing functionality you have built for your own applications previously, or expertise which is held by your own development team) you may want to build yourself (2b/c). Or, you might just want to use our own wallet with no additional functionality to consume tickets (1).</p>
