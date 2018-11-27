@@ -42,6 +42,8 @@ Something of the blockchain are hard to deal with. We developed a family of serv
 
 **Modest** is our scaling solution for the blockchain, but firstly for the Aventus Protocol itself. It utilises Merkle trees to allow much quicker, concurrent processing of objects to the blockchain.
 
+<aside class="notice">In the future we will add a specification for Modest here, and also a deeper explanation of how it works and how you can roll your own solution.</aside>
+
 #### AWS Lambdas
 
 We employ the use of AWS Lambdas throughout the technology stack as serverless middleware between services. These aren't distinct services themselves but simply allow for horizontally scalable data processing throughout the system.
