@@ -10,7 +10,7 @@ Wallet Core:
 
 - Recieving/Displaying Tickets
 - Create Ticket SDK
-- Key Pair Management
+- Key Pair Management (tbc)
 
 Wallet Optional:
 
