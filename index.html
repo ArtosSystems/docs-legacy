@@ -254,22 +254,10 @@
                     <a href="#retrieve-event-list" class="toc-h2 toc-link" data-title="Retrieve Event List">Retrieve Event List</a>
                   </li>
                   <li>
-                    <a href="#delete-event" class="toc-h2 toc-link" data-title="Delete Event">Delete Event</a>
-                  </li>
-                  <li>
                     <a href="#create-tickets" class="toc-h2 toc-link" data-title="Create Tickets">Create Tickets</a>
                   </li>
                   <li>
                     <a href="#retrieve-ticket-list" class="toc-h2 toc-link" data-title="Retrieve Ticket List">Retrieve Ticket List</a>
-                  </li>
-                  <li>
-                    <a href="#cancel-tickets" class="toc-h2 toc-link" data-title="Cancel Tickets">Cancel Tickets</a>
-                  </li>
-                  <li>
-                    <a href="#send-ticket-links" class="toc-h2 toc-link" data-title="Send Ticket Links">Send Ticket Links</a>
-                  </li>
-                  <li>
-                    <a href="#generate-doorlist" class="toc-h2 toc-link" data-title="Generate Doorlist">Generate Doorlist</a>
                   </li>
               </ul>
           </li>
@@ -388,12 +376,8 @@ As of now, there is no need to authenticate. Please see this section in the futu
 <ul>
 <li>Create an Event (POST)</li>
 <li>Retrieve Event List (GET)</li>
-<li>Delete Event (DELETE)</li>
 <li>Create Tickets (POST)</li>
 <li>Retrieve Ticket List (GET)</li>
-<li>Cancel Tickets (DELETE)</li>
-<li>Send Ticket Links (POST)</li>
-<li>Generate Doorlist (GET)</li>
 </ul>
 <h1 id='api-guides'>API Guides</h1>
 <p>Aventus makes creating and managing events and tickets on the blockchain easy. Find the documentation, sample code, and developer tools you need to build exactly what you want, fast. We’ll handle the complexity of blockchain and the Aventus Protocol. Let’s get building!</p>
@@ -423,8 +407,6 @@ As of now, there is no need to authenticate. Please see this section in the futu
     </span><span class="s2">"eventSupportURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"onSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
     </span><span class="s2">"offSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"averageTicketPriceInUSCents"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w"> </span><span class="err">(</span><span class="mi">0</span><span class="err">x</span><span class="p">[</span><span class="mi">0-9</span><span class="err">a-f</span><span class="p">]{</span><span class="mi">64</span><span class="p">}</span><span class="err">)</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='request-headers'>Request Headers</h3>
 <table><thead>
@@ -435,34 +417,24 @@ As of now, there is no need to authenticate. Please see this section in the futu
 </tr>
 </thead><tbody>
 <tr>
-<td>eventDesc*</td>
+<td>eventDesc</td>
 <td>string</td>
 <td>A brief description of the event you are hosting, 200 characters maximum.</td>
 </tr>
 <tr>
-<td>eventSupportURL*</td>
+<td>eventSupportURL</td>
 <td>string</td>
 <td>If your event has a supporting link, to say the event on the artist website, please place here..</td>
 </tr>
 <tr>
-<td>onSaleTime*</td>
+<td>onSaleTime</td>
 <td>number</td>
 <td>The time that tickets will go on sale. Seconds since Epoch.</td>
 </tr>
 <tr>
-<td>offSaleTime*</td>
+<td>offSaleTime</td>
 <td>number</td>
 <td>The time that tickets will go off sale. Seconds since Epoch.</td>
-</tr>
-<tr>
-<td>averageTicketPriceInUSCents*</td>
-<td>string</td>
-<td>Required format is:  <code>0x[0-9a-f]{64}</code></td>
-</tr>
-<tr>
-<td>ownerProof</td>
-<td>string</td>
-<td>Proof the user has permission</td>
 </tr>
 </tbody></table>
 
@@ -473,17 +445,10 @@ As of now, there is no need to authenticate. Please see this section in the futu
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"eventDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kendrick Lamar, Brixton Academy, London, 18+"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"eventSupportURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.kendricklamar.com/tour"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"onSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1574500752"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"offSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1573250035"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"averageTicketPriceInUSCents"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f4780e2d9f6"</span><span class="w">
+    </span><span class="s2">"onSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574500752</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"offSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1573250035</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>Sample Response: The following is the expected response for the sample event above</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="err">Insert</span><span class="w"> </span><span class="err">Example</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="err">here</span><span class="w">
 </span></code></pre><h2 id='retrieve-event-list'>Retrieve Event List</h2>
 <p>Now that you have created an event you may want to retrieve these details from the protocol in order to keep track of your live events.</p>
 
@@ -495,77 +460,34 @@ As of now, there is no need to authenticate. Please see this section in the futu
 <p><code>GET /events</code></p>
 
 <blockquote>
-<p>Sample Request: The following will retrieve a list of active events</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='request-headers-2'>Request Headers</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>eventId*</td>
-<td>number</td>
-<td>event ID for reference</td>
-</tr>
-<tr>
-<td>ownerProof</td>
-<td>string</td>
-<td>Proof the user has permission</td>
-</tr>
-</tbody></table>
-
-<blockquote>
 <p>Sample Response: The following is the expected response for asking for a list of active events</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="err">Insert</span><span class="w"> </span><span class="err">Example</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="err">here</span><span class="w">
-</span></code></pre><h2 id='delete-event'>Delete Event</h2>
-<p>Now that you have created an event you may want to cancel it if there was an error.</p>
-
-<p>Using our Aventus RESTful API, you can cancel an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
-- Cancel an event</p>
-
-<p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling an event you recently created.</p>
-<h3 id='method-delete'>Method: <code>DELETE</code></h3>
-<p><code>DELETE /events</code></p>
-
-<blockquote>
-<p>Sample Request</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='request-headers-3'>Request Headers</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>eventId*</td>
-<td>number</td>
-<td>event ID for reference</td>
-</tr>
-<tr>
-<td>ownerProof</td>
-<td>string</td>
-<td>Proof the user has permission</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p>Sample Response</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="err">Insert</span><span class="w"> </span><span class="err">Example</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="err">here</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kendrick Lamar, Brixton Academy, London, 18+"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"onSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574500752</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"offSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1573250035</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"avtDeposit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beyonce, Wembley Stadium, London"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"onSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1542986560</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"offSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574544160</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"avtDeposit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Tribe Called Quest, The Apollo, Harlem"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"onSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1542991411430</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"offSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1542991415430</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"avtDeposit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre><h2 id='create-tickets'>Create Tickets</h2>
 <p>Now that you have created an event you can now generate and distribute tickets to customers</p>
 
@@ -581,14 +503,10 @@ As of now, there is no need to authenticate. Please see this section in the futu
 <p>Sample Request: The following will create a number of tickets for a specific event</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"vendorReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='request-headers-4'>Request Headers</h3>
+</span></code></pre><h3 id='request-headers-2'>Request Headers</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -597,41 +515,31 @@ As of now, there is no need to authenticate. Please see this section in the futu
 </tr>
 </thead><tbody>
 <tr>
-<td>vendorReference*</td>
-<td>string</td>
-<td>something</td>
-</tr>
-<tr>
 <td>eventId</td>
 <td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>payload</td>
-<td>string</td>
-<td>something</td>
+<td>a unique identifier used to reference an event on the Aventus Protocol</td>
 </tr>
 <tr>
 <td>email</td>
 <td>string</td>
 <td>customer email address</td>
 </tr>
-<tr>
-<td>secret</td>
-<td>string</td>
-<td>something</td>
-</tr>
-<tr>
-<td>status</td>
-<td>string</td>
-<td>something</td>
-</tr>
 </tbody></table>
 
 <blockquote>
 <p>Sample Response: The following is the expected response for creating a number of tickets for a specific event</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="err">Insert</span><span class="w"> </span><span class="err">Example</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="err">here</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"vendorReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ref 1543329264762"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payload"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer@aventus.io"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5b7e7593-ff70-4c57-b1da-565380f1e964"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artos.ticketwallet://+?payload=W3siZXZlbnRJZCI6IjUiLCJ0aWNrZXRSZWZlcmVuY2UiOiJyZWYgMTU0MzMyOTI2NDc2MiIsInBheWxvYWQiOiJ7c29tZVN0dWZmV2hhdGV2ZXJGb3JtYXRQYXlsb2FkfSIsImRhdGFTaWduYXR1cmUiOiIweGI3ZTMxZWVjMjUzZDI2ZTIzZDQwNjg3Nzc0MjM5NDZmMmZjNDk1YjlhMWE5YmNlODk2ZDQ0ZWQyM2E5OGU5ZWMwNDNiNDc4OWYzN2UxYTEwMmMxOTQ2NzRlMzNhMzE0MjY4Y2U3NzJhMDdmODg3ZGZlMmQ3ZWNkZmQ5MDIwNjNjMDEiLCJzZWNyZXQiOiJNeSBhbWF6aW5nIHNlY3JldCIsInNlY3JldFNpZ25hdHVyZSI6IjB4YzY5MWUyMTdhOTZlNGVhZTQ5MDhmYzM4MjlmNGVmNDk0MDBlNDc1MGIxNzZmMWJiMDhlYWE3MjM2NTkzOTJjNDY3NTZhMGMzODQ0Yzk0NTEwZTkxNDdjYjllZDhiOWY0Yjc2MGJlZGM2YjZiNTJhOWM0MTMyMDA5ODAyNTk1YjMwMCJ9XQ=="</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"status"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre><h2 id='retrieve-ticket-list'>Retrieve Ticket List</h2>
 <p>Now that you have created an event with tickets you can now retrieve a list of tickets associated with an event and see the status of each ticket</p>
 
@@ -640,154 +548,58 @@ As of now, there is no need to authenticate. Please see this section in the futu
 
 <p>First, take note of the method, and sample request. In this example guide you&#39;ll be retrieving a list of ticket for an event you recently created.</p>
 <h3 id='method-get-2'>Method: <code>GET</code></h3>
-<p><code>GET /events</code></p>
-
-<blockquote>
-<p>Sample Request: The following will retrieve a list of tickets for a specified event</p>
-</blockquote>
-<pre class="highlight plaintext"><code>{
-    "eventId": number,
-  "ownerProof": "string"
-}
-</code></pre><h3 id='request-headers-5'>Request Headers</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>eventId*</td>
-<td>number</td>
-<td>event ID for reference</td>
-</tr>
-<tr>
-<td>ownerProof</td>
-<td>string</td>
-<td>Proof the user has permission</td>
-</tr>
-</tbody></table>
+<p><code>GET /events/*eventId*/tickets</code></p>
 
 <blockquote>
 <p>Sample Response: The following is the expected response for retrieving a list of tickets for a specified event</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="err">Insert</span><span class="w"> </span><span class="err">Example</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="err">here</span><span class="w">
-</span></code></pre><h2 id='cancel-tickets'>Cancel Tickets</h2>
-<p>Now that you have a list of tickets for an event, you can now perform ticket management and cancel a specific ticket</p>
-
-<p>Using our Aventus RESTful API, you can specify a ticket to cancel from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
-- Cancel a ticket</p>
-
-<p>First, take note of the method, and sample request. In this example guide you&#39;ll be cancelling tickets for an event you recently created.</p>
-<h3 id='method-delete-2'>Method: <code>DELETE</code></h3>
-<p><code>DELETE /events</code></p>
-
-<blockquote>
-<p>Sample request: The following will cancel a specified ticket for a specified event</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='request-headers-6'>Request Headers</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>eventId*</td>
-<td>number</td>
-<td>event ID for reference</td>
-</tr>
-<tr>
-<td>ownerProof</td>
-<td>string</td>
-<td>Proof the user has permission</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p>Sample Response: The following is the expected response for cancelling a specified ticket for a specified event</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="err">Insert</span><span class="w"> </span><span class="err">Example</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="err">here</span><span class="w">
-</span></code></pre><h2 id='send-ticket-links'>Send Ticket Links</h2>
-<p>blurb</p>
-<h3 id='method-post-3'>Method: <code>POST</code></h3>
-<p><code>POST /events</code></p>
-
-<blockquote>
-<p>Sample request: The following will send out ticket link emails for specified tickets</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='request-headers-7'>Request Headers</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>eventId*</td>
-<td>number</td>
-<td>event ID for reference</td>
-</tr>
-<tr>
-<td>ownerProof</td>
-<td>string</td>
-<td>Proof the user has permission</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p>Sample Response: The following is the expected response for sending out ticket link emails for specified tickets</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="err">Insert</span><span class="w"> </span><span class="err">Example</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="err">here</span><span class="w">
-</span></code></pre><h2 id='generate-doorlist'>Generate Doorlist</h2>
-<p>blurb</p>
-<h3 id='method-get-3'>Method: <code>GET</code></h3>
-<p><code>GET /events</code></p>
-
-<blockquote>
-<p>Sample request: The following will generate a CSV doorlist for a specified event</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ownerProof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='request-headers-8'>Request Headers</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>eventId*</td>
-<td>number</td>
-<td>event ID for reference</td>
-</tr>
-<tr>
-<td>ownerProof</td>
-<td>string</td>
-<td>Proof the user has permission</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p>Sample Response: The following is the expected response for generating a CSV doorlist for a specified event</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="err">Insert</span><span class="w"> </span><span class="err">Example</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="err">here</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"vendorReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ref 1543005210191"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payload"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer2@aventus.io"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7b52931c-e1a9-4b7d-bf06-c2f0d9562d3a"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artos.ticketwallet://+?payload=W3siZXZlbnRJZCI6IjUiLCJ0aWNrZXRSZWZlcmVuY2UiOiJyZWYgMTU0MzAwNTIxMDE5MSIsInBheWxvYWQiOiJ7c29tZVN0dWZmV2hhdGV2ZXJGb3JtYXRQYXlsb2FkfSIsImRhdGFTaWduYXR1cmUiOiIweDE2MGRlMjIzNDc1NmY0MWNlYzU1MDZmNGZjZWUxZTg3MTUzNmYwZmI3YWVlN2EyMDE4ZmJjODdjOWRhNzNiZmM3Zjg5ZDQ0MDA2ZDAzN2Y5YmEzZTc0NmIxNDIzMTJiNWU5Nzc1MTRkZDAwNjlhNDUwODdlNDRmZGY1Y2VhNmM2MDEiLCJzZWNyZXQiOiJNeSBhbWF6aW5nIHNlY3JldCIsInNlY3JldFNpZ25hdHVyZSI6IjB4YzY5MWUyMTdhOTZlNGVhZTQ5MDhmYzM4MjlmNGVmNDk0MDBlNDc1MGIxNzZmMWJiMDhlYWE3MjM2NTkzOTJjNDY3NTZhMGMzODQ0Yzk0NTEwZTkxNDdjYjllZDhiOWY0Yjc2MGJlZGM2YjZiNTJhOWM0MTMyMDA5ODAyNTk1YjMwMCJ9XQ=="</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"status"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"vendorReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ref 1542993837015"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payload"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer3@aventus.io"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb80109a-22aa-41bf-9e28-eea721d5b4ab"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artos.ticketwallet://+?payload=W3siZXZlbnRJZCI6IjUiLCJ0aWNrZXRSZWZlcmVuY2UiOiJyZWYgMTU0Mjk5MzgzNzAxNSIsInBheWxvYWQiOiJ7c29tZVN0dWZmV2hhdGV2ZXJGb3JtYXRQYXlsb2FkfSIsImRhdGFTaWduYXR1cmUiOiIweDRkM2FjZTAxNzY5NzhkYjczMjkyN2Y4MWY1OWYyZTQxYTMxNWRmOTAxOTI3OTgyZjE1OGE4MmEzNzY1ODBkNzA0MWFjNzY5NTJhZmMyMTc2OGNkZWJlNjFkMTk5ZGI2M2Y2YzE5OGI1ZDJmMTc4ZmE5OGQ0NzlhODIyMmJiZGYxMDAiLCJzZWNyZXQiOiJNeSBhbWF6aW5nIHNlY3JldCIsInNlY3JldFNpZ25hdHVyZSI6IjB4YzY5MWUyMTdhOTZlNGVhZTQ5MDhmYzM4MjlmNGVmNDk0MDBlNDc1MGIxNzZmMWJiMDhlYWE3MjM2NTkzOTJjNDY3NTZhMGMzODQ0Yzk0NTEwZTkxNDdjYjllZDhiOWY0Yjc2MGJlZGM2YjZiNTJhOWM0MTMyMDA5ODAyNTk1YjMwMCJ9XQ=="</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"status"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"vendorReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ref 1542993841495"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payload"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer4@aventus.io"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f7ab0e5-7d7d-4ab4-a142-faa2c2df1399"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artos.ticketwallet://+?payload=W3siZXZlbnRJZCI6IjUiLCJ0aWNrZXRSZWZlcmVuY2UiOiJyZWYgMTU0Mjk5Mzg0MTQ5NSIsInBheWxvYWQiOiJ7c29tZVN0dWZmV2hhdGV2ZXJGb3JtYXRQYXlsb2FkfSIsImRhdGFTaWduYXR1cmUiOiIweDljYjY5NjYwODQ3YzE5ZGNkMTJjZmVmNzcxZDU4NzI0NTkwMmMzOTBmOGZmZjNlYTM4MzhiZTQxMDFjYmViNGUzNjQzZDgxZmVkNGY0NjZjZTUzOGRlMWFkOGIyYTcyOTRlNWZhYWQ0MThlNDRkODAyNTEwY2NkNTM2NzRlYzM3MDEiLCJzZWNyZXQiOiJNeSBhbWF6aW5nIHNlY3JldCIsInNlY3JldFNpZ25hdHVyZSI6IjB4YzY5MWUyMTdhOTZlNGVhZTQ5MDhmYzM4MjlmNGVmNDk0MDBlNDc1MGIxNzZmMWJiMDhlYWE3MjM2NTkzOTJjNDY3NTZhMGMzODQ0Yzk0NTEwZTkxNDdjYjllZDhiOWY0Yjc2MGJlZGM2YjZiNTJhOWM0MTMyMDA5ODAyNTk1YjMwMCJ9XQ=="</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"status"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"vendorReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ref 1542993828967"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payload"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer5@aventus.io"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"47fb3d8d-f480-42c1-aec9-c267790841be"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artos.ticketwallet://+?payload=W3siZXZlbnRJZCI6IjUiLCJ0aWNrZXRSZWZlcmVuY2UiOiJyZWYgMTU0Mjk5MzgyODk2OSIsInBheWxvYWQiOiJ7c29tZVN0dWZmV2hhdGV2ZXJGb3JtYXRQYXlsb2FkfSIsImRhdGFTaWduYXR1cmUiOiIweDNkNWU2NmZlNDQxZWJkY2ZiNTM2MmVmNTVjNTA2MWIzMTg4ODg4Yjk4ODRlNWUzZjFkNzllNTgxNjVlMTcyYzEyNzEzZDcxZjY1MmVhYTllMjBhZmNlNzhlOTE4MDZhNDIwY2NmNGU2NGVlMTMyYjQ1YTc0OWI1M2M0NzQ1OGVkMDAiLCJzZWNyZXQiOiJNeSBhbWF6aW5nIHNlY3JldCIsInNlY3JldFNpZ25hdHVyZSI6IjB4YzY5MWUyMTdhOTZlNGVhZTQ5MDhmYzM4MjlmNGVmNDk0MDBlNDc1MGIxNzZmMWJiMDhlYWE3MjM2NTkzOTJjNDY3NTZhMGMzODQ0Yzk0NTEwZTkxNDdjYjllZDhiOWY0Yjc2MGJlZGM2YjZiNTJhOWM0MTMyMDA5ODAyNTk1YjMwMCJ9XQ=="</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"status"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"vendorReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ref 1542993839534"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payload"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer6@aventus.io"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"750a3cd7-4301-4e97-9dc3-e79b30d906be"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"artos.ticketwallet://+?payload=W3siZXZlbnRJZCI6IjUiLCJ0aWNrZXRSZWZlcmVuY2UiOiJyZWYgMTU0Mjk5MzgzOTUzNCIsInBheWxvYWQiOiJ7c29tZVN0dWZmV2hhdGV2ZXJGb3JtYXRQYXlsb2FkfSIsImRhdGFTaWduYXR1cmUiOiIweGViZDVmNzRlNjcyYWRkMDRiNjUzNDY1YzYyMDhlMjQ0MTA4ZDlmMzU1MGJhNDk4YzZmNWQ4M2U5MTUxMWJjZDczMTQzZDU5YmFlNjI4NGZlNTljZmRkYmNhOTIwNDZkMmNlNDIwNTQxMGQ2ZTA5N2RiZjExZTM0ZDBkMzhlYjY0MDAiLCJzZWNyZXQiOiJNeSBhbWF6aW5nIHNlY3JldCIsInNlY3JldFNpZ25hdHVyZSI6IjB4YzY5MWUyMTdhOTZlNGVhZTQ5MDhmYzM4MjlmNGVmNDk0MDBlNDc1MGIxNzZmMWJiMDhlYWE3MjM2NTkzOTJjNDY3NTZhMGMzODQ0Yzk0NTEwZTkxNDdjYjllZDhiOWY0Yjc2MGJlZGM2YjZiNTJhOWM0MTMyMDA5ODAyNTk1YjMwMCJ9XQ=="</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"status"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
 <!--- YOU ARE NOW ENTERING... KITTENs
 
@@ -880,14 +692,11 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 
 ## Delete a Specific Kitten
 
-
-
 ```shell
 curl "http://example.com/api/kittens/2"
   -X DELETE
   -H "Authorization: meowmeowmeow"
 ```
-
 
 
 > The above command returns JSON structured like this:
