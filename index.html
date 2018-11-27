@@ -225,13 +225,16 @@
                     <a href="#aventus-protocol" class="toc-h2 toc-link" data-title="Aventus Protocol">Aventus Protocol</a>
                   </li>
                   <li>
-                    <a href="#virtue-services" class="toc-h2 toc-link" data-title="Virtue Services">Virtue Services</a>
+                    <a href="#protocol-abstraction" class="toc-h2 toc-link" data-title="Protocol Abstraction">Protocol Abstraction</a>
                   </li>
                   <li>
-                    <a href="#aws-lambdas" class="toc-h2 toc-link" data-title="AWS Lambdas">AWS Lambdas</a>
+                    <a href="#api-gateways" class="toc-h2 toc-link" data-title="API Gateways">API Gateways</a>
                   </li>
                   <li>
-                    <a href="#ticket-wallet" class="toc-h2 toc-link" data-title="Ticket Wallet">Ticket Wallet</a>
+                    <a href="#sdks" class="toc-h2 toc-link" data-title="SDKs">SDKs</a>
+                  </li>
+                  <li>
+                    <a href="#b2b-b2c-applications" class="toc-h2 toc-link" data-title="B2B/B2C Applications">B2B/B2C Applications</a>
                   </li>
               </ul>
           </li>
@@ -262,7 +265,13 @@
               </ul>
           </li>
           <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+          <li>
             <a href="#ticket-wallet-modules" class="toc-h1 toc-link" data-title="Ticket Wallet Modules">Ticket Wallet Modules</a>
+          </li>
+          <li>
+            <a href="#agency-admin-panel" class="toc-h1 toc-link" data-title="Agency Admin Panel">Agency Admin Panel</a>
           </li>
           <li>
             <a href="#sdks" class="toc-h1 toc-link" data-title="SDKs">SDKs</a>
@@ -274,9 +283,6 @@
                     <a href="#high-level-sdks" class="toc-h2 toc-link" data-title="High Level SDKs">High Level SDKs</a>
                   </li>
               </ul>
-          </li>
-          <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
           <li>
             <a href="#glossary" class="toc-h1 toc-link" data-title="Glossary">Glossary</a>
@@ -317,27 +323,37 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome, to your bridge to Blockchain; Artos. We have developed the Aventus Protocol on behalf of the Aventus Foundation.</p>
+<p>We have developed the Aventus Protocol on behalf of the Aventus Foundation.</p>
 
-<p>Below you will find a general architecture diagram outlining our core services and where data is being processed from the point of entry via our RESTful API. Each of these distinct products makes up the Artos Systems ecosystem and we aim to continue to develop these as our implementation matures.</p>
+<p>Below you will find a general architecture diagram outlining our core services and where data is being processed from the point of entry via our RESTful API. Each of these distinct services makes up the Artos Systems ecosystem and we aim to continue to develop these as our implementation matures.</p>
 
 <p><img src="images/architecture-diagram-aws.png" alt="big" /></p>
 
-<p>As shown in the above architecture diagram our technology stack is built in layers on top of the blockchain and each product serves a purpose to ensure interaction via our endpoints is standardised and familiar for developers.</p>
+<p>As shown in the above architecture diagram our technology stack is built in layers on top of the Ethereum blockchain and each product serves a purpose to ensure interaction via our endpoints is standardised and familiar for developers.</p>
 <h3 id='aventus-protocol'>Aventus Protocol</h3>
-<p>The Aventus Protocol is a global open standard for the exchange of tickets built upon the Ethereum blockchain composed of smart contracts that allow for the creation and validation of events, the issuance, sale and distribution of tickets in primary and secondary ticket markets (under parameters designed and customised by inventory holders and event organisers) and the allocation of defined proportions of ticket sale revenue between event organisers, ticket promoters, artists, secondary resellers, etc.</p>
-<h3 id='virtue-services'>Virtue Services</h3><h4 id='patient'>Patient</h4>
-<p>Patient is a queuing system. A way to manage a large requests that will write to the blockchain. Think of the IMS that sends large amounts of requests to the blockchain, but the blockchain itself is really slow. Patient manages (i.e. queues) the transactions that are being sent to the blockchain. A user of Patient doesn’t need to know how to interact with the protocol as it operates as a high level layer between the protocol and the client. Patient users also don’t need to care about smart contracts, transaction fee’s etc. It auto adjusts the price paid for gas depending on the level of congestion on the blockchain.</p>
-<h4 id='honest'>Honest</h4>
-<p>Honest is a public API that allows any kind of application to look up information on the protocol. Anything that resides on the protocol can be seen and consumed by Honest.</p>
-<h4 id='modest'>Modest</h4>
-<p>The last, and largest of our virtue services. Modest, as the name suggests, is our scaling solution for the blockchain, but firstly for the Aventus Protocol itself. It utilises Merkle trees to allow much quicker, concurrent processing of objects to the blockchain.</p>
-<h3 id='aws-lambdas'>AWS Lambdas</h3>
+<p>The Aventus Protocol is a global open standard for the exchange of tickets built upon the blockchain composed of smart contracts that allow for the creation and validation of events, the issuance and distribution of tickets in primary and secondary ticket markets.</p>
+<h3 id='protocol-abstraction'>Protocol Abstraction</h3>
+<p>Something of the blockchain are hard to deal with. We developed a family of services that help deal with the inherent challenges working with the blockchain provides.</p>
+
+<p><strong>Patient</strong> is a queuing system. A way to manage a large requests that will write to the blockchain. Think of the theortical ticket distribution systems that sends large amounts of requests to the blockchain, but the blockchain itself is really slow. Patient manages (i.e. queues) the transactions that are being sent to the blockchain. A user of Patient doesn’t need to know how to interact with the protocol as it operates as a high level layer between the protocol and the client. Patient users also don’t need to care about smart contracts, transaction fee’s etc. It auto adjusts the price paid for gas depending on the level of congestion on the blockchain.</p>
+
+<p><strong>Honest</strong> is a public API that allows any kind of application to look up information on the protocol. Anything that resides on the protocol can be seen and consumed by Honest.</p>
+
+<p><strong>Modest</strong> is our scaling solution for the blockchain, but firstly for the Aventus Protocol itself. It utilises Merkle trees to allow much quicker, concurrent processing of objects to the blockchain.</p>
+<h4 id='aws-lambdas'>AWS Lambdas</h4>
 <p>We employ the use of AWS Lambdas throughout the technology stack as serverless middleware between services. These aren&#39;t distinct services themselves but simply allow for horizontally scalable data processing throughout the system.</p>
-<h3 id='ticket-wallet'>Ticket Wallet</h3>
+<h3 id='api-gateways'>API Gateways</h3>
+<p>The core product you will be interacting with. A RESTful inteface to give you easy interaction with the protocol. For more, see below.</p>
+<h3 id='sdks'>SDKs</h3>
+<p>Including, but not exhaustive: Aventus4S - our Scala library for interacting with the protocol, and AventusJS - our Javascript library for interacting with the protocol. As we develop more SDKs, we will insert them here and in the relevant sub section.</p>
+<h3 id='b2b-b2c-applications'>B2B/B2C Applications</h3><h4 id='white-label-ticket-wallet'>White-Label Ticket Wallet</h4>
 <p>The Aventus Ticket Wallet is a white-label mobile application acting as the user facing client for loading and viewing tickets issued by the event creator. Originally designed as a proof-of-concept to show our end-to-end solution including access control but is built in a modular fashion to allow third parties to brand their own wallet using our technology under the hood.</p>
 
-<p>This API documentation aims to make interacting the the Aventus Protocol as simple and straightforward as possible.</p>
+<!--- Ermmmm??? This API documentation aims to make interacting the the Aventus Protocol as simple and straightforward as possible. --->
+<h4 id='ticket-wallet-modules'>Ticket Wallet Modules</h4>
+<p>As we will elaborate on further down this documentation, the Ticket Wallet has been built in a modular fashion. As such, our white label solution <em>doesn&#39;t need</em> to be the starting point of integrating our tickets with your application. In the section concerning the Ticket Wallet Modules specifically, we will list the options available for you.</p>
+<h4 id='agency-admin-panel'>Agency Admin Panel</h4>
+<p>The Agency Admin Panel is our protocol level interface for clients to create and manage events that will be delivered with the assistance of the Aventus Protocol. It enables users to create events and tickets with relevant CRUD functions. Further detail is provided later in this document.</p>
 <h1 id='before-you-begin'>Before You Begin</h1>
 <p>This guide acts as developer reference for integrating with Aventus Protocol RESTful API covering interaction with events and tickets hence any language and instructional information assumes an existing technical knowledge of interacting via an API and the typical practices involved.</p>
 
@@ -725,6 +741,39 @@ ID | The ID of the kitten to delete
 
 
  --->
+<h1 id='errors'>Errors</h1>
+<p>The Aventus RESTful API uses the following error codes:</p>
+
+<!--- Specifically the errors relating to THIS guide. -->
+
+<table><thead>
+<tr>
+<th>HTTP response Code</th>
+<th>HTTP error category</th>
+<th>Typical Failure Case</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>BAD REQUEST</td>
+<td>One of the expected parameters is not present or in an incorrect format</td>
+</tr>
+<tr>
+<td>404</td>
+<td>NOT FOUND</td>
+<td>Resource not found</td>
+</tr>
+<tr>
+<td>500</td>
+<td>INTERNAL SERVER ERROR</td>
+<td>Unexpected internal server error, our services are down</td>
+</tr>
+<tr>
+<td>503</td>
+<td>SERVICE UNAVAILABLE</td>
+<td>Server overloaded or down for maintainence</td>
+</tr>
+</tbody></table>
 <h1 id='ticket-wallet-modules'>Ticket Wallet Modules</h1>
 <p>As described above, the Wallet is built in a modularised fashion for clients to select the parts they need to achieve the functionality required for their product. This list of modules described further down is not exhaustive, and upon contacting Artos, we can discuss what your needs may be for future development.</p>
 
@@ -737,7 +786,7 @@ ID | The ID of the kitten to delete
 <ul>
 <li>Recieving/Displaying Tickets</li>
 <li>Create Ticket SDK</li>
-<li>Key Pair Management</li>
+<li>Key Pair Management (tbc)</li>
 </ul>
 
 <p>Wallet Optional:</p>
@@ -776,6 +825,10 @@ ID | The ID of the kitten to delete
 <aside class="notice">
 As of now, this section is a placeholder, we will return to this as we approach modularisation of our Ticket Wallet product.
 </aside>
+<h1 id='agency-admin-panel'>Agency Admin Panel</h1>
+<aside class="notice">
+As of now, this section is a placeholder. As we update our products this section will be filled.
+</aside>
 <h1 id='sdks'>SDKs</h1>
 <p>Artos is committed to making the developer experience as smooth as possible. Part of this effort is providing high-quality libraries you can use to access the API. The available libraries are listed below, and more are in development. If you don’t see what you need, check the open-source community for your platform, and let us know that you’d like to find one here!</p>
 <h2 id='aventus-js-aventus4s'>Aventus.JS/Aventus4S</h2>
@@ -786,42 +839,8 @@ As of now, this section is a placeholder, we will return to this as we approach 
 <p>As we begin to add more high level SDKs, this will be the place to find them.</p>
 
 <aside class="notice">
-As of now, this section is a placeholder. As we update our products to include SDKs for developers, we will place them in this section.<br/ ><br/ >
-<iframe src="https://giphy.com/embed/ToMjGpjwk1MxyYRcQnK" width="480" height="283" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/shiba-inu-moon-pls-hello-trampoline-ToMjGpjwk1MxyYRcQnK">via GIPHY</a></p>
+As of now, this section is a placeholder. As we update our products to include SDKs for developers, we will place them in this section.
 </aside>
-<h1 id='errors'>Errors</h1>
-<p>The Aventus RESTful API uses the following error codes:</p>
-
-<!--- Specifically the errors relating to THIS guide. -->
-
-<table><thead>
-<tr>
-<th>HTTP response Code</th>
-<th>HTTP error category</th>
-<th>Typical Failure Case</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>BAD REQUEST</td>
-<td>One of the expected parameters is not present or in an incorrect format</td>
-</tr>
-<tr>
-<td>404</td>
-<td>NOT FOUND</td>
-<td>Resource not found</td>
-</tr>
-<tr>
-<td>500</td>
-<td>INTERNAL SERVER ERROR</td>
-<td>Unexpected internal server error, our services are down</td>
-</tr>
-<tr>
-<td>503</td>
-<td>SERVICE UNAVAILABLE</td>
-<td>Server overloaded or down for maintainence</td>
-</tr>
-</tbody></table>
 <h1 id='glossary'>Glossary</h1>
 <ul>
 <li><strong>Access Control</strong> is the method of entry (along with security protocols) to an <em>event (aventus)</em>, granted by a <em>ticket</em></li>
