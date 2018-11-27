@@ -100,12 +100,8 @@ What you can do?
 
 - Create an Event (POST)
 - Retrieve Event List (GET)
-- Delete Event (DELETE)
 - Create Tickets (POST)
 - Retrieve Ticket List (GET)
-- Cancel Tickets (DELETE)
-- Send Ticket Links (POST)
-- Generate Doorlist (GET)
 
 # API Guides
 Aventus makes creating and managing events and tickets on the blockchain easy. Find the documentation, sample code, and developer tools you need to build exactly what you want, fast. We’ll handle the complexity of blockchain and the Aventus Protocol. Let’s get building!
@@ -136,8 +132,6 @@ First, take note of the method, and sample request. In this example guide you'll
 	"eventSupportURL": "string",
 	"onSaleTime": number,
 	"offSaleTime": number,
-	"averageTicketPriceInUSCents": "string" (0x[0-9a-f]{64}),
-  "ownerProof": "string"
 }
 ```
 
@@ -145,12 +139,10 @@ First, take note of the method, and sample request. In this example guide you'll
 
 Parameter | Type | Description
 --------- | ------- | -----------
-eventDesc* | string | A brief description of the event you are hosting, 200 characters maximum.
-eventSupportURL* | string | If your event has a supporting link, to say the event on the artist website, please place here..
-onSaleTime* | number  | The time that tickets will go on sale. Seconds since Epoch.
-offSaleTime* | number |  The time that tickets will go off sale. Seconds since Epoch.
-averageTicketPriceInUSCents* | string | Required format is:  `0x[0-9a-f]{64}`
-ownerProof | string | Proof the user has permission
+eventDesc | string | A brief description of the event you are hosting, 200 characters maximum.
+eventSupportURL | string | If your event has a supporting link, to say the event on the artist website, please place here..
+onSaleTime | number | The time that tickets will go on sale. Seconds since Epoch.
+offSaleTime | number |  The time that tickets will go off sale. Seconds since Epoch.
 
 
 > The following sample request has inputs for a potential event
@@ -160,20 +152,11 @@ ownerProof | string | Proof the user has permission
   {
 	"eventDesc": "Kendrick Lamar, Brixton Academy, London, 18+",
 	"eventSupportURL": "www.kendricklamar.com/tour",
-	"onSaleTime": "1574500752",
-	"offSaleTime": "1573250035",
-	"averageTicketPriceInUSCents": 100,
-  "ownerProof": "f4780e2d9f6"
+	"onSaleTime": 1574500752,
+	"offSaleTime": 1573250035,
 }
 ]
 ```
-
-> Sample Response: The following is the expected response for the sample event above
-
-```json
-Insert Example Response here
-```
-
 
 ## Retrieve Event List
 Now that you have created an event you may want to retrieve these details from the protocol in order to keep track of your live events.
@@ -187,64 +170,35 @@ First, take note of the method, and sample request. In this example guide you'll
 
 `GET /events`
 
-> Sample Request: The following will retrieve a list of active events
-
-```json
-{
-  "eventId": number,
-  "ownerProof": string
-}
-```
-
-### Request Headers
-
-Parameter | Type | Description
---------- | ------- | -----------
-eventId* | number | event ID for reference
-ownerProof | string | Proof the user has permission
-
-
-
 > Sample Response: The following is the expected response for asking for a list of active events
 
 ```json
-Insert Example Response here
-```
-
-
-## Delete Event
-Now that you have created an event you may want to cancel it if there was an error.
-
-Using our Aventus RESTful API, you can cancel an event you created from your language of choice. In this guide, we'll explore how you can use the Aventus API to:
-- Cancel an event
-
-First, take note of the method, and sample request. In this example guide you'll be cancelling an event you recently created.
-
-### Method: `DELETE`
-
-`DELETE /events`
-
-> Sample Request
-
-```json
-{
-	"eventId": number,
-  "ownerProof": "string"
-}
-```
-
-### Request Headers
-
-Parameter | Type | Description
---------- | ------- | -----------
-eventId* | number | event ID for reference
-ownerProof | string | Proof the user has permission
-
-
-> Sample Response
-
-```json
-Insert Example Response here
+[
+  {
+    "eventId": 1,
+    "description": "Kendrick Lamar, Brixton Academy, London, 18+",
+    "onSaleTime": 1574500752,
+    "offSaleTime": 1573250035,
+    "price": 1000,
+    "avtDeposit": "1000"
+  },
+  {
+    "eventId": 2,
+    "description": "Beyonce, Wembley Stadium, London",
+    "onSaleTime": 1542986560,
+    "offSaleTime": 1574544160,
+    "price": 1000,
+    "avtDeposit": "1000"
+  },
+  {
+    "eventId": 3,
+    "description": "A Tribe Called Quest, The Apollo, Harlem",
+    "onSaleTime": 1542991411430,
+    "offSaleTime": 1542991415430,
+    "price": 1000,
+    "avtDeposit": "1000"
+  },
+]
 ```
 
 ## Create Tickets
@@ -264,12 +218,8 @@ First, take note of the method, and sample request. In this example guide you'll
 
 ```json
 {
-	"vendorReference": "string",
   "eventId": "string",
-  "payload": "string",
   "email": "string",
-	"secret": "string",
-	"status": "string"
 }
 ```
 
@@ -277,18 +227,23 @@ First, take note of the method, and sample request. In this example guide you'll
 
 Parameter | Type | Description
 --------- | ------- | -----------
-vendorReference* | string | something
-eventId  | string  |
-payload | string | something
-email  |  string |  customer email address
-secret  |  string |  something
-status  | string  |  something
-
+eventId  | string  | a unique identifier used to reference an event on the Aventus Protocol
+email  |  string | customer email address
 
 > Sample Response: The following is the expected response for creating a number of tickets for a specific event
 
 ```json
-Insert Example Response here
+[
+  {
+    "vendorReference": "ref 1543329264762",
+    "eventId": "3",
+    "payload": "payload",
+    "email": "customer@aventus.io",
+    "secret": "5b7e7593-ff70-4c57-b1da-565380f1e964",
+    "link": "artos.ticketwallet://+?payload=W3siZXZlbnRJZCI6IjUiLCJ0aWNrZXRSZWZlcmVuY2UiOiJyZWYgMTU0MzMyOTI2NDc2MiIsInBheWxvYWQiOiJ7c29tZVN0dWZmV2hhdGV2ZXJGb3JtYXRQYXlsb2FkfSIsImRhdGFTaWduYXR1cmUiOiIweGI3ZTMxZWVjMjUzZDI2ZTIzZDQwNjg3Nzc0MjM5NDZmMmZjNDk1YjlhMWE5YmNlODk2ZDQ0ZWQyM2E5OGU5ZWMwNDNiNDc4OWYzN2UxYTEwMmMxOTQ2NzRlMzNhMzE0MjY4Y2U3NzJhMDdmODg3ZGZlMmQ3ZWNkZmQ5MDIwNjNjMDEiLCJzZWNyZXQiOiJNeSBhbWF6aW5nIHNlY3JldCIsInNlY3JldFNpZ25hdHVyZSI6IjB4YzY5MWUyMTdhOTZlNGVhZTQ5MDhmYzM4MjlmNGVmNDk0MDBlNDc1MGIxNzZmMWJiMDhlYWE3MjM2NTkzOTJjNDY3NTZhMGMzODQ0Yzk0NTEwZTkxNDdjYjllZDhiOWY0Yjc2MGJlZGM2YjZiNTJhOWM0MTMyMDA5ODAyNTk1YjMwMCJ9XQ==",
+    "status": "status"
+  }
+]
 ```
 
 ## Retrieve Ticket List
@@ -301,134 +256,59 @@ First, take note of the method, and sample request. In this example guide you'll
 
 ### Method: `GET`
 
-`GET /events`
-
-> Sample Request: The following will retrieve a list of tickets for a specified event
-
-```JSON
-{
-	"eventId": number,
-  "ownerProof": "string"
-}
-```
-
-### Request Headers
-
-Parameter | Type | Description
---------- | ------- | -----------
-eventId* | number | event ID for reference
-ownerProof | string | Proof the user has permission
-
+`GET /events/*eventId*/tickets`
 
 > Sample Response: The following is the expected response for retrieving a list of tickets for a specified event
 
 ```json
-Insert Example Response here
+[
+  {
+    "vendorReference": "ref 1543005210191",
+    "eventId": "3",
+    "payload": "payload",
+    "email": "customer2@aventus.io",
+    "secret": "7b52931c-e1a9-4b7d-bf06-c2f0d9562d3a",
+    "link": "artos.ticketwallet://+?payload=W3siZXZlbnRJZCI6IjUiLCJ0aWNrZXRSZWZlcmVuY2UiOiJyZWYgMTU0MzAwNTIxMDE5MSIsInBheWxvYWQiOiJ7c29tZVN0dWZmV2hhdGV2ZXJGb3JtYXRQYXlsb2FkfSIsImRhdGFTaWduYXR1cmUiOiIweDE2MGRlMjIzNDc1NmY0MWNlYzU1MDZmNGZjZWUxZTg3MTUzNmYwZmI3YWVlN2EyMDE4ZmJjODdjOWRhNzNiZmM3Zjg5ZDQ0MDA2ZDAzN2Y5YmEzZTc0NmIxNDIzMTJiNWU5Nzc1MTRkZDAwNjlhNDUwODdlNDRmZGY1Y2VhNmM2MDEiLCJzZWNyZXQiOiJNeSBhbWF6aW5nIHNlY3JldCIsInNlY3JldFNpZ25hdHVyZSI6IjB4YzY5MWUyMTdhOTZlNGVhZTQ5MDhmYzM4MjlmNGVmNDk0MDBlNDc1MGIxNzZmMWJiMDhlYWE3MjM2NTkzOTJjNDY3NTZhMGMzODQ0Yzk0NTEwZTkxNDdjYjllZDhiOWY0Yjc2MGJlZGM2YjZiNTJhOWM0MTMyMDA5ODAyNTk1YjMwMCJ9XQ==",
+    "status": "status"
+  },
+  {
+    "vendorReference": "ref 1542993837015",
+    "eventId": "3",
+    "payload": "payload",
+    "email": "customer3@aventus.io",
+    "secret": "cb80109a-22aa-41bf-9e28-eea721d5b4ab",
+    "link": "artos.ticketwallet://+?payload=W3siZXZlbnRJZCI6IjUiLCJ0aWNrZXRSZWZlcmVuY2UiOiJyZWYgMTU0Mjk5MzgzNzAxNSIsInBheWxvYWQiOiJ7c29tZVN0dWZmV2hhdGV2ZXJGb3JtYXRQYXlsb2FkfSIsImRhdGFTaWduYXR1cmUiOiIweDRkM2FjZTAxNzY5NzhkYjczMjkyN2Y4MWY1OWYyZTQxYTMxNWRmOTAxOTI3OTgyZjE1OGE4MmEzNzY1ODBkNzA0MWFjNzY5NTJhZmMyMTc2OGNkZWJlNjFkMTk5ZGI2M2Y2YzE5OGI1ZDJmMTc4ZmE5OGQ0NzlhODIyMmJiZGYxMDAiLCJzZWNyZXQiOiJNeSBhbWF6aW5nIHNlY3JldCIsInNlY3JldFNpZ25hdHVyZSI6IjB4YzY5MWUyMTdhOTZlNGVhZTQ5MDhmYzM4MjlmNGVmNDk0MDBlNDc1MGIxNzZmMWJiMDhlYWE3MjM2NTkzOTJjNDY3NTZhMGMzODQ0Yzk0NTEwZTkxNDdjYjllZDhiOWY0Yjc2MGJlZGM2YjZiNTJhOWM0MTMyMDA5ODAyNTk1YjMwMCJ9XQ==",
+    "status": "status"
+  },
+  {
+    "vendorReference": "ref 1542993841495",
+    "eventId": "3",
+    "payload": "payload",
+    "email": "customer4@aventus.io",
+    "secret": "9f7ab0e5-7d7d-4ab4-a142-faa2c2df1399",
+    "link": "artos.ticketwallet://+?payload=W3siZXZlbnRJZCI6IjUiLCJ0aWNrZXRSZWZlcmVuY2UiOiJyZWYgMTU0Mjk5Mzg0MTQ5NSIsInBheWxvYWQiOiJ7c29tZVN0dWZmV2hhdGV2ZXJGb3JtYXRQYXlsb2FkfSIsImRhdGFTaWduYXR1cmUiOiIweDljYjY5NjYwODQ3YzE5ZGNkMTJjZmVmNzcxZDU4NzI0NTkwMmMzOTBmOGZmZjNlYTM4MzhiZTQxMDFjYmViNGUzNjQzZDgxZmVkNGY0NjZjZTUzOGRlMWFkOGIyYTcyOTRlNWZhYWQ0MThlNDRkODAyNTEwY2NkNTM2NzRlYzM3MDEiLCJzZWNyZXQiOiJNeSBhbWF6aW5nIHNlY3JldCIsInNlY3JldFNpZ25hdHVyZSI6IjB4YzY5MWUyMTdhOTZlNGVhZTQ5MDhmYzM4MjlmNGVmNDk0MDBlNDc1MGIxNzZmMWJiMDhlYWE3MjM2NTkzOTJjNDY3NTZhMGMzODQ0Yzk0NTEwZTkxNDdjYjllZDhiOWY0Yjc2MGJlZGM2YjZiNTJhOWM0MTMyMDA5ODAyNTk1YjMwMCJ9XQ==",
+    "status": "status"
+  },
+  {
+    "vendorReference": "ref 1542993828967",
+    "eventId": "3",
+    "payload": "payload",
+    "email": "customer5@aventus.io",
+    "secret": "47fb3d8d-f480-42c1-aec9-c267790841be",
+    "link": "artos.ticketwallet://+?payload=W3siZXZlbnRJZCI6IjUiLCJ0aWNrZXRSZWZlcmVuY2UiOiJyZWYgMTU0Mjk5MzgyODk2OSIsInBheWxvYWQiOiJ7c29tZVN0dWZmV2hhdGV2ZXJGb3JtYXRQYXlsb2FkfSIsImRhdGFTaWduYXR1cmUiOiIweDNkNWU2NmZlNDQxZWJkY2ZiNTM2MmVmNTVjNTA2MWIzMTg4ODg4Yjk4ODRlNWUzZjFkNzllNTgxNjVlMTcyYzEyNzEzZDcxZjY1MmVhYTllMjBhZmNlNzhlOTE4MDZhNDIwY2NmNGU2NGVlMTMyYjQ1YTc0OWI1M2M0NzQ1OGVkMDAiLCJzZWNyZXQiOiJNeSBhbWF6aW5nIHNlY3JldCIsInNlY3JldFNpZ25hdHVyZSI6IjB4YzY5MWUyMTdhOTZlNGVhZTQ5MDhmYzM4MjlmNGVmNDk0MDBlNDc1MGIxNzZmMWJiMDhlYWE3MjM2NTkzOTJjNDY3NTZhMGMzODQ0Yzk0NTEwZTkxNDdjYjllZDhiOWY0Yjc2MGJlZGM2YjZiNTJhOWM0MTMyMDA5ODAyNTk1YjMwMCJ9XQ==",
+    "status": "status"
+  },
+  {
+    "vendorReference": "ref 1542993839534",
+    "eventId": "3",
+    "payload": "payload",
+    "email": "customer6@aventus.io",
+    "secret": "750a3cd7-4301-4e97-9dc3-e79b30d906be",
+    "link": "artos.ticketwallet://+?payload=W3siZXZlbnRJZCI6IjUiLCJ0aWNrZXRSZWZlcmVuY2UiOiJyZWYgMTU0Mjk5MzgzOTUzNCIsInBheWxvYWQiOiJ7c29tZVN0dWZmV2hhdGV2ZXJGb3JtYXRQYXlsb2FkfSIsImRhdGFTaWduYXR1cmUiOiIweGViZDVmNzRlNjcyYWRkMDRiNjUzNDY1YzYyMDhlMjQ0MTA4ZDlmMzU1MGJhNDk4YzZmNWQ4M2U5MTUxMWJjZDczMTQzZDU5YmFlNjI4NGZlNTljZmRkYmNhOTIwNDZkMmNlNDIwNTQxMGQ2ZTA5N2RiZjExZTM0ZDBkMzhlYjY0MDAiLCJzZWNyZXQiOiJNeSBhbWF6aW5nIHNlY3JldCIsInNlY3JldFNpZ25hdHVyZSI6IjB4YzY5MWUyMTdhOTZlNGVhZTQ5MDhmYzM4MjlmNGVmNDk0MDBlNDc1MGIxNzZmMWJiMDhlYWE3MjM2NTkzOTJjNDY3NTZhMGMzODQ0Yzk0NTEwZTkxNDdjYjllZDhiOWY0Yjc2MGJlZGM2YjZiNTJhOWM0MTMyMDA5ODAyNTk1YjMwMCJ9XQ==",
+    "status": "status"
+  }
+]
 ```
-
-## Cancel Tickets
-Now that you have a list of tickets for an event, you can now perform ticket management and cancel a specific ticket
-
-Using our Aventus RESTful API, you can specify a ticket to cancel from your language of choice. In this guide, we'll explore how you can use the Aventus API to:
-- Cancel a ticket
-
-First, take note of the method, and sample request. In this example guide you'll be cancelling tickets for an event you recently created.
-
-### Method: `DELETE`
-
-`DELETE /events`
-
-> Sample request: The following will cancel a specified ticket for a specified event
-
-```json
-{
-	"eventId": number,
-  "ticketId": number,
-  "ownerProof": "string"
-}
-```
-
-### Request Headers
-
-Parameter | Type | Description
---------- | ------- | -----------
-eventId* | number | event ID for reference
-ownerProof | string | Proof the user has permission
-
-
-> Sample Response: The following is the expected response for cancelling a specified ticket for a specified event
-
-```json
-Insert Example Response here
-```
-
-## Send Ticket Links
-blurb
-
-### Method: `POST`
-
-`POST /events`
-
-> Sample request: The following will send out ticket link emails for specified tickets
-
-```json
-{
-  "eventId": number,
-  "ticketId": number,
-  "ownerProof": "string"
-}
-```
-
-### Request Headers
-
-Parameter | Type | Description
---------- | ------- | -----------
-eventId* | number | event ID for reference
-ownerProof | string | Proof the user has permission
-
-
-
-> Sample Response: The following is the expected response for sending out ticket link emails for specified tickets
-
-```json
-Insert Example Response here
-```
-
-
-## Generate Doorlist
-blurb
-
-### Method: `GET`
-
-`GET /events`
-
-> Sample request: The following will generate a CSV doorlist for a specified event
-
-```json
-{
-  "eventId": number,
-  "ownerProof": "string"
-}
-```
-
-### Request Headers
-
-Parameter | Type | Description
---------- | ------- | -----------
-eventId* | number | event ID for reference
-ownerProof | string | Proof the user has permission
-
-
-
-> Sample Response: The following is the expected response for generating a CSV doorlist for a specified event
-
-```json
-Insert Example Response here
-```
-
-
-
-
 
 <!--- YOU ARE NOW ENTERING... KITTENs
 
@@ -521,14 +401,11 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 
 ## Delete a Specific Kitten
 
-
-
 ```shell
 curl "http://example.com/api/kittens/2"
   -X DELETE
   -H "Authorization: meowmeowmeow"
 ```
-
 
 
 > The above command returns JSON structured like this:
