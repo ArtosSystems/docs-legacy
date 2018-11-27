@@ -36,17 +36,11 @@ The Aventus Protocol is a global open standard for the exchange of tickets built
 
 Something of the blockchain are hard to deal with. We developed a family of services that help deal with the inherent challenges working with the blockchain provides.
 
-#### Patient
+**Patient** is a queuing system. A way to manage a large requests that will write to the blockchain. Think of the theortical ticket distribution systems that sends large amounts of requests to the blockchain, but the blockchain itself is really slow. Patient manages (i.e. queues) the transactions that are being sent to the blockchain. A user of Patient doesn’t need to know how to interact with the protocol as it operates as a high level layer between the protocol and the client. Patient users also don’t need to care about smart contracts, transaction fee’s etc. It auto adjusts the price paid for gas depending on the level of congestion on the blockchain.
 
-Patient is a queuing system. A way to manage a large requests that will write to the blockchain. Think of the theortical ticket distribution systems that sends large amounts of requests to the blockchain, but the blockchain itself is really slow. Patient manages (i.e. queues) the transactions that are being sent to the blockchain. A user of Patient doesn’t need to know how to interact with the protocol as it operates as a high level layer between the protocol and the client. Patient users also don’t need to care about smart contracts, transaction fee’s etc. It auto adjusts the price paid for gas depending on the level of congestion on the blockchain.
+**Honest** is a public API that allows any kind of application to look up information on the protocol. Anything that resides on the protocol can be seen and consumed by Honest.
 
-#### Honest
-
-Honest is a public API that allows any kind of application to look up information on the protocol. Anything that resides on the protocol can be seen and consumed by Honest.
-
-#### Modest
-
-The last, and largest of our virtue services. Modest, as the name suggests, is our scaling solution for the blockchain, but firstly for the Aventus Protocol itself. It utilises Merkle trees to allow much quicker, concurrent processing of objects to the blockchain.
+**Modest** is our scaling solution for the blockchain, but firstly for the Aventus Protocol itself. It utilises Merkle trees to allow much quicker, concurrent processing of objects to the blockchain.
 
 #### AWS Lambdas
 
