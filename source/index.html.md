@@ -111,7 +111,7 @@ What you can do?
 Aventus makes creating and managing events and tickets on the blockchain easy. Find the documentation, sample code, and developer tools you need to build exactly what you want, fast. We’ll handle the complexity of blockchain and the Aventus Protocol. Let’s get building!
 
 <aside class="warning">
-As of now, these API endpoints and resources are WIP. They will be updated as soon as possible to reflect the product as is. However, the guides themselves are relevant and correct.
+**Please note**: As of now, these API endpoints and resources are a "Work In Progress". They will be updated as soon as possible to reflect the product as is. However, the guides themselves are relevant and correct.
 </aside>
 
 ## Create Event
