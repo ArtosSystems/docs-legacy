@@ -5,7 +5,7 @@ Artos is committed to making the developer experience as smooth as possible. Par
 
 ## Aventus.JS/Aventus4S
 
-Aventus.JS/4S are our low level SDKS. Essentially, this is the glue between the mainnet and other software Artos have produced. We will include code snippets here to help you interact with the protocol directly.
+Aventus.JS/4S are our low level SDKS. Aventus JS is a JavaScript library, whilst Aventus4S is a Scala library. Essentially, this is the glue between the mainnet and other software Artos have produced. We will include code snippets here to help you interact with the protocol directly.
 
 ## High Level SDKs
 
