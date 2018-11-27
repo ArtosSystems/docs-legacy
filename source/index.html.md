@@ -11,7 +11,7 @@ toc_footers:
 includes:
   - errors
   - Wallet Modularisation
-  - Agency Admin Panel
+  - agency admin panel
   - SDKs
   - glossary
 
