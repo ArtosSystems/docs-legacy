@@ -9,10 +9,10 @@ toc_footers:
   - <a href='https://github.com/AventusProtocolFoundation/protocol'>Aventus Protocol on GitHub</a>
 
 includes:
+  - errors
   - Wallet Modularisation
   - Agency Admin Panel
   - SDKs
-  - errors
   - glossary
 
 search: true
