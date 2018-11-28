@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: Artos Systems Documentation Portal
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - json
@@ -7,6 +7,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/AventusProtocolFoundation/protocol'>Aventus Protocol on GitHub</a>
+  - <a href='https://github.com/ArtosSystems/'>Artos Systems on GitHub</a>
 
 includes:
   - errors
