@@ -30,7 +30,7 @@ As shown in the above architecture diagram our technology stack is built in laye
 
 ### Aventus Protocol
 
-The Aventus Protocol is a global open standard for the exchange of tickets built upon the blockchain composed of smart contracts that allow for the creation and validation of events, the issuance and distribution of tickets in primary and secondary ticket markets.
+The Aventus Protocol is a global open standard for the exchange of tickets built upon the blockchain composed of smart contracts that allow for the creation and validation of events, the issuance and distribution of tickets in primary and secondary ticket markets. For more information, please refer to our [Whitepaper](https://aventus.io/doc/whitepaper.pdf) - or for a shorter read, our [Lightpaper](https://aventus.io/doc/lightpaper.pdf).
 
 ### Protocol Abstraction
 
