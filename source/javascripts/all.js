@@ -2,4 +2,11 @@
 //= require ./app/_search
 
 // links in new tab
-$("#content a[href^='http://']").attr("target","_blank");
+$(‘body’).delegate(“a”,”click”,function() {
+var a = new RegExp(‘/’ + window.location.host + ‘/’);
+if(!a.test(this.href)) {
+event.preventDefault();
+event.stopPropagation();
+window.open(this.href, ‘_blank’);
+}
+});
