@@ -36,9 +36,6 @@ html, body {
   -webkit-text-size-adjust: none; /* Never autoresize text */
 }
 
-a {
-}
-
 ////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 ////////////////////////////////////////////////////////////////////////////////
@@ -445,6 +442,8 @@ a {
   p, li, dt, dd {
     line-height: 1.6;
     margin-top: 0;
+    text-align: justify;
+    text-justify: inter-word;
   }
 
   img {
