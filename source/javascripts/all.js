@@ -12,4 +12,4 @@ $(function() {
   window.open(this.href, ‘_blank’);
   }
   })
-};
+});
