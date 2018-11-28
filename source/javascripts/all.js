@@ -11,4 +11,5 @@ $(function() {
   event.stopPropagation();
   window.open(this.href, ‘_blank’);
   }
-  });
+  })
+};
