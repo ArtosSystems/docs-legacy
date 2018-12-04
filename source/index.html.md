@@ -69,9 +69,9 @@ The Aventus Ticket Wallet is a white-label mobile application acting as the user
 
 As we will elaborate on further down this documentation, the Ticket Wallet has been built in a modular fashion. As such, our white label solution _doesn't need_ to be the starting point of integrating our tickets with your application. In the section concerning the Ticket Wallet Modules specifically, we will list the options available for you.
 
-#### Agency Admin Panel
+#### METaL
 
-The Agency Admin Panel is our protocol level interface for clients to create and manage events that will be delivered with the assistance of the Aventus Protocol. It enables users to create events and tickets with relevant CRUD functions. Further detail is provided later in this document.
+METaL is our protocol level interface for clients to create and manage events that will be delivered with the assistance of the Aventus Protocol. It enables users to create events and tickets with relevant CRUD functions. Further detail is provided later in this document.
 
 # Before You Begin
 
