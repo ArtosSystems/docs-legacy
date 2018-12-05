@@ -15,6 +15,7 @@ includes:
   - aap
   - SDKs
   - glossary
+  - ticket
 
 search: true
 ---
