@@ -257,13 +257,13 @@
                     <a href="#retrieve-event-list" class="toc-h2 toc-link" data-title="Retrieve Event List">Retrieve Event List</a>
                   </li>
                   <li>
-                    <a href="#ticket-definition" class="toc-h2 toc-link" data-title="Ticket Definition">Ticket Definition</a>
-                  </li>
-                  <li>
                     <a href="#create-tickets" class="toc-h2 toc-link" data-title="Create Tickets">Create Tickets</a>
                   </li>
                   <li>
                     <a href="#retrieve-ticket-list" class="toc-h2 toc-link" data-title="Retrieve Ticket List">Retrieve Ticket List</a>
+                  </li>
+                  <li>
+                    <a href="#ticket-definition" class="toc-h2 toc-link" data-title="Ticket Definition">Ticket Definition</a>
                   </li>
               </ul>
           </li>
@@ -549,88 +549,6 @@ As of now, there is no need to authenticate. Please see this section in the futu
 <td>Deposit cost for the event in AVT <em>(to be depricated)</em></td>
 </tr>
 </tbody></table>
-<h2 id='ticket-definition'>Ticket Definition</h2>
-<!--- Suppp Eth. I thought about this for a while and really, I'm going to change the 'reference' section to 'Response Headers' as stylistically it makes sense because that's what I'm actually exaplining here. It'll read better, but then I need to do the same to the event section as we didn't to response headers either. Then I can go and crop for style. Brb, running. --->
-
-<blockquote>
-<p>Example of what is used by a wallet to send to the API</p>
-</blockquote>
-<pre class="highlight plaintext"><code>secret -&gt; very_very_secret,
-payload -&gt; {\"eventName\": \"Stubborn Event\", \"eventTime\": 1543255200, \"eventVenue\": \"Hell\"},
-ticketRef -&gt; stubborn-4064,
-eventId -&gt; 1,
-primarySignedSecret -&gt; 0x7a4a1ade9fa66db3227574384fcd20dd244bed5ef36ed7fbab08e92f0ffa3e2949c1df37a5cf0f360bf500c72509f313238a2935158eb940753285505dfff25c00,
-doublySignedSecret -&gt; 0x655b1710acd74d630352bb25ad031d9803fdba094b3a921399300abbf85e95d83d3805b7b6057148f9134ce3ce52e3114614b15ab585b285fa45c7e55d99655000,
-primarySignedTicketData -&gt; 0xf126ffc2a84ed5bfec1a40a02be5af6fbddaee19796ae36feee1471c38aa6a80625cd3933a9739529c595e0544886cfbf0555f9d2a35a434f31f5dc963a8a37500,
-customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd59074d5f9616ad316054c658838dcc0286cb7dbb4d9057a7dddb69480d3f1cef19fe993e77327300
-</code></pre>
-<p>Before moving onto methods of interacting with tickets - a brief explainer on what a ticket consists of.</p>
-
-<p>The example provided is what an application would send to our API.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>secret</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>payload</td>
-<td>string</td>
-<td>contextual, non-unqiue which is attached to a ticket. includes but not exclusive to: event name, data, time, location</td>
-</tr>
-<tr>
-<td>ticketRef</td>
-<td>string</td>
-<td>unique identifier for a ticket</td>
-</tr>
-<tr>
-<td>eventId</td>
-<td>string</td>
-<td>a unique identifier used to reference an event on the Aventus Protocol</td>
-</tr>
-<tr>
-<td>primarySignedSecret</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>doublySignedSecret</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>primarySignedTicketData</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>customerSignedData</td>
-<td>string</td>
-<td></td>
-</tr>
-</tbody></table>
-
-<p>Anything that is <code>primarySigned</code> is coming from the link generator on completion of a ticket (through METaL). What has been signed by the customer (including <code>doublySignedSecret</code>) comes from the wallet.</p>
-
-<p><strong>Customer Signed Data contains:</strong></p>
-
-<p><code>customerSignedData = sign(“$payload|$eventId|$ticketRef|${link.secret}|$secretSignature|$doublySignedSecret|$ticketDataSignature”, customerPrivateKey)</code></p>
-
-<p><strong>doublySignedSecret contains:</strong></p>
-
-<p><code>doublySignedSecret = sign(primarySecretSignature, customerPrivateKey)</code></p>
-<h4 id='reference'>Reference</h4>
-<ul>
-<li><strong>payload</strong> = contextual, non-unqiue which is attached to a ticket. includes but not exclusive to: event name, data, time, location.</li>
-<li><strong>ticketRef</strong> = unique identifier for a ticket</li>
-</ul>
 <h2 id='create-tickets'>Create Tickets</h2>
 <p>Create new tickets for an event you created from your language of choice.</p>
 <h3 id='method-post-2'>Method: <code>POST</code></h3>
@@ -820,6 +738,83 @@ customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd590
 <td>&lt;!--- erm --&gt;</td>
 </tr>
 </tbody></table>
+<h2 id='ticket-definition'>Ticket Definition</h2>
+<!--- Suppp Eth. I thought about this for a while and really, I'm going to change the 'reference' section to 'Response Headers' as stylistically it makes sense because that's what I'm actually exaplining here. It'll read better, but then I need to do the same to the event section as we didn't to response headers either. Then I can go and crop for style. Brb, running. --->
+
+<blockquote>
+<p>Example of what is used by a wallet to send to the API</p>
+</blockquote>
+<pre class="highlight plaintext"><code>secret -&gt; very_very_secret,
+payload -&gt; {\"eventName\": \"Stubborn Event\", \"eventTime\": 1543255200, \"eventVenue\": \"Hell\"},
+ticketRef -&gt; stubborn-4064,
+eventId -&gt; 1,
+primarySignedSecret -&gt; 0x7a4a1ade9fa66db3227574384fcd20dd244bed5ef36ed7fbab08e92f0ffa3e2949c1df37a5cf0f360bf500c72509f313238a2935158eb940753285505dfff25c00,
+doublySignedSecret -&gt; 0x655b1710acd74d630352bb25ad031d9803fdba094b3a921399300abbf85e95d83d3805b7b6057148f9134ce3ce52e3114614b15ab585b285fa45c7e55d99655000,
+primarySignedTicketData -&gt; 0xf126ffc2a84ed5bfec1a40a02be5af6fbddaee19796ae36feee1471c38aa6a80625cd3933a9739529c595e0544886cfbf0555f9d2a35a434f31f5dc963a8a37500,
+customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd59074d5f9616ad316054c658838dcc0286cb7dbb4d9057a7dddb69480d3f1cef19fe993e77327300
+</code></pre>
+<p>Before moving onto methods of interacting with tickets - a brief explainer on what a ticket consists of.</p>
+
+<p>The example provided is what an application would send to our API.</p>
+<h4 id='reference'>Reference</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>secret</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>payload</td>
+<td>string</td>
+<td>contextual, non-unqiue which is attached to a ticket. includes but not exclusive to: event name, data, time, location</td>
+</tr>
+<tr>
+<td>ticketRef</td>
+<td>string</td>
+<td>unique identifier for a ticket</td>
+</tr>
+<tr>
+<td>eventId</td>
+<td>string</td>
+<td>a unique identifier used to reference an event on the Aventus Protocol</td>
+</tr>
+<tr>
+<td>primarySignedSecret</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>doublySignedSecret</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>primarySignedTicketData</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>customerSignedData</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p>Anything that is <code>primarySigned</code> is coming from the link generator on completion of a ticket (through METaL). What has been signed by the customer (including <code>doublySignedSecret</code>) comes from the wallet.</p>
+
+<p><strong>Customer Signed Data contains:</strong></p>
+
+<p><code>customerSignedData = sign(“$payload|$eventId|$ticketRef|${link.secret}|$secretSignature|$doublySignedSecret|$ticketDataSignature”, customerPrivateKey)</code></p>
+
+<p><strong>doublySignedSecret contains:</strong></p>
+
+<p><code>doublySignedSecret = sign(primarySecretSignature, customerPrivateKey)</code></p>
 
 <!--- YOU ARE NOW ENTERING... KITTENs
 
