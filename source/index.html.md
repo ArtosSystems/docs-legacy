@@ -174,6 +174,16 @@ offSaleTime | number |  The time that tickets will go off sale. Seconds since Ep
 ]
 ```
 
+### Response Headers
+
+Parameter | Type | Description
+--------- | ------- | -----------
+eventId  | string  | identifier for the event
+description  |  string | supporting information on the event itself
+onSaleTime  | string  | the date and time tickets will go on sale
+offSaleTime  | string  | the date and time tickets will go off sale
+price  | string  | average price of the tickets in USD
+avtDeposit  | string  | deposit cost for the event in AVT _(to be depricated)_
 ## Retrieve Event List
 Query for a list of active events from your language of choice.
 
@@ -212,6 +222,16 @@ Query for a list of active events from your language of choice.
 ]
 ```
 
+### Response Headers
+
+Parameter | Type | Description
+--------- | ------- | -----------
+eventId  | string  | identifier for the event
+description  |  string | supporting information on the event itself
+onSaleTime  | string  | the date and time tickets will go on sale
+offSaleTime  | string  | the date and time tickets will go off sale
+price  | string  | average price of the tickets in USD
+avtDeposit  | string  | deposit cost for the event in AVT _(to be depricated)_
 
 ## Ticket Definition
 
@@ -234,7 +254,6 @@ Before moving onto methods of interacting with tickets - a brief explainer on wh
 
 The example provided is what the Ticket Wallet sends to our API.
 
-### Response Headers
 
 Parameter | Type | Description
 --------- | ------- | -----------
