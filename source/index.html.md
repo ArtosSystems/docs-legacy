@@ -157,8 +157,8 @@ Parameter | Type | Description
 --------- | ------- | -----------
 eventDesc | string | A brief description of the event you are hosting, 200 characters maximum.
 eventSupportURL | string | If your event has a supporting link, to say the event on the artist website, please place here..
-onSaleTime | number | The time that tickets will go on sale. Seconds since Epoch.
-offSaleTime | number |  The time that tickets will go off sale. Seconds since Epoch.
+onSaleTime | interger | The time that tickets will go on sale. Seconds since Epoch.
+offSaleTime | interger |  The time that tickets will go off sale. Seconds since Epoch.
 
 
 > The following sample request has inputs for a potential event
@@ -216,12 +216,12 @@ Query for a list of active events from your language of choice.
 
 Parameter | Type | Description
 --------- | ------- | -----------
-eventId  | string  | Identifier for the event
+eventId  | interger  | Identifier for the event
 description  |  string | Brief description of the event you are hosting, 200 characters maximum
-onSaleTime  | string  | The time that tickets will go on sale. Seconds since Epoch.
-offSaleTime  | string  | The time that tickets will go off sale. Seconds since Epoch.
-price  | string  | Average price of the tickets in USD
-avtDeposit  | string  | Deposit cost for the event in AVT _(to be depricated)_
+onSaleTime  | interger  | The time that tickets will go on sale. Seconds since Epoch.
+offSaleTime  | interger  | The time that tickets will go off sale. Seconds since Epoch.
+price  | interger  | Average price of the tickets in USD (cents)
+avtDeposit  | interger  | Deposit cost for the event in AVT _(to be depricated)_
 
 
 
@@ -366,7 +366,7 @@ primarySignedTicketData -> 0xf126ffc2a84ed5bfec1a40a02be5af6fbddaee19796ae36feee
 customerSignedData -> 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd59074d5f9616ad316054c658838dcc0286cb7dbb4d9057a7dddb69480d3f1cef19fe993e77327300
 ```
 
-Before moving onto methods of interacting with tickets - a brief explainer on what a ticket consists of.
+Following on from the guides on interacting with tickets - a brief explainer on what a ticket consists of.
 
 The example provided is what an application would send to our API.
 
@@ -383,9 +383,9 @@ doublySignedSecret  | string  |
 primarySignedTicketData  | string  |
 customerSignedData  | string  |
 
-Anything that is `primarySigned` is coming from the link generator on completion of a ticket. What has been signed by the customer (including `doublySignedSecret`) comes from a wallet.
+Anything that is `primarySigned` is sent from a link generator on completion of a ticket. What has been signed by the customer (including `doublySignedSecret`) comes from a wallet.
 
-**Customer Signed Data contains:**
+**customerSignedData contains:**
 
 `customerSignedData = sign(“$payload|$eventId|$ticketRef|${link.secret}|$secretSignature|$doublySignedSecret|$ticketDataSignature”, customerPrivateKey)`
 
