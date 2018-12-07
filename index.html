@@ -260,6 +260,9 @@
                     <a href="#create-tickets" class="toc-h2 toc-link" data-title="Create Tickets">Create Tickets</a>
                   </li>
                   <li>
+                    <a href="#ticket-definition" class="toc-h2 toc-link" data-title="Ticket Definition">Ticket Definition</a>
+                  </li>
+                  <li>
                     <a href="#retrieve-ticket-list" class="toc-h2 toc-link" data-title="Retrieve Ticket List">Retrieve Ticket List</a>
                   </li>
               </ul>
@@ -272,6 +275,14 @@
           </li>
           <li>
             <a href="#metal" class="toc-h1 toc-link" data-title="METaL">METaL</a>
+          </li>
+          <li>
+            <a href="#aventus-tickets" class="toc-h1 toc-link" data-title="Aventus Tickets">Aventus Tickets</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ticket-links" class="toc-h2 toc-link" data-title="Ticket Links">Ticket Links</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#sdks" class="toc-h1 toc-link" data-title="SDKs">SDKs</a>
@@ -313,22 +324,10 @@
                   </li>
               </ul>
           </li>
-          <li>
-            <a href="#aventus-tickets" class="toc-h1 toc-link" data-title="Aventus Tickets">Aventus Tickets</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#ticket-links" class="toc-h2 toc-link" data-title="Ticket Links">Ticket Links</a>
-                  </li>
-                  <li>
-                    <a href="#ticket-definition" class="toc-h2 toc-link" data-title="Ticket Definition">Ticket Definition</a>
-                  </li>
-              </ul>
-          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a></li>
             <li><a href='https://github.com/AventusProtocolFoundation/protocol'>Aventus Protocol on GitHub</a></li>
-            <li><a href='https://github.com/ArtosSystems/'>Artos Systems on GitHub</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -573,7 +572,57 @@ As of now, there is no need to authenticate. Please see this section in the futu
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"status"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h2 id='retrieve-ticket-list'>Retrieve Ticket List</h2>
+</span></code></pre><h2 id='ticket-definition'>Ticket Definition</h2>
+<blockquote>
+<p>What a ticket <em>really</em> consists of</p>
+</blockquote>
+<pre class="highlight plaintext"><code>secret -&gt; very_very_secret,
+payload -&gt; {\"eventName\": \"Stubborn Event\", \"eventTime\": 1543255200, \"eventVenue\": \"Hell\"},
+ticketRef -&gt; stubborn-4064,
+eventId -&gt; 1,
+primarySignedSecret -&gt; 0x7a4a1ade9fa66db3227574384fcd20dd244bed5ef36ed7fbab08e92f0ffa3e2949c1df37a5cf0f360bf500c72509f313238a2935158eb940753285505dfff25c00,
+doublySignedSecret -&gt; 0x655b1710acd74d630352bb25ad031d9803fdba094b3a921399300abbf85e95d83d3805b7b6057148f9134ce3ce52e3114614b15ab585b285fa45c7e55d99655000,
+primarySignedTicketData -&gt; 0xf126ffc2a84ed5bfec1a40a02be5af6fbddaee19796ae36feee1471c38aa6a80625cd3933a9739529c595e0544886cfbf0555f9d2a35a434f31f5dc963a8a37500,
+customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd59074d5f9616ad316054c658838dcc0286cb7dbb4d9057a7dddb69480d3f1cef19fe993e77327300
+</code></pre>
+<p>The first example is what the Ticket Wallet sends to the nessessary lambda.</p>
+
+<p>Anything that is <code>primarySigned</code> is coming from the link generator on completion of a ticket (through METaL, mostly). What has been signed by the customer (including <code>doublySignedSecret</code>) comes from the wallet.</p>
+
+<blockquote>
+<p>Customer Signed Data contains:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">customerSignedData</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">sign(“$payload|$eventId|$ticketRef|$</span><span class="p">{</span><span class="err">link.secret</span><span class="p">}</span><span class="err">|$secretSignature|$doublySignedSecret|$ticketDataSignature”</span><span class="p">,</span><span class="w"> </span><span class="err">customerPrivateKey)</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>doublySignedSecret contains:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>doublySignedSecret = sign(primarySecretSignature, customerPrivateKey)
+</code></pre>
+<aside class="notice">
+For the current purposes of what we're doing right now, we have two kinds of ticket. A ticket, and a merkle leaf (one that is using our scaling solution, Modest) ticket. Currently, all tickets that we will produce are merkle leaf tickets - thus, all our examples are merkle leaf tickets.
+</aside>
+
+<blockquote>
+<p>An empty ticket specification</p>
+</blockquote>
+<pre class="highlight plaintext"><code>- Ticket Data
+- PuK1
+- Signed[Primary](TicketData, PuK1)
+- Signed[PrK2](Signed[Primary](DoorData))
+</code></pre><h4 id='definitions'>Definitions</h4>
+<ul>
+<li><strong>Primary</strong> a primary seller or event owner (event owners can sell their own tickets)</li>
+<li><strong>LeafContent</strong> the entirety of the leaf content: TicketData, PuK1, Signed<a href="TicketData,%20PuK1">Primary</a> and if non-integrated AC the Signed<a href="Signed[Primary]%20(DoorData)">PuK2</a></li>
+<li><strong>ticketData</strong> = eventID, vendorID, ticketMeta (potentially a JSON object used by wallet, contains things like; venue, seat #, gate #, etc.)</li>
+<li><strong>PuK1</strong> public key of ticket buyer, generated by wallet, used for proof of ticket ownership to blockchain (and proof at door if AC is integrated)</li>
+<li><strong>PuK2</strong> public key of ticket buyer, generated by wallet, used for proof of ticket at the door in the the non-integrated AC scenarios</li>
+<li><strong>NewPuK1</strong> public key of new ticket buyer when a ticket is resold on a secondary market, used for proof of ticket ownership to blockchain (and proof at door if AC is integrated)</li>
+<li><strong>Door Data (previously Secret or TicketKey)</strong> primary issued secret that is used to EC recover the ticket holders PuK2 in the non-integrated AC scenarios</li>
+<li><strong>Merkle Proof</strong> Used to check the validity of LeafContent by showing the complete path to a leaf within a Merkle Root</li>
+<li><strong>doublySignedSecret</strong> = sign(primarySecretSignature, customerPrivateKey)</li>
+</ul>
+<h2 id='retrieve-ticket-list'>Retrieve Ticket List</h2>
 <p>Now that you have created an event with tickets you can now retrieve a list of tickets associated with an event and see the status of each ticket</p>
 
 <p>Using our Aventus RESTful API, you can fetch a list of tickets for an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
@@ -845,6 +894,76 @@ As of now, this section is a placeholder, we will return to this as we approach 
 <aside class="notice">
 As of now, this section is a placeholder. As we update our products this section will be filled.
 </aside>
+<h1 id='aventus-tickets'>Aventus Tickets</h1>
+<p>On the Aventus Protocol - a ticket consists of specific pieces of data; some unique data used to identify and reference the ticket, and some metadata used by applications like the ticket wallet.</p>
+
+<p>Before tickets are written to the blockchain (either via our scaling service or directly) they exist in a preliminary stage as a hyperlink created by METaL to be loaded (or claimed) by a ticket wallet. Firstly, we&#39;ll define the content of a ticket link generated by METaL, then the definition of a merkle leaf ticket once opened by a wallet.</p>
+
+<aside class="notice">
+For the current purposes of what we're doing right now, we have two kinds of ticket. A blockchain ticket, and a merkle leaf (one that is using our scaling solution, Modest) ticket. All tickets that we will produce start off as merkle leaf tickets.
+</aside>
+<h2 id='ticket-links'>Ticket Links</h2>
+<p>The unique data inside of a ticket link consists of a vendor reference and an event ID. Metadata consists of everything else, i.e. other data that is relevant to the event itself.</p>
+
+<p>It is important to note that the Protocol has no opinion on what is inside of a ticket, it is up to clients to enforce and parse what a ticket really contains. With that in mind, it is possible to understand what extra pieces of metadata you may want to include inside of a ticket. It is not limited to what is below, but remember whatever client you build needs to be able to understand the JSON object structure below.</p>
+
+<p>Specifically, it is the combination of the vendorReference and eventId is what makes a ticket unique.</p>
+
+<p>The combination of the above, and ticketMeta (metadata, in our case, any other information that is stored in a ticket, such as venue, seat, gate, email, etc)</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>eventId*</td>
+<td>string</td>
+<td>a unique identifier used to reference an event on the Aventus Protocol</td>
+</tr>
+<tr>
+<td>vendorReference*</td>
+<td>string</td>
+<td>a unique identifier used to tie an event to a vendor (Primary)</td>
+</tr>
+<tr>
+<td>email*</td>
+<td>string</td>
+<td><strong>metadata</strong>: customer email address</td>
+</tr>
+<tr>
+<td>payload*</td>
+<td>string</td>
+<td><strong>metadata</strong>: provided by METaL</td>
+</tr>
+<tr>
+<td>secret*</td>
+<td>string</td>
+<td><strong>metadata</strong>: provided by METaL</td>
+</tr>
+<tr>
+<td>link*</td>
+<td>string</td>
+<td><strong>metadata</strong>: the link generated by METaL for use of a ticket in the Wallet.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+* indicates a required field
+</aside>
+<pre class="highlight plaintext"><code>{
+    "vendorReference": "ref 1543005210191",
+    "eventId": "3",
+    "payload": "payload",
+    "email": "customer2@aventus.io",
+    "secret": "7b52931c-e1a9-4b7d-bf06-c2f0d9562d3a",
+    "link": "artos.ticketwallet://+?payload=W3siZXZlbnRJZCI6IjUiLCJ0aWNrZXRSZWZlcmVuY2UiOiJyZWYgMTU0MzAwNTIxMDE5MSIsInBheWxvYWQiOiJ7c29tZVN0dWZmV2hhdGV2ZXJGb3JtYXRQYXlsb2FkfSIsImRhdGFTaWduYXR1cmUiOiIweDE2MGRlMjIzNDc1NmY0MWNlYzU1MDZmNGZjZWUxZTg3MTUzNmYwZmI3YWVlN2EyMDE4ZmJjODdjOWRhNzNiZmM3Zjg5ZDQ0MDA2ZDAzN2Y5YmEzZTc0NmIxNDIzMTJiNWU5Nzc1MTRkZDAwNjlhNDUwODdlNDRmZGY1Y2VhNmM2MDEiLCJzZWNyZXQiOiJNeSBhbWF6aW5nIHNlY3JldCIsInNlY3JldFNpZ25hdHVyZSI6IjB4YzY5MWUyMTdhOTZlNGVhZTQ5MDhmYzM4MjlmNGVmNDk0MDBlNDc1MGIxNzZmMWJiMDhlYWE3MjM2NTkzOTJjNDY3NTZhMGMzODQ0Yzk0NTEwZTkxNDdjYjllZDhiOWY0Yjc2MGJlZGM2YjZiNTJhOWM0MTMyMDA5ODAyNTk1YjMwMCJ9XQ==",
+    "status": "sent"
+  },
+</code></pre>
+<p>In terms of what a ticket looks like as a JSON object, see right (or above, if on mobile).</p>
 <h1 id='sdks'>SDKs</h1>
 <p>Artos is committed to making the developer experience as smooth as possible. Part of this effort is providing high-quality libraries you can use to access the API. The available libraries are listed below, and more are in development. If you don’t see what you need, check the open-source community for your platform, and let us know that you’d like to find one here!</p>
 <h2 id='aventus-js-aventus4s'>Aventus.JS/Aventus4S</h2>
@@ -972,126 +1091,6 @@ As of now, this section is a placeholder. As we update our products to include S
 <li><strong>Reporting</strong> Before the &quot;on-sale&quot; period; waiting for a potential challenge</li>
 <li><strong>Trading</strong> in the &quot;on-sale&quot; period</li>
 <li><strong>Inactive</strong> After sales period, waiting for endEvent to be called in order to release the deposit: a.k.a. Z O M B I E event</li>
-</ul>
-<h1 id='aventus-tickets'>Aventus Tickets</h1>
-<p>On the Aventus Protocol - a ticket consists of specific pieces of data; some unique data used to identify and reference the ticket, and some metadata used by applications like the ticket wallet.</p>
-
-<p>Before tickets are written to the blockchain (either via our scaling service or directly) they exist in a preliminary stage as a hyperlink created by METaL to be loaded (or claimed) by a ticket wallet. Firstly, we&#39;ll define the content of a ticket link generated by METaL, then the definition of a merkle leaf ticket once opened by a wallet.</p>
-
-<aside class="notice">
-For the current purposes of what we're doing right now, we have two kinds of ticket. A blockchain ticket, and a merkle leaf (one that is using our scaling solution, Modest) ticket. All tickets that we will produce start off as merkle leaf tickets.
-</aside>
-<h2 id='ticket-links'>Ticket Links</h2>
-<p>The unique data inside of a ticket link consists of a vendor reference and an event ID. Metadata consists of everything else, i.e. other data that is relevant to the event itself.</p>
-
-<p>It is important to note that the Protocol has no opinion on what is inside of a ticket, it is up to clients to enforce and parse what a ticket really contains. With that in mind, it is possible to understand what extra pieces of metadata you may want to include inside of a ticket. It is not limited to what is below, but remember whatever client you build needs to be able to understand the JSON object structure below.</p>
-
-<p>Specifically, it is the combination of the vendorReference and eventId is what makes a ticket unique.</p>
-
-<p>The combination of the above, and ticketMeta (metadata, in our case, any other information that is stored in a ticket, such as venue, seat, gate, email, etc)</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>eventId*</td>
-<td>string</td>
-<td>a unique identifier used to reference an event on the Aventus Protocol</td>
-</tr>
-<tr>
-<td>vendorReference*</td>
-<td>string</td>
-<td>a unique identifier used to tie an event to a vendor (Primary)</td>
-</tr>
-<tr>
-<td>email*</td>
-<td>string</td>
-<td><strong>metadata</strong>: customer email address</td>
-</tr>
-<tr>
-<td>payload*</td>
-<td>string</td>
-<td><strong>metadata</strong>: provided by METaL</td>
-</tr>
-<tr>
-<td>secret*</td>
-<td>string</td>
-<td><strong>metadata</strong>: provided by METaL</td>
-</tr>
-<tr>
-<td>link*</td>
-<td>string</td>
-<td><strong>metadata</strong>: the link generated by METaL for use of a ticket in the Wallet.</td>
-</tr>
-</tbody></table>
-
-<aside class="notice">
-* indicates a required field
-</aside>
-<pre class="highlight plaintext"><code>{
-    "vendorReference": "ref 1543005210191",
-    "eventId": "3",
-    "payload": "payload",
-    "email": "customer2@aventus.io",
-    "secret": "7b52931c-e1a9-4b7d-bf06-c2f0d9562d3a",
-    "link": "artos.ticketwallet://+?payload=W3siZXZlbnRJZCI6IjUiLCJ0aWNrZXRSZWZlcmVuY2UiOiJyZWYgMTU0MzAwNTIxMDE5MSIsInBheWxvYWQiOiJ7c29tZVN0dWZmV2hhdGV2ZXJGb3JtYXRQYXlsb2FkfSIsImRhdGFTaWduYXR1cmUiOiIweDE2MGRlMjIzNDc1NmY0MWNlYzU1MDZmNGZjZWUxZTg3MTUzNmYwZmI3YWVlN2EyMDE4ZmJjODdjOWRhNzNiZmM3Zjg5ZDQ0MDA2ZDAzN2Y5YmEzZTc0NmIxNDIzMTJiNWU5Nzc1MTRkZDAwNjlhNDUwODdlNDRmZGY1Y2VhNmM2MDEiLCJzZWNyZXQiOiJNeSBhbWF6aW5nIHNlY3JldCIsInNlY3JldFNpZ25hdHVyZSI6IjB4YzY5MWUyMTdhOTZlNGVhZTQ5MDhmYzM4MjlmNGVmNDk0MDBlNDc1MGIxNzZmMWJiMDhlYWE3MjM2NTkzOTJjNDY3NTZhMGMzODQ0Yzk0NTEwZTkxNDdjYjllZDhiOWY0Yjc2MGJlZGM2YjZiNTJhOWM0MTMyMDA5ODAyNTk1YjMwMCJ9XQ==",
-    "status": "sent"
-  },
-</code></pre>
-<p>In terms of what a ticket looks like as a JSON object, see right (or above, if on mobile).</p>
-<h2 id='ticket-definition'>Ticket Definition</h2>
-<blockquote>
-<p>What a ticket <em>really</em> consists of</p>
-</blockquote>
-<pre class="highlight plaintext"><code>secret -&gt; very_very_secret,
-payload -&gt; {\"eventName\": \"Stubborn Event\", \"eventTime\": 1543255200, \"eventVenue\": \"Hell\"},
-ticketRef -&gt; stubborn-4064,
-eventId -&gt; 1,
-primarySignedSecret -&gt; 0x7a4a1ade9fa66db3227574384fcd20dd244bed5ef36ed7fbab08e92f0ffa3e2949c1df37a5cf0f360bf500c72509f313238a2935158eb940753285505dfff25c00,
-doublySignedSecret -&gt; 0x655b1710acd74d630352bb25ad031d9803fdba094b3a921399300abbf85e95d83d3805b7b6057148f9134ce3ce52e3114614b15ab585b285fa45c7e55d99655000,
-primarySignedTicketData -&gt; 0xf126ffc2a84ed5bfec1a40a02be5af6fbddaee19796ae36feee1471c38aa6a80625cd3933a9739529c595e0544886cfbf0555f9d2a35a434f31f5dc963a8a37500,
-customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd59074d5f9616ad316054c658838dcc0286cb7dbb4d9057a7dddb69480d3f1cef19fe993e77327300
-</code></pre>
-<p>The first example is what the Ticket Wallet sends to the nessessary lambda.</p>
-
-<p>Anything that is <code>primarySigned</code> is coming from the link generator on completion of a ticket (through METaL, mostly). What has been signed by the customer (including <code>doublySignedSecret</code>) comes from the wallet.</p>
-
-<blockquote>
-<p>Customer Signed Data contains:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="err">customerSignedData</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">sign(“$payload|$eventId|$ticketRef|$</span><span class="p">{</span><span class="err">link.secret</span><span class="p">}</span><span class="err">|$secretSignature|$doublySignedSecret|$ticketDataSignature”</span><span class="p">,</span><span class="w"> </span><span class="err">customerPrivateKey)</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>doublySignedSecret contains:</p>
-</blockquote>
-<pre class="highlight plaintext"><code>doublySignedSecret = sign(primarySecretSignature, customerPrivateKey)
-</code></pre>
-<aside class="notice">
-For the current purposes of what we're doing right now, we have two kinds of ticket. A ticket, and a merkle leaf (one that is using our scaling solution, Modest) ticket. Currently, all tickets that we will produce are merkle leaf tickets - thus, all our examples are merkle leaf tickets.
-</aside>
-
-<blockquote>
-<p>An empty ticket specification</p>
-</blockquote>
-<pre class="highlight plaintext"><code>- Ticket Data
-- PuK1
-- Signed[Primary](TicketData, PuK1)
-- Signed[PrK2](Signed[Primary](DoorData))
-</code></pre><h4 id='definitions'>Definitions</h4>
-<ul>
-<li><strong>Primary</strong> a primary seller or event owner (event owners can sell their own tickets)</li>
-<li><strong>LeafContent</strong> the entirety of the leaf content: TicketData, PuK1, Signed<a href="TicketData,%20PuK1">Primary</a> and if non-integrated AC the Signed<a href="Signed[Primary]%20(DoorData)">PuK2</a></li>
-<li><strong>ticketData</strong> = eventID, vendorID, ticketMeta (potentially a JSON object used by wallet, contains things like; venue, seat #, gate #, etc.)</li>
-<li><strong>PuK1</strong> public key of ticket buyer, generated by wallet, used for proof of ticket ownership to blockchain (and proof at door if AC is integrated)</li>
-<li><strong>PuK2</strong> public key of ticket buyer, generated by wallet, used for proof of ticket at the door in the the non-integrated AC scenarios</li>
-<li><strong>NewPuK1</strong> public key of new ticket buyer when a ticket is resold on a secondary market, used for proof of ticket ownership to blockchain (and proof at door if AC is integrated)</li>
-<li><strong>Door Data (previously Secret or TicketKey)</strong> primary issued secret that is used to EC recover the ticket holders PuK2 in the non-integrated AC scenarios</li>
-<li><strong>Merkle Proof</strong> Used to check the validity of LeafContent by showing the complete path to a leaf within a Merkle Root</li>
-<li><strong>doublySignedSecret</strong> = sign(primarySecretSignature, customerPrivateKey)</li>
 </ul>
 
       </div>
