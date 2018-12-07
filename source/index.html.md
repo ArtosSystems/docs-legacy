@@ -221,6 +221,8 @@ First, take note of the method, and sample request. In this example guide you'll
 
 ## Ticket Definition
 
+<!--- Suppp Eth. I thought about this for a while and really, I'm going to change the 'reference' section to 'Response Headers' as stylistically it makes sense because that's what I'm actually exaplining here. It'll read better, but then I need to do the same to the event section as we didn't to response headers either. Then I can go and crop for style. Brb, running. --->
+
 > A Ticket to be consumed by the Ticket Wallet consists of
 
 ```
@@ -237,6 +239,19 @@ customerSignedData -> 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd59074d
 Before moving onto methods of interacting with tickets - a brief explainer on what a Ticket consists of.
 
 The example provided is what the Ticket Wallet sends to our API.
+
+### Response Headers
+
+Parameter | Type | Description
+--------- | ------- | -----------
+secret  | string  | a unique identifier used to reference an event on the Aventus Protocol
+payload  |  string | customer email address
+ticketRef  | string  |
+eventId  | string  |
+primarySignedSecret  | string  |
+doublySignedSecret  | string  |
+primarySignedTicketData  | string  |
+customerSignedData  | string  |
 
 Anything that is `primarySigned` is coming from the link generator on completion of a ticket (through METaL). What has been signed by the customer (including `doublySignedSecret`) comes from the wallet.
 
@@ -302,6 +317,18 @@ email  |  string | customer email address
 ]
 ```
 
+### Response Headers
+
+Parameter | Type | Description
+--------- | ------- | -----------
+vendorReference  | string  | a unique identifier used to reference a vendor on the Aventus Protocol
+eventId  |  string | a unique identifier used to reference an event on the  Protocol
+payload  | string  | contextual, non-unqiue data which is attached to a ticket. includes but not exclusive to: event name, data, time, location
+email  | string  | customer email address
+secret  | string  |
+link  | string  | the link to be sent to a customer which will open in their  Ticket Wallet
+status  | string  | <!--- erm -->
+
 ## Retrieve Ticket List
 Now that you have created an event with tickets you can now retrieve a list of tickets associated with an event and see the status of each ticket
 
@@ -365,6 +392,20 @@ First, take note of the method, and sample request. In this example guide you'll
   }
 ]
 ```
+
+
+### Response Headers
+
+Parameter | Type | Description
+--------- | ------- | -----------
+vendorReference  | string  | a unique identifier used to reference a vendor on the Aventus Protocol
+eventId  |  string | a unique identifier used to reference an event on the  Protocol
+payload  | string  | contextual, non-unqiue data which is attached to a ticket. includes but not exclusive to: event name, data, time, location
+email  | string  | customer email address
+secret  | string  |
+link  | string  | the link to be sent to a customer which will open in their  Ticket Wallet
+status  | string  | <!--- erm -->
+
 
 <!--- YOU ARE NOW ENTERING... KITTENs
 
