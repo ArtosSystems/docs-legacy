@@ -12,7 +12,7 @@ toc_footers:
 includes:
   - errors
   - Wallet Modularisation
-  - aap
+  - metal
   - SDKs
   - glossary
   - ticket
