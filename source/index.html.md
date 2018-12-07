@@ -130,12 +130,11 @@ Aventus makes creating and managing events and tickets on the blockchain easy. F
 ## Create Event
 The first thing we'd recommend you do is create an event. Events are the foundation of any content on the Aventus Protocol and must be in place before tickets can be issued and thus comes first in this guided flow.
 
-Using our Aventus RESTful API, you can create events on the protocol direct from your language of choice. In this guide, we'll explore how you can use the Aventus API to:
+Using our Aventus RESTful API, you can create events on the protocol direct from your language of choice. Here, we'll explore how you can use the Aventus API to:
 
   - Create a new event
   - Set parameters for your event
 
-First, take note of the method, and sample request. In this example guide you'll be creating your new event for 8000 people.
 
 ### Method: `POST`
 
@@ -176,12 +175,7 @@ offSaleTime | number |  The time that tickets will go off sale. Seconds since Ep
 ```
 
 ## Retrieve Event List
-Now that you have created an event you may want to retrieve these details from the protocol in order to keep track of your live events.
-
-Using our Aventus RESTful API, you can query for a list of active events from your language of choice. In this guide, we'll explore how you can use the Aventus API to:
-- See a list of active events
-
-First, take note of the method, and sample request. In this example guide you'll be retrieving the details of an event recently created.
+Query for a list of active events from your language of choice.
 
 ### Method: `GET`
 
@@ -273,13 +267,7 @@ Anything that is `primarySigned` is coming from the link generator on completion
 
 
 ## Create Tickets
-Now that you have created an event you can now generate and distribute tickets to customers
-
-Using our Aventus RESTful API, you can create new tickets for an event you created from your language of choice. In this guide, we'll explore how you can use the Aventus API to:
-- Generate new tickets
-- Distribute tickets via email
-
-First, take note of the method, and sample request. In this example guide you'll be creating tickets for an event you recently created.
+Create new tickets for an event you created from your language of choice.
 
 ### Method: `POST`
 
@@ -330,12 +318,8 @@ link  | string  | the link to be sent to a customer which will open in their  Ti
 status  | string  | <!--- erm -->
 
 ## Retrieve Ticket List
-Now that you have created an event with tickets you can now retrieve a list of tickets associated with an event and see the status of each ticket
+Retrieve a list of tickets associated with an event and see the status of each ticket
 
-Using our Aventus RESTful API, you can fetch a list of tickets for an event you created from your language of choice. In this guide, we'll explore how you can use the Aventus API to:
-- Fetch a list of tickets
-
-First, take note of the method, and sample request. In this example guide you'll be retrieving a list of ticket for an event you recently created.
 
 ### Method: `GET`
 
