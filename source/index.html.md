@@ -14,7 +14,6 @@ includes:
   - metal
   - SDKs
   - glossary
-  - ticket
 
 search: true
 ---
