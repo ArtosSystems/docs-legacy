@@ -417,14 +417,12 @@ As of now, there is no need to authenticate. Please see this section in the futu
 <h2 id='create-event'>Create Event</h2>
 <p>The first thing we&#39;d recommend you do is create an event. Events are the foundation of any content on the Aventus Protocol and must be in place before tickets can be issued and thus comes first in this guided flow.</p>
 
-<p>Using our Aventus RESTful API, you can create events on the protocol direct from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:</p>
+<p>Using our Aventus RESTful API, you can create events on the protocol direct from your language of choice. Here, we&#39;ll explore how you can use the Aventus API to:</p>
 
 <ul>
 <li>Create a new event</li>
 <li>Set parameters for your event</li>
 </ul>
-
-<p>First, take note of the method, and sample request. In this example guide you&#39;ll be creating your new event for 8000 people.</p>
 <h3 id='method-post'>Method: <code>POST</code></h3>
 <p><code>POST /events</code></p>
 
@@ -479,12 +477,7 @@ As of now, there is no need to authenticate. Please see this section in the futu
 </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre><h2 id='retrieve-event-list'>Retrieve Event List</h2>
-<p>Now that you have created an event you may want to retrieve these details from the protocol in order to keep track of your live events.</p>
-
-<p>Using our Aventus RESTful API, you can query for a list of active events from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
-- See a list of active events</p>
-
-<p>First, take note of the method, and sample request. In this example guide you&#39;ll be retrieving the details of an event recently created.</p>
+<p>Query for a list of active events from your language of choice.</p>
 <h3 id='method-get'>Method: <code>GET</code></h3>
 <p><code>GET /events</code></p>
 
@@ -600,13 +593,7 @@ customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd590
 <li><strong>ticketRef</strong> = unique identifier for a ticket</li>
 </ul>
 <h2 id='create-tickets'>Create Tickets</h2>
-<p>Now that you have created an event you can now generate and distribute tickets to customers</p>
-
-<p>Using our Aventus RESTful API, you can create new tickets for an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
-- Generate new tickets
-- Distribute tickets via email</p>
-
-<p>First, take note of the method, and sample request. In this example guide you&#39;ll be creating tickets for an event you recently created.</p>
+<p>Create new tickets for an event you created from your language of choice.</p>
 <h3 id='method-post-2'>Method: <code>POST</code></h3>
 <p><code>POST /tickets</code></p>
 
@@ -696,12 +683,7 @@ customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd590
 </tr>
 </tbody></table>
 <h2 id='retrieve-ticket-list'>Retrieve Ticket List</h2>
-<p>Now that you have created an event with tickets you can now retrieve a list of tickets associated with an event and see the status of each ticket</p>
-
-<p>Using our Aventus RESTful API, you can fetch a list of tickets for an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
-- Fetch a list of tickets</p>
-
-<p>First, take note of the method, and sample request. In this example guide you&#39;ll be retrieving a list of ticket for an event you recently created.</p>
+<p>Retrieve a list of tickets associated with an event and see the status of each ticket</p>
 <h3 id='method-get-2'>Method: <code>GET</code></h3>
 <p><code>GET /events/*eventId*/tickets</code></p>
 
