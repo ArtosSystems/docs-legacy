@@ -518,6 +518,8 @@ As of now, there is no need to authenticate. Please see this section in the futu
   </span><span class="p">},</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre><h2 id='ticket-definition'>Ticket Definition</h2>
+<!--- Suppp Eth. I thought about this for a while and really, I'm going to change the 'reference' section to 'Response Headers' as stylistically it makes sense because that's what I'm actually exaplining here. It'll read better, but then I need to do the same to the event section as we didn't to response headers either. Then I can go and crop for style. Brb, running. --->
+
 <blockquote>
 <p>A Ticket to be consumed by the Ticket Wallet consists of</p>
 </blockquote>
@@ -533,6 +535,55 @@ customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd590
 <p>Before moving onto methods of interacting with tickets - a brief explainer on what a Ticket consists of.</p>
 
 <p>The example provided is what the Ticket Wallet sends to our API.</p>
+<h3 id='response-headers'>Response Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>secret</td>
+<td>string</td>
+<td>a unique identifier used to reference an event on the Aventus Protocol</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>string</td>
+<td>customer email address</td>
+</tr>
+<tr>
+<td>ticketRef</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>eventId</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>primarySignedSecret</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>doublySignedSecret</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>primarySignedTicketData</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>customerSignedData</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody></table>
 
 <p>Anything that is <code>primarySigned</code> is coming from the link generator on completion of a ticket (through METaL). What has been signed by the customer (including <code>doublySignedSecret</code>) comes from the wallet.</p>
 
@@ -600,7 +651,51 @@ customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd590
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"status"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h2 id='retrieve-ticket-list'>Retrieve Ticket List</h2>
+</span></code></pre><h3 id='response-headers-2'>Response Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>vendorReference</td>
+<td>string</td>
+<td>a unique identifier used to reference a vendor on the Aventus Protocol</td>
+</tr>
+<tr>
+<td>eventId</td>
+<td>string</td>
+<td>a unique identifier used to reference an event on the  Protocol</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>string</td>
+<td>contextual, non-unqiue data which is attached to a ticket. includes but not exclusive to: event name, data, time, location</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>customer email address</td>
+</tr>
+<tr>
+<td>secret</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>link</td>
+<td>string</td>
+<td>the link to be sent to a customer which will open in their  Ticket Wallet</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>&lt;!--- erm --&gt;</td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-ticket-list'>Retrieve Ticket List</h2>
 <p>Now that you have created an event with tickets you can now retrieve a list of tickets associated with an event and see the status of each ticket</p>
 
 <p>Using our Aventus RESTful API, you can fetch a list of tickets for an event you created from your language of choice. In this guide, we&#39;ll explore how you can use the Aventus API to:
@@ -660,7 +755,51 @@ customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd590
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"status"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre><h3 id='response-headers-3'>Response Headers</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>vendorReference</td>
+<td>string</td>
+<td>a unique identifier used to reference a vendor on the Aventus Protocol</td>
+</tr>
+<tr>
+<td>eventId</td>
+<td>string</td>
+<td>a unique identifier used to reference an event on the  Protocol</td>
+</tr>
+<tr>
+<td>payload</td>
+<td>string</td>
+<td>contextual, non-unqiue data which is attached to a ticket. includes but not exclusive to: event name, data, time, location</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>customer email address</td>
+</tr>
+<tr>
+<td>secret</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>link</td>
+<td>string</td>
+<td>the link to be sent to a customer which will open in their  Ticket Wallet</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>&lt;!--- erm --&gt;</td>
+</tr>
+</tbody></table>
+
 <!--- YOU ARE NOW ENTERING... KITTENs
 
 # Here Be Kittens
@@ -867,13 +1006,13 @@ ID | The ID of the kitten to delete
 As of now, this section is a placeholder, we will return to this as we approach modularisation of our Ticket Wallet product.
 </aside>
 <h1 id='metal'>METaL</h1>
-<p>METaL is our protocol-level interface client allowing specified users to create and manage events, tickets and links on the Aventus Protocol. It provides a simple front end interface for users not willing to directly integrate with our API layer.</p>
+<p>METaL is our protocol-level interface client allowing specified users to create and manage events, tickets and links on the Aventus Protocol. It provides a simple front end reference interface for users not willing to directly integrate with our API layer.</p>
 
 <p>Most of the functionality is formatting data correctly to be ingested by the Protocol in the form of events and tickets. It does also allows users to distribute ticket links via email and generate a final doorlist of all valid ticket holders for access control purposes.</p>
 <h2 id='ticket-links'>Ticket Links</h2>
 <p>In the Aventus ecosystem - a ticket consists of specific pieces of data; some unique data used to identify and reference the ticket, and some metadata used by reference applications like the ticket wallet.</p>
 
-<p>Before tickets are written to the blockchain (either via Modest or directly) they exist in a preliminary stage as a hyperlink created by METaL to be loaded (or claimed) by a ticket wallet. Here we&#39;ll define the content of a ticket generated by METaL.</p>
+<p>Before tickets are written to the blockchain (either via Modest or directly) they exist in a preliminary stage as a hyperlink created by METaL to be loaded (or claimed) by a ticket wallet. Here we&#39;ll define a ticket as generated by METaL.</p>
 
 <table><thead>
 <tr>
@@ -912,11 +1051,20 @@ As of now, this section is a placeholder, we will return to this as we approach 
 <td>string</td>
 <td>metadata: the hyperlink generated by METaL containing all of the necessary information for the ticket wallet</td>
 </tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>metadata: identifier used by METaL to determine the current status of a ticket link</td>
+</tr>
 </tbody></table>
 
 <aside class="notice">
 * indicates a required field
 </aside>
+
+<blockquote>
+<p>Sample Response: The following is the expected response when creating a new ticket via METaL</p>
+</blockquote>
 <pre class="highlight plaintext"><code>{
     "vendorReference": "ref 1543005210191",
     "eventId": "3",
@@ -929,7 +1077,7 @@ As of now, this section is a placeholder, we will return to this as we approach 
 </code></pre>
 <p>As shown above the required fields eventId and vendorReference as a combination make a ticket unique allowing it to be properly referenced</p>
 
-<p>It is important to note that the metadata of a ticket is not limited to what is outlined above, this is only what our reference client METaL is utilising. Just ensure whatever client you build needs to be able to understand the following JSON object structure.</p>
+<p>It is important to note that the metadata of a ticket is not limited to what is outlined above, this is only what our reference client METaL is utilising. Just ensure whatever client you build needs to be able to understand the example JSON object structure.</p>
 <h1 id='sdks'>SDKs</h1>
 <p>Artos is committed to making the developer experience as smooth as possible. Part of this effort is providing high-quality libraries you can use to access the API. The available libraries are listed below, and more are in development. If you don’t see what you need, check the open-source community for your platform, and let us know that you’d like to find one here!</p>
 <h2 id='aventus-js-aventus4s'>Aventus.JS/Aventus4S</h2>
