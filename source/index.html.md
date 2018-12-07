@@ -124,11 +124,11 @@ What you can do?
 Aventus makes creating and managing events and tickets on the blockchain easy. Find the documentation, sample code, and developer tools you need to build exactly what you want, fast. We’ll handle the complexity of blockchain and the Aventus Protocol. Let’s get building!
 
 <aside class="warning">
-**Please note**: As of now, these API endpoints and resources are a "Work In Progress". They will be updated as soon as possible to reflect the product as is. However, the guides themselves are relevant and correct.
+Please note: As of now, these API endpoints and resources are a "Work In Progress". They will be updated as soon as possible to reflect the product as is. However, the guides themselves are relevant and correct.
 </aside>
 
 ## Create Event
-Firstly, we'd recommend you do is create an event. Events are the foundation of any content on the Protocol and must be in place before tickets can be issued and thus comes first in this guided flow.
+Firstly, we'd recommend you create an event. Events are the foundation of any content on the Protocol and must be in place before tickets can be issued.
 
 Using our RESTful API, you can create events on the protocol direct from your language of choice. Here, we'll explore how you can use the API to:
 
