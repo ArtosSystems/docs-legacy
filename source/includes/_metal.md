@@ -26,7 +26,7 @@ status | string | metadata: identifier used by METaL to determine the current st
 
 > Sample Response: The following is the expected response when creating a new ticket via METaL
 
-```JSON
+```json
 {
     "vendorReference": "ref 1543005210191",
     "eventId": "3",
@@ -39,5 +39,7 @@ status | string | metadata: identifier used by METaL to determine the current st
 ```
 
 As shown in the above table, the required fields eventId and vendorReference as a combination make a ticket unique, allowing it to be properly referenced.
+
+The link field contains the unique ticket data, the secret (signed by the primary via METaL), and the specific metadata required by a reference wallet to load the ticket properly in the payload.
 
 It is important to note that the metadata of a ticket is not limited to what is outlined above, this is only what our reference client METaL is utilising. Just ensure whatever client you build understands the JSON object structure as shown in the sample response.
