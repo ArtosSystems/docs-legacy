@@ -274,7 +274,7 @@ payload  | string  | contextual, non-unqiue data which is attached to a ticket. 
 email  | string  | customer email address
 secret  | string  |
 link  | string  | the link to be sent to a customer which will open in their  Ticket Wallet
-status  | string  | <!--- erm -->
+status  | string  | <!--- erm --->
 
 ## Retrieve Ticket List
 Retrieve a list of tickets associated with an event and see the status of each ticket
@@ -347,7 +347,7 @@ payload  | string  | contextual, non-unqiue data which is attached to a ticket. 
 email  | string  | customer email address
 secret  | string  |
 link  | string  | the link to be sent to a customer which will open in their  Ticket Wallet
-status  | string  | <!--- erm -->
+status  | string  | <!--- erm --->
 
 ## Ticket Definition
 
@@ -383,7 +383,7 @@ doublySignedSecret  | string  |
 primarySignedTicketData  | string  |
 customerSignedData  | string  |
 
-Anything that is `primarySigned` is coming from the link generator on completion of a ticket (through METaL). What has been signed by the customer (including `doublySignedSecret`) comes from the wallet.
+Anything that is `primarySigned` is coming from the link generator on completion of a ticket. What has been signed by the customer (including `doublySignedSecret`) comes from a wallet.
 
 **Customer Signed Data contains:**
 
