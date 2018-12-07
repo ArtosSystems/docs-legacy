@@ -40,6 +40,6 @@ status | string | metadata: identifier used by METaL to determine the current st
 
 As shown in the above table, the required fields eventId and vendorReference as a combination make a ticket unique, allowing it to be properly referenced.
 
-The link field contains the unique ticket data, the secret (signed by the primary via METaL), and the specific metadata required by a reference wallet to load the ticket properly in the payload.
+The link field contains the unique ticket data, the secret (signed by the primary via METaL), and the specific metadata required by a reference wallet to load the ticket properly in the payload so when this is opened on a mobile device a 'Load Ticket' action will trigger in a wallet.
 
 It is important to note that the metadata of a ticket is not limited to what is outlined above, this is only what our reference client METaL is utilising. Just ensure whatever client you build understands the JSON object structure as shown in the sample response.
