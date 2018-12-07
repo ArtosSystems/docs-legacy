@@ -128,9 +128,9 @@ Aventus makes creating and managing events and tickets on the blockchain easy. F
 </aside>
 
 ## Create Event
-The first thing we'd recommend you do is create an event. Events are the foundation of any content on the Aventus Protocol and must be in place before tickets can be issued and thus comes first in this guided flow.
+Firstly, we'd recommend you do is create an event. Events are the foundation of any content on the Protocol and must be in place before tickets can be issued and thus comes first in this guided flow.
 
-Using our Aventus RESTful API, you can create events on the protocol direct from your language of choice. Here, we'll explore how you can use the Aventus API to:
+Using our RESTful API, you can create events on the protocol direct from your language of choice. Here, we'll explore how you can use the API to:
 
   - Create a new event
   - Set parameters for your event
@@ -174,16 +174,6 @@ offSaleTime | number |  The time that tickets will go off sale. Seconds since Ep
 ]
 ```
 
-### Response Headers
-
-Parameter | Type | Description
---------- | ------- | -----------
-eventId  | string  | identifier for the event
-description  |  string | supporting information on the event itself
-onSaleTime  | string  | the date and time tickets will go on sale
-offSaleTime  | string  | the date and time tickets will go off sale
-price  | string  | average price of the tickets in USD
-avtDeposit  | string  | deposit cost for the event in AVT _(to be depricated)_
 ## Retrieve Event List
 Query for a list of active events from your language of choice.
 
@@ -226,18 +216,18 @@ Query for a list of active events from your language of choice.
 
 Parameter | Type | Description
 --------- | ------- | -----------
-eventId  | string  | identifier for the event
-description  |  string | supporting information on the event itself
-onSaleTime  | string  | the date and time tickets will go on sale
-offSaleTime  | string  | the date and time tickets will go off sale
-price  | string  | average price of the tickets in USD
-avtDeposit  | string  | deposit cost for the event in AVT _(to be depricated)_
+eventId  | string  | Identifier for the event
+description  |  string | Brief description of the event you are hosting, 200 characters maximum
+onSaleTime  | string  | The time that tickets will go on sale. Seconds since Epoch.
+offSaleTime  | string  | The time that tickets will go off sale. Seconds since Epoch.
+price  | string  | Average price of the tickets in USD
+avtDeposit  | string  | Deposit cost for the event in AVT _(to be depricated)_
 
 ## Ticket Definition
 
 <!--- Suppp Eth. I thought about this for a while and really, I'm going to change the 'reference' section to 'Response Headers' as stylistically it makes sense because that's what I'm actually exaplining here. It'll read better, but then I need to do the same to the event section as we didn't to response headers either. Then I can go and crop for style. Brb, running. --->
 
-> A Ticket to be consumed by the Ticket Wallet consists of
+> Example of what is used by a wallet to send to the API
 
 ```
 secret -> very_very_secret,
@@ -250,17 +240,17 @@ primarySignedTicketData -> 0xf126ffc2a84ed5bfec1a40a02be5af6fbddaee19796ae36feee
 customerSignedData -> 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd59074d5f9616ad316054c658838dcc0286cb7dbb4d9057a7dddb69480d3f1cef19fe993e77327300
 ```
 
-Before moving onto methods of interacting with tickets - a brief explainer on what a Ticket consists of.
+Before moving onto methods of interacting with tickets - a brief explainer on what a ticket consists of.
 
-The example provided is what the Ticket Wallet sends to our API.
+The example provided is what an application would send to our API.
 
 
 Parameter | Type | Description
 --------- | ------- | -----------
-secret  | string  | a unique identifier used to reference an event on the Aventus Protocol
-payload  |  string | customer email address
-ticketRef  | string  |
-eventId  | string  |
+secret  | string  | 
+payload  |  string | contextual, non-unqiue which is attached to a ticket. includes but not exclusive to: event name, data, time, location
+ticketRef  | string  | unique identifier for a ticket
+eventId  | string  | a unique identifier used to reference an event on the Aventus Protocol
 primarySignedSecret  | string  |
 doublySignedSecret  | string  |
 primarySignedTicketData  | string  |
