@@ -412,10 +412,10 @@ As of now, there is no need to authenticate. Please see this section in the futu
 <p>Aventus makes creating and managing events and tickets on the blockchain easy. Find the documentation, sample code, and developer tools you need to build exactly what you want, fast. We’ll handle the complexity of blockchain and the Aventus Protocol. Let’s get building!</p>
 
 <aside class="warning">
-**Please note**: As of now, these API endpoints and resources are a "Work In Progress". They will be updated as soon as possible to reflect the product as is. However, the guides themselves are relevant and correct.
+Please note: As of now, these API endpoints and resources are a "Work In Progress". They will be updated as soon as possible to reflect the product as is. However, the guides themselves are relevant and correct.
 </aside>
 <h2 id='create-event'>Create Event</h2>
-<p>Firstly, we&#39;d recommend you do is create an event. Events are the foundation of any content on the Protocol and must be in place before tickets can be issued and thus comes first in this guided flow.</p>
+<p>Firstly, we&#39;d recommend you create an event. Events are the foundation of any content on the Protocol and must be in place before tickets can be issued.</p>
 
 <p>Using our RESTful API, you can create events on the protocol direct from your language of choice. Here, we&#39;ll explore how you can use the API to:</p>
 
@@ -455,12 +455,12 @@ As of now, there is no need to authenticate. Please see this section in the futu
 </tr>
 <tr>
 <td>onSaleTime</td>
-<td>number</td>
+<td>interger</td>
 <td>The time that tickets will go on sale. Seconds since Epoch.</td>
 </tr>
 <tr>
 <td>offSaleTime</td>
-<td>number</td>
+<td>interger</td>
 <td>The time that tickets will go off sale. Seconds since Epoch.</td>
 </tr>
 </tbody></table>
@@ -520,7 +520,7 @@ As of now, there is no need to authenticate. Please see this section in the futu
 </thead><tbody>
 <tr>
 <td>eventId</td>
-<td>string</td>
+<td>interger</td>
 <td>Identifier for the event</td>
 </tr>
 <tr>
@@ -530,22 +530,22 @@ As of now, there is no need to authenticate. Please see this section in the futu
 </tr>
 <tr>
 <td>onSaleTime</td>
-<td>string</td>
+<td>interger</td>
 <td>The time that tickets will go on sale. Seconds since Epoch.</td>
 </tr>
 <tr>
 <td>offSaleTime</td>
-<td>string</td>
+<td>interger</td>
 <td>The time that tickets will go off sale. Seconds since Epoch.</td>
 </tr>
 <tr>
 <td>price</td>
-<td>string</td>
-<td>Average price of the tickets in USD</td>
+<td>interger</td>
+<td>Average price of the tickets in USD (cents)</td>
 </tr>
 <tr>
 <td>avtDeposit</td>
-<td>string</td>
+<td>interger</td>
 <td>Deposit cost for the event in AVT <em>(to be depricated)</em></td>
 </tr>
 </tbody></table>
@@ -753,7 +753,7 @@ doublySignedSecret -&gt; 0x655b1710acd74d630352bb25ad031d9803fdba094b3a921399300
 primarySignedTicketData -&gt; 0xf126ffc2a84ed5bfec1a40a02be5af6fbddaee19796ae36feee1471c38aa6a80625cd3933a9739529c595e0544886cfbf0555f9d2a35a434f31f5dc963a8a37500,
 customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd59074d5f9616ad316054c658838dcc0286cb7dbb4d9057a7dddb69480d3f1cef19fe993e77327300
 </code></pre>
-<p>Before moving onto methods of interacting with tickets - a brief explainer on what a ticket consists of.</p>
+<p>Following on from the guides on interacting with tickets - a brief explainer on what a ticket consists of.</p>
 
 <p>The example provided is what an application would send to our API.</p>
 <h4 id='reference'>Reference</h4>
@@ -806,9 +806,9 @@ customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd590
 </tr>
 </tbody></table>
 
-<p>Anything that is <code>primarySigned</code> is coming from the link generator on completion of a ticket. What has been signed by the customer (including <code>doublySignedSecret</code>) comes from a wallet.</p>
+<p>Anything that is <code>primarySigned</code> is sent from a link generator on completion of a ticket. What has been signed by the customer (including <code>doublySignedSecret</code>) comes from a wallet.</p>
 
-<p><strong>Customer Signed Data contains:</strong></p>
+<p><strong>customerSignedData contains:</strong></p>
 
 <p><code>customerSignedData = sign(“$payload|$eventId|$ticketRef|${link.secret}|$secretSignature|$doublySignedSecret|$ticketDataSignature”, customerPrivateKey)</code></p>
 
