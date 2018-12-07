@@ -252,7 +252,7 @@ Anything that is `primarySigned` is coming from the link generator on completion
 
 #### Reference
 
-- **payload** contextual, non-unqiue which is attached to a ticket. includes but not exclusive to: event name, data, time, location.
+- **payload** = contextual, non-unqiue which is attached to a ticket. includes but not exclusive to: event name, data, time, location.
 - **ticketRef** = unique identifier for a ticket
 
 
