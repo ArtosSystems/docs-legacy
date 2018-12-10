@@ -409,12 +409,6 @@ As of now, there is no need to authenticate. Please see this section in the futu
 Please note: As of now, these API endpoints and resources are a "Work In Progress". They will be updated as soon as possible to reflect the product as is. However, the guides themselves are relevant and correct.
 </aside>
 <h2 id='create-event'>Create Event</h2>
-<p>Using our RESTful API, you can create events on the protocol direct from your language of choice.</p>
-
-<p><em>Events must be in place before tickets can be issued.</em></p>
-<h3 id='method-post'>Method: <code>POST</code></h3>
-<p><code>POST /events</code></p>
-
 <blockquote>
 <p>The following is an empty sample request</p>
 </blockquote>
@@ -424,6 +418,24 @@ Please note: As of now, these API endpoints and resources are a "Work In Progres
     </span><span class="s2">"onSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
     </span><span class="s2">"offSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Using our RESTful API, you can create events on the protocol direct from your language of choice.</p>
+
+<p><em>Events must be in place before tickets can be issued.</em></p>
+<h3 id='method-post'>Method: <code>POST</code></h3>
+<p><code>POST /events</code></p>
+
+<blockquote>
+<p>The following sample request has inputs for a potential event</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"eventDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kendrick Lamar, Brixton Academy, London, 18+"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"eventSupportURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.kendricklamar.com/tour"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"onSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574500752</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"offSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1573250035</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre><h3 id='request-headers'>Request Headers</h3>
 <table><thead>
 <tr>
@@ -453,19 +465,7 @@ Please note: As of now, these API endpoints and resources are a "Work In Progres
 <td>The time that tickets will go off sale. Seconds since Epoch.</td>
 </tr>
 </tbody></table>
-
-<blockquote>
-<p>The following sample request has inputs for a potential event</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"eventDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kendrick Lamar, Brixton Academy, London, 18+"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"eventSupportURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.kendricklamar.com/tour"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"onSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574500752</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"offSaleTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1573250035</span><span class="p">,</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre><h2 id='retrieve-event-list'>Retrieve Event List</h2>
+<h2 id='retrieve-event-list'>Retrieve Event List</h2>
 <p>Query for a list of active events from your language of choice.</p>
 <h3 id='method-get'>Method: <code>GET</code></h3>
 <p><code>GET /events</code></p>
