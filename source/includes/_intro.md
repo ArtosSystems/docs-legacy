@@ -22,11 +22,11 @@ Patient is a data queuing system for the blockchain. It acts as a way to manage 
 
 #### Honest
 
-Honest is a publicly accessible history of transactions on the Protocol implemented as an API that allows any service to look up information. Each time a transaction is made, Honest reads any Solidity logs emitted to compile a complete and queryable history of data written to the blockchain.
+Honest is a publicly accessible history of transactions on the Protocol implemented as an API that allows any service to look up information. Each time a transaction is made, Honest reads any Solidity logs emitted to compile a complete and queryable history of data written to the blockchain via the Protocol. The nature of an open blockchain means that data is available to everyone and immutable, but our read service Honest makes this data more accessible than a direct read query to Ethereum.
 
 #### Modest
 
-Modest is our scaling solution for the blockchain, but firstly for the Aventus Protocol itself. It utilises Merkle trees to allow much quicker, concurrent processing of objects to the blockchain.
+Because the Ethereum blockchain has some issues with scaling we've built our own Merkle Tree based solution named Modest for use with the Protocol. It allows for large quantities of ticket data to be sent to the blockchain en masse in the form of Merkle Roots.
 
 <aside class="notice">In the future we will add a specification for Modest here, and also a deeper explanation of how it works and how you can roll your own solution.</aside>
 
@@ -36,7 +36,7 @@ We employ the use of AWS Lambdas throughout the technology stack as serverless m
 
 #### API Gateways
 
-The core product you will be interacting with. A RESTful inteface to give you easy interaction with the protocol. For more, see below.
+The API is the core service developers will be interacting with when utilising the Aventus Protocol. We have provided a RESTful interface to give you easy access to the various functions of the Protocol and will continue to update these endpoints when new methods are added. For more information see the (API Guides)[#API- Guide] section below.
 
 #### SDKs
 
@@ -46,13 +46,11 @@ Including, but not exhaustive: Aventus4S - our Scala library for interacting wit
 
 #### White-Label Ticket Wallet
 
-The Aventus Ticket Wallet is a white-label mobile application acting as the user facing client for loading and viewing tickets issued by the event creator. Originally designed as a proof-of-concept to show our end-to-end solution including access control but is built in a modular fashion to allow third parties to brand their own wallet using our technology under the hood.
+The Aventus Ticket Wallet is a white-label mobile application acting as the user facing client for loading and viewing tickets issued by the event creator. Originally designed as a proof-of-concept to show our end-to-end solution including access control, but built in a modular fashion to allow third parties to brand their own wallet using our technology under the hood.
 
-<!--- Ermmmm??? This API documentation aims to make interacting the the Aventus Protocol as simple and straightforward as possible. --->
+##### Wallet Modules
 
-#### Ticket Wallet Modules
-
-As we will elaborate on further down this documentation, the Ticket Wallet has been built in a modular fashion. As such, our white label solution _doesn't need_ to be the starting point of integrating our tickets with your application. In the section concerning the Ticket Wallet Modules specifically, we will list the options available for you.
+As mentioned the wallet has been built to make sure features are bundled in modules meaning they can be added/removed without affecting the core functionality of the app (loading and displaying Aventus Protocol tickets). This modularity means a third party doesn't necessarily need to build their own version of the wallet _or_ use ours wholesale. This is covered in more depth in the (Ticket Wallet Modules)[#The-Ticket-Wallet-Modules] to be found below.
 
 #### METaL App
 
