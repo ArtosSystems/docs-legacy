@@ -14,7 +14,7 @@ includes:
   - gettingStarted
   - apiGuides
   - errors
-  - Wallet Modularisation
+  - walletModularisation
   - metal
   - SDKs
   - glossary
