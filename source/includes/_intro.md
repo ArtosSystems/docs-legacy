@@ -54,7 +54,7 @@ As mentioned the wallet has been built to make sure features are bundled in modu
 
 #### METaL App
 
-METaL is our protocol level interface for clients to create and manage events that will be delivered with the assistance of the Aventus Protocol. It enables users to create events and tickets with relevant CRUD functions. Further detail is provided later in this document.
+METaL is our protocol-level interface client allowing specified users to create and manage events, tickets and links on the Aventus Protocol. It provides a simple front end reference interface for users not willing to directly integrate with the API layer outlined above. For more information, see the [METaL](#metal) section of this portal.
 
 # Before You Begin
 
