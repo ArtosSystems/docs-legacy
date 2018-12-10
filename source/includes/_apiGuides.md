@@ -152,7 +152,7 @@ payload  | string  | contextual, non-unqiue data which is attached to a ticket. 
 email  | string  | customer email address
 secret  | string  |
 link  | string  | the link to be sent to a customer which will open on their device
-status  | string  | <!--- erm --->
+status  | string  | _Currently unused_, later will become: status of the link, sent, unsent
 
 ## Retrieve Ticket List
 Retrieve a list of tickets associated with an event and see the status of each ticket
