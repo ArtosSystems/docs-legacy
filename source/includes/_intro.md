@@ -36,7 +36,7 @@ We employ the use of AWS Lambdas throughout the technology stack as serverless m
 
 #### API Gateways
 
-The API is the core service developers will be interacting with when utilising the Aventus Protocol. We have provided a RESTful interface to give you easy access to the various functions of the Protocol and will continue to update these endpoints when new methods are added. For more information see the (API Guides)[#API- Guide] section below.
+The API is the core service developers will be interacting with when utilising the Aventus Protocol. We have provided a RESTful interface to give you easy access to the various functions of the Protocol and will continue to update these endpoints when new methods are added. For more information see the [API Guides](#api-guides) section below.
 
 #### SDKs
 
@@ -50,7 +50,7 @@ The Aventus Ticket Wallet is a white-label mobile application acting as the user
 
 ##### Wallet Modules
 
-As mentioned the wallet has been built to make sure features are bundled in modules meaning they can be added/removed without affecting the core functionality of the app (loading and displaying Aventus Protocol tickets). This modularity means a third party doesn't necessarily need to build their own version of the wallet _or_ use ours wholesale. This is covered in more depth in the (Ticket Wallet Modules)[#The-Ticket-Wallet-Modules] to be found below.
+As mentioned the wallet has been built to make sure features are bundled in modules meaning they can be added/removed without affecting the core functionality of the app (loading and displaying Aventus Protocol tickets). This modularity means a third party doesn't necessarily need to build their own version of the wallet _or_ use ours wholesale. This is covered in more depth in the [Ticket Wallet Modules](#ticket-wallet-modules) to be found below.
 
 #### METaL App
 
