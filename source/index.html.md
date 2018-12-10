@@ -11,6 +11,7 @@ toc_footers:
 includes:
   - intro
   - auth
+  - gettingStarted
   - apiGuides
   - errors
   - walletModularisation
@@ -20,3 +21,11 @@ includes:
 
 search: true
 ---
+
+<!--- 
+title = What we see in the title bar in a browser
+language_tabs = What we display in the top right for language toggles, if we add a new language, we should add it to the tab and it'll deal with it.
+toc_footers = the bottom left links, maybe add contact?
+includes = the actual contents, nothing is here anymore, but these are the order they display in the left bar
+search = c'monnnn
+--->
