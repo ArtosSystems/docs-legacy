@@ -321,7 +321,14 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
+        <!---
+title = What we see in the title bar in a browser
+language_tabs = What we display in the top right for language toggles, if we add a new language, we should add it to the tab and it'll deal with it.
+toc_footers = the bottom left links, maybe add contact?
+includes = the actual contents, nothing is here anymore, but these are the order they display in the left bar
+search = c'monnnn
+--->
+<h1 id='introduction'>Introduction</h1>
 <p>We have developed the Aventus Protocol on behalf of the Aventus Foundation.</p>
 
 <p>Below you will find a general architecture diagram outlining our core services and where data is being processed from the point of entry via our RESTful API. Each of these distinct services makes up the Artos Systems ecosystem and we aim to continue to development on these technologies as our implementation matures.</p>
@@ -364,8 +371,6 @@
 
 <aside class="notice">A sandbox development environment is currently under construction to allow test access to our service. More info to follow.</aside>
 <h1 id='authentication'>Authentication</h1>
-<p>All requests to the Aventus APIs go over the web. Essentially this means that any system that can speak to the web, can speak to our APIs. Any and all language specific libraries and SDKs provided are really just wrappers which are providing some convenience and linguistic niceties to help you work with a simple, RESTful API.</p>
-
 <p>Aventus will create an Auth0 login for you to use, and thereafter: the Aventus API requires a header authorisation key/value pair for each request.</p>
 
 <blockquote>
@@ -1004,9 +1009,9 @@ ID | The ID of the kitten to delete
 As of now, this section is a placeholder, we will return to this as we approach modularisation of our Ticket Wallet product.
 </aside>
 <h1 id='metal'>METaL</h1>
-<p>METaL is our protocol-level interface client allowing specified users to create and manage events, tickets and links on the Aventus Protocol. It provides a simple front end reference interface for users not willing to directly integrate with the API layer outlined above.</p>
+<p>METaL is our protocol-level interface client allowing specified users to create and manage events, tickets and links on the Aventus Protocol. It provides a simple front-end reference interface for users not willing to directly integrate with the API layer outlined above.</p>
 
-<p>Most of the functionality is formatting data correctly to be ingested by our endpoints, and in turn, the Protocol, in the form of events and tickets. It does also allows users to distribute ticket links via email and generate a final doorlist of all valid ticket holders for access control purposes.</p>
+<p>Most of the functionality is formatting data correctly to be ingested by our endpoints, and in turn, the Protocol, in the form of events and tickets. It does also allow users to distribute ticket links via email and generate a final doorlist of all valid ticket holders for access control purposes.</p>
 <h2 id='ticket-links'>Ticket Links</h2>
 <p>In the Aventus ecosystem - a ticket consists of specific pieces of data; some unique data used to identify and reference the ticket, and some metadata used by reference applications like the ticket wallet.</p>
 
