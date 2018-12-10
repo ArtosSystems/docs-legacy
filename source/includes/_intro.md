@@ -46,7 +46,7 @@ Including, but not exhaustive: Aventus4S - our Scala library for interacting wit
 
 #### White-Label Ticket Wallet
 
-The Aventus Ticket Wallet is a white-label mobile application acting as the user facing client for loading and viewing tickets issued by the event creator. Originally designed as a proof-of-concept to show our end-to-end solution including access control, but built in a modular fashion to allow third parties to brand their own wallet using our technology under the hood.
+The Aventus Ticket Wallet is a white-label mobile application acting as the user facing client for loading and viewing tickets issued by the event creator. Originally designed as a proof-of-concept to show our end-to-end solution including access control, but built in a modular fashion to allow third parties to brand their own wallet using Protocol-compatible technology under the hood.
 
 ##### Wallet Modules
 
@@ -58,12 +58,12 @@ METaL is our protocol level interface for clients to create and manage events th
 
 # Before You Begin
 
-This guide acts as developer reference for integrating with Aventus Protocol RESTful API covering interaction with events and tickets hence any language and instructional information assumes an existing technical knowledge of interacting via an API and the typical practices involved.
+This guide acts as developer reference for integrating with Aventus Protocol RESTful API covering interaction with events and tickets, hence any language and instructional information assumes an existing technical knowledge of interacting via an API and the typical practices involved.
 
-By sending HTTPS requests to specific URLs (endpoints) as a registered user you can easily harness the power of the Aventus Protocol allowing us to handle any corresponding complexity with writing and reading the Ethereum blockchain.
+By sending HTTPS requests to specific URLs (endpoints) as a registered user you can easily harness the power of the Aventus Protocol allowing us to handle any corresponding complexity related to writing and reading the Ethereum blockchain.
 
 An API endpoint contains the URL of the resource that you want to access and the action that you want to complete on that resource. The action is indicated by the HTTP method of the request: GET, POST, PUT, or DELETE.
 
-When you send an API request, the server returns an HTTP response. The HTTP response contains a status code to indicate whether the request succeeded and the details of the response in the response body. Most resources format this response as JavaScript Object Notation (JSON). You can use the JSON packages or libraries that are built in to the programming language that you use to extract the data.
+When you send an API request, the server returns a HTTP response. The HTTP response contains a status code to indicate whether the request succeeded and the details of the response in the response body. Most resources format this response as JavaScript Object Notation (JSON). You can use the JSON packages or libraries that are built in to the programming language that you use to extract the data.
 
-Finally, Sandboxing abilities will be added to this document as we move towards completing our <kbd>Enterprise Grade</kbd> epic during Quarter 1.
+<aside class="notice">A sandbox development environment is currently under construction to allow test access to our service. More info to follow.</aside>
