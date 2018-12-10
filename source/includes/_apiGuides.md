@@ -46,7 +46,7 @@ _Events must be in place before tickets can be issued._
 Parameter | Type | Description
 --------- | ------- | -----------
 eventDesc | string | A brief description of the event you are hosting, 200 characters maximum.
-eventSupportURL | string | If your event has a supporting link, to say the event on the artist website, please place here..
+eventSupportURL | string | If your event has a supporting link, e.g. the event on the artist website, place here.
 onSaleTime | interger | The time that tickets will go on sale. Seconds since Epoch.
 offSaleTime | interger |  The time that tickets will go off sale. Seconds since Epoch.
 
@@ -225,7 +225,7 @@ payload  | string  | contextual, non-unqiue data which is attached to a ticket. 
 email  | string  | customer email address
 secret  | string  |
 link  | string  | the link to be sent to a customer which will open on their device
-status  | string  | <!--- erm --->
+status  | string  | _Currently unused_, later will become: status of the link, sent, unsent
 
 ## Ticket Definition
 
