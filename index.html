@@ -371,7 +371,12 @@ search = c'monnnn
 
 <aside class="notice">A sandbox development environment is currently under construction to allow test access to our service. More info to follow.</aside>
 <h1 id='authentication'>Authentication</h1>
-<p>Aventus will create an Auth0 login for you to use, and thereafter: the Aventus API requires a header authorisation key/value pair for each request.</p>
+<p>For operations where the output interacts with consumer held applications within our ecosystem, authentication will be given by Artos. We expect the Aventus API to require a header authorisation key/value pair for each request.</p>
+
+<!---
+USER STORY KLAXON
+As an Artos PO, I want to ensure our product is only accessible to authorized clients as to maintain the integrity of our services and keep gas costs down.
+--->
 
 <blockquote>
 <p>To authorize, use this code:</p>
@@ -384,12 +389,12 @@ curl <span class="s2">"api_endpoint_here"</span>
 <p>Make sure to replace <code>ticketticket</code> with your API key.</p>
 </blockquote>
 
-<p>Aventus expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>We expect for the API key to be included in all API requests to the server in a header that looks like the following:</p>
 
 <p><code>Authorization: ticketticket</code></p>
 
 <aside class="notice">
-As of now, there is no need to authenticate. Please see this section in the future for authentication details.
+Currently, there is no need to authenticate. Please see this section in the future for authentication details.
 </aside>
 <h1 id='api-guides'>API Guides</h1>
 <p>The following guides outline the individual actions available via the Aventus Protocol. Navigate to the required section to get more information on; how to access an endpoint, what data structure is expected to be sent, and what data structure a receiver will get back from an endpoint for a specific call. The methods are arranged in an order that a user would most likely follow when interacting with the Protocol in a typical event lifecycle (so some dependencies exist on previous API calls) but each endpoint can be accessed at any time by a valid user with the correct data input.</p>
