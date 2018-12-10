@@ -6,14 +6,6 @@ Please note: As of now, these API endpoints and resources are a "Work In Progres
 </aside>
 
 ## Create Event
-Using our RESTful API, you can create events on the protocol direct from your language of choice.
-
-_Events must be in place before tickets can be issued._
-
-
-### Method: `POST`
-
-`POST /events`
 
 > The following is an empty sample request
 
@@ -26,14 +18,14 @@ _Events must be in place before tickets can be issued._
 }
 ```
 
-### Request Headers
+Using our RESTful API, you can create events on the protocol direct from your language of choice.
 
-Parameter | Type | Description
---------- | ------- | -----------
-eventDesc | string | A brief description of the event you are hosting, 200 characters maximum.
-eventSupportURL | string | If your event has a supporting link, to say the event on the artist website, please place here..
-onSaleTime | interger | The time that tickets will go on sale. Seconds since Epoch.
-offSaleTime | interger |  The time that tickets will go off sale. Seconds since Epoch.
+_Events must be in place before tickets can be issued._
+
+
+### Method: `POST`
+
+`POST /events`
 
 
 > The following sample request has inputs for a potential event
@@ -48,6 +40,17 @@ offSaleTime | interger |  The time that tickets will go off sale. Seconds since 
 }
 ]
 ```
+
+### Request Headers
+
+Parameter | Type | Description
+--------- | ------- | -----------
+eventDesc | string | A brief description of the event you are hosting, 200 characters maximum.
+eventSupportURL | string | If your event has a supporting link, to say the event on the artist website, please place here..
+onSaleTime | interger | The time that tickets will go on sale. Seconds since Epoch.
+offSaleTime | interger |  The time that tickets will go off sale. Seconds since Epoch.
+
+
 
 ## Retrieve Event List
 Query for a list of active events from your language of choice.
