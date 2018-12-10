@@ -2,7 +2,7 @@
 
 The following guides outline the individual actions available via the Aventus Protocol. Navigate to the required section to get more information on; how to access an endpoint, what data structure is expected to be sent, and what data structure a receiver will get back from an endpoint for specific call. The methods are arranged in an order that a user would most likely follow when interacting with the Protocol in a typical event lifecycle (so some dependancies exist on previous API calls) but each endpoint can be accessed at anytime by a valid user with the correct data input.
 
-The sections below assume knowledge of the basic mechanics of the Aventus Protocol. If this is your first time here, have a look over the sections [above](#Introduction) before digging deeper into the documentation to get an overview of how our system works. 
+The sections below assume knowledge of the basic mechanics of the Aventus Protocol. If this is your first time here, have a look over the sections [above](#introduction) before digging deeper into the documentation to get an overview of how our system works. 
 
 Below find guides for the following:
 
