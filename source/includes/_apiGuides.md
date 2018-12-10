@@ -6,9 +6,10 @@ Please note: As of now, these API endpoints and resources are a "Work In Progres
 </aside>
 
 ## Create Event
-Firstly, we'd recommend you create an event. Events are the foundation of any content on the Protocol and must be in place before tickets can be issued.
-
 Using our RESTful API, you can create events on the protocol direct from your language of choice.
+
+_Events must be in place before tickets can be issued._
+
 
 ### Method: `POST`
 
@@ -225,7 +226,6 @@ status  | string  | <!--- erm --->
 
 ## Ticket Definition
 
-<!--- Suppp Eth. I thought about this for a while and really, I'm going to change the 'reference' section to 'Response Headers' as stylistically it makes sense because that's what I'm actually exaplining here. It'll read better, but then I need to do the same to the event section as we didn't to response headers either. Then I can go and crop for style. Brb, running. --->
 
 > Example of what is used by a wallet to send to the API
 
@@ -242,7 +242,7 @@ customerSignedData -> 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd59074d
 
 Following on from the guides on interacting with tickets - a brief explainer on what a ticket consists of.
 
-The example provided is what an application would send to our API.
+The example provided is what a white label consumer app would send to our API.
 
 #### Reference
 
