@@ -1,6 +1,6 @@
 # Authentication
 
-Aventus will create an Auth0 login for you to use, and thereafter: the Aventus API requires a header authorisation key/value pair for each request.
+For operations where the output interacts with consumer held applications within our ecosystem, authentication will be given by Artos. We expect the Aventus API to require a header authorisation key/value pair for each request.
 
 > To authorize, use this code:
 
@@ -13,10 +13,10 @@ curl "api_endpoint_here"
 
 > Make sure to replace `ticketticket` with your API key.
 
-Aventus expects for the API key to be included in all API requests to the server in a header that looks like the following:
+We expect for the API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: ticketticket`
 
 <aside class="notice">
-As of now, there is no need to authenticate. Please see this section in the future for authentication details.
+Currently, there is no need to authenticate. Please see this section in the future for authentication details.
 </aside>
