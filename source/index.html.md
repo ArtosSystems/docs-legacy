@@ -130,11 +130,7 @@ Please note: As of now, these API endpoints and resources are a "Work In Progres
 ## Create Event
 Firstly, we'd recommend you create an event. Events are the foundation of any content on the Protocol and must be in place before tickets can be issued.
 
-Using our RESTful API, you can create events on the protocol direct from your language of choice. Here, we'll explore how you can use the API to:
-
-  - Create a new event
-  - Set parameters for your event
-
+Using our RESTful API, you can create events on the protocol direct from your language of choice.
 
 ### Method: `POST`
 
@@ -245,7 +241,7 @@ Create new tickets for an event you created from your language of choice.
 
 Parameter | Type | Description
 --------- | ------- | -----------
-eventId  | string  | a unique identifier used to reference an event on the Aventus Protocol
+eventId  | string  | a unique identifier used to reference an event on the Protocol
 email  |  string | customer email address
 
 > Sample Response: The following is the expected response for creating a number of tickets for a specific event
@@ -268,12 +264,12 @@ email  |  string | customer email address
 
 Parameter | Type | Description
 --------- | ------- | -----------
-vendorReference  | string  | a unique identifier used to reference a vendor on the Aventus Protocol
+vendorReference  | string  | a unique identifier used to reference a vendor on the  Protocol
 eventId  |  string | a unique identifier used to reference an event on the  Protocol
 payload  | string  | contextual, non-unqiue data which is attached to a ticket. includes but not exclusive to: event name, data, time, location
 email  | string  | customer email address
 secret  | string  |
-link  | string  | the link to be sent to a customer which will open in their  Ticket Wallet
+link  | string  | the link to be sent to a customer which will open on their device
 status  | string  | <!--- erm --->
 
 ## Retrieve Ticket List
@@ -341,12 +337,12 @@ Retrieve a list of tickets associated with an event and see the status of each t
 
 Parameter | Type | Description
 --------- | ------- | -----------
-vendorReference  | string  | a unique identifier used to reference a vendor on the Aventus Protocol
+vendorReference  | string  | a unique identifier used to reference a vendor on the  Protocol
 eventId  |  string | a unique identifier used to reference an event on the  Protocol
 payload  | string  | contextual, non-unqiue data which is attached to a ticket. includes but not exclusive to: event name, data, time, location
 email  | string  | customer email address
 secret  | string  |
-link  | string  | the link to be sent to a customer which will open in their  Ticket Wallet
+link  | string  | the link to be sent to a customer which will open on their device
 status  | string  | <!--- erm --->
 
 ## Ticket Definition
@@ -377,13 +373,13 @@ Parameter | Type | Description
 secret  | string  |
 payload  |  string | contextual, non-unqiue which is attached to a ticket. includes but not exclusive to: event name, data, time, location
 ticketRef  | string  | unique identifier for a ticket
-eventId  | string  | a unique identifier used to reference an event on the Aventus Protocol
+eventId  | string  | a unique identifier used to reference an event on the Protocol
 primarySignedSecret  | string  |
 doublySignedSecret  | string  |
 primarySignedTicketData  | string  |
 customerSignedData  | string  |
 
-Anything that is `primarySigned` is sent from a link generator on completion of a ticket. What has been signed by the customer (including `doublySignedSecret`) comes from a wallet.
+Anything that is `primarySigned` is sent from a link generator on completion of a ticket. What has been signed by the customer (including `doublySignedSecret`) comes from a customer device.
 
 **customerSignedData contains:**
 
