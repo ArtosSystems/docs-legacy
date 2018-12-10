@@ -417,12 +417,7 @@ Please note: As of now, these API endpoints and resources are a "Work In Progres
 <h2 id='create-event'>Create Event</h2>
 <p>Firstly, we&#39;d recommend you create an event. Events are the foundation of any content on the Protocol and must be in place before tickets can be issued.</p>
 
-<p>Using our RESTful API, you can create events on the protocol direct from your language of choice. Here, we&#39;ll explore how you can use the API to:</p>
-
-<ul>
-<li>Create a new event</li>
-<li>Set parameters for your event</li>
-</ul>
+<p>Using our RESTful API, you can create events on the protocol direct from your language of choice.</p>
 <h3 id='method-post'>Method: <code>POST</code></h3>
 <p><code>POST /events</code></p>
 
@@ -572,7 +567,7 @@ Please note: As of now, these API endpoints and resources are a "Work In Progres
 <tr>
 <td>eventId</td>
 <td>string</td>
-<td>a unique identifier used to reference an event on the Aventus Protocol</td>
+<td>a unique identifier used to reference an event on the Protocol</td>
 </tr>
 <tr>
 <td>email</td>
@@ -606,7 +601,7 @@ Please note: As of now, these API endpoints and resources are a "Work In Progres
 <tr>
 <td>vendorReference</td>
 <td>string</td>
-<td>a unique identifier used to reference a vendor on the Aventus Protocol</td>
+<td>a unique identifier used to reference a vendor on the  Protocol</td>
 </tr>
 <tr>
 <td>eventId</td>
@@ -631,7 +626,7 @@ Please note: As of now, these API endpoints and resources are a "Work In Progres
 <tr>
 <td>link</td>
 <td>string</td>
-<td>the link to be sent to a customer which will open in their  Ticket Wallet</td>
+<td>the link to be sent to a customer which will open on their device</td>
 </tr>
 <tr>
 <td>status</td>
@@ -705,7 +700,7 @@ Please note: As of now, these API endpoints and resources are a "Work In Progres
 <tr>
 <td>vendorReference</td>
 <td>string</td>
-<td>a unique identifier used to reference a vendor on the Aventus Protocol</td>
+<td>a unique identifier used to reference a vendor on the  Protocol</td>
 </tr>
 <tr>
 <td>eventId</td>
@@ -730,7 +725,7 @@ Please note: As of now, these API endpoints and resources are a "Work In Progres
 <tr>
 <td>link</td>
 <td>string</td>
-<td>the link to be sent to a customer which will open in their  Ticket Wallet</td>
+<td>the link to be sent to a customer which will open on their device</td>
 </tr>
 <tr>
 <td>status</td>
@@ -782,7 +777,7 @@ customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd590
 <tr>
 <td>eventId</td>
 <td>string</td>
-<td>a unique identifier used to reference an event on the Aventus Protocol</td>
+<td>a unique identifier used to reference an event on the Protocol</td>
 </tr>
 <tr>
 <td>primarySignedSecret</td>
@@ -806,7 +801,7 @@ customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd590
 </tr>
 </tbody></table>
 
-<p>Anything that is <code>primarySigned</code> is sent from a link generator on completion of a ticket. What has been signed by the customer (including <code>doublySignedSecret</code>) comes from a wallet.</p>
+<p>Anything that is <code>primarySigned</code> is sent from a link generator on completion of a ticket. What has been signed by the customer (including <code>doublySignedSecret</code>) comes from a customer device.</p>
 
 <p><strong>customerSignedData contains:</strong></p>
 
