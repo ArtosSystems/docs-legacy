@@ -1,8 +1,8 @@
 # METaL
 
-METaL is our protocol-level interface client allowing specified users to create and manage events, tickets and links on the Aventus Protocol. It provides a simple front end reference interface for users not willing to directly integrate with the API layer outlined above.
+METaL is our protocol-level interface client allowing specified users to create and manage events, tickets and links on the Aventus Protocol. It provides a simple front-end reference interface for users not willing to directly integrate with the API layer outlined above.
 
-Most of the functionality is formatting data correctly to be ingested by our endpoints, and in turn, the Protocol, in the form of events and tickets. It does also allows users to distribute ticket links via email and generate a final doorlist of all valid ticket holders for access control purposes.
+Most of the functionality is formatting data correctly to be ingested by our endpoints, and in turn, the Protocol, in the form of events and tickets. It does also allow users to distribute ticket links via email and generate a final doorlist of all valid ticket holders for access control purposes.
 
 ## Ticket Links
 
