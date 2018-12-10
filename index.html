@@ -351,21 +351,21 @@
 <h4 id='sdks'>SDKs</h4>
 <p>Including, but not exhaustive: Aventus4S - our Scala library for interacting with the protocol, and AventusJS - our Javascript library for interacting with the protocol. As we develop more SDKs, we will insert them here and in the relevant sub section.</p>
 <h3 id='b2b-b2c-applications'>B2B/B2C Applications</h3><h4 id='white-label-ticket-wallet'>White-Label Ticket Wallet</h4>
-<p>The Aventus Ticket Wallet is a white-label mobile application acting as the user facing client for loading and viewing tickets issued by the event creator. Originally designed as a proof-of-concept to show our end-to-end solution including access control, but built in a modular fashion to allow third parties to brand their own wallet using our technology under the hood.</p>
+<p>The Aventus Ticket Wallet is a white-label mobile application acting as the user facing client for loading and viewing tickets issued by the event creator. Originally designed as a proof-of-concept to show our end-to-end solution including access control, but built in a modular fashion to allow third parties to brand their own wallet using Protocol-compatible technology under the hood.</p>
 <h5 id='wallet-modules'>Wallet Modules</h5>
 <p>As mentioned the wallet has been built to make sure features are bundled in modules meaning they can be added/removed without affecting the core functionality of the app (loading and displaying Aventus Protocol tickets). This modularity means a third party doesn&#39;t necessarily need to build their own version of the wallet <em>or</em> use ours wholesale. This is covered in more depth in the <a href="#ticket-wallet-modules">Ticket Wallet Modules</a> to be found below.</p>
 <h4 id='metal-app'>METaL App</h4>
 <p>METaL is our protocol level interface for clients to create and manage events that will be delivered with the assistance of the Aventus Protocol. It enables users to create events and tickets with relevant CRUD functions. Further detail is provided later in this document.</p>
 <h1 id='before-you-begin'>Before You Begin</h1>
-<p>This guide acts as developer reference for integrating with Aventus Protocol RESTful API covering interaction with events and tickets hence any language and instructional information assumes an existing technical knowledge of interacting via an API and the typical practices involved.</p>
+<p>This guide acts as developer reference for integrating with Aventus Protocol RESTful API covering interaction with events and tickets, hence any language and instructional information assumes an existing technical knowledge of interacting via an API and the typical practices involved.</p>
 
-<p>By sending HTTPS requests to specific URLs (endpoints) as a registered user you can easily harness the power of the Aventus Protocol allowing us to handle any corresponding complexity with writing and reading the Ethereum blockchain.</p>
+<p>By sending HTTPS requests to specific URLs (endpoints) as a registered user you can easily harness the power of the Aventus Protocol allowing us to handle any corresponding complexity related to writing and reading the Ethereum blockchain.</p>
 
 <p>An API endpoint contains the URL of the resource that you want to access and the action that you want to complete on that resource. The action is indicated by the HTTP method of the request: GET, POST, PUT, or DELETE.</p>
 
-<p>When you send an API request, the server returns an HTTP response. The HTTP response contains a status code to indicate whether the request succeeded and the details of the response in the response body. Most resources format this response as JavaScript Object Notation (JSON). You can use the JSON packages or libraries that are built in to the programming language that you use to extract the data.</p>
+<p>When you send an API request, the server returns a HTTP response. The HTTP response contains a status code to indicate whether the request succeeded and the details of the response in the response body. Most resources format this response as JavaScript Object Notation (JSON). You can use the JSON packages or libraries that are built in to the programming language that you use to extract the data.</p>
 
-<p>Finally, Sandboxing abilities will be added to this document as we move towards completing our <kbd>Enterprise Grade</kbd> epic during Quarter 1.</p>
+<aside class="notice">A sandbox development environment is currently under construction to allow test access to our service. More info to follow.</aside>
 <h1 id='authentication'>Authentication</h1>
 <p>All requests to the Aventus APIs go over the web. Essentially this means that any system that can speak to the web, can speak to our APIs. Any and all language specific libraries and SDKs provided are really just wrappers which are providing some convenience and linguistic niceties to help you work with a simple, RESTful API.</p>
 
