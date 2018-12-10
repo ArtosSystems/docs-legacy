@@ -11,7 +11,6 @@ toc_footers:
 includes:
   - intro
   - auth
-  - gettingStarted
   - apiGuides
   - errors
   - walletModularisation
