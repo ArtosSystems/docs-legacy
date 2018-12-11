@@ -1,6 +1,6 @@
 # Ticket Wallet Modules
 
-As described in the [Introduction](#introduction), our reference application Ticket Wallet is built in a modularised fashion allowing clients to select the parts they need to achieve the functionality required for their product. This section includes a full list of our available modules as well as the core wallet. The list is not exhaustive and in constant development so if there's something specific you're looking for feel free to contact Artos directly and we can discuss what your needs may be for future development.
+As described in the [Introduction](#introduction), our reference application Ticket Wallet is built in a modularised fashion allowing clients to select the parts they need to achieve the functionality required for their product. This section includes the core wallet functionality as well as a full list of our available modules. The list is not exhaustive and in constant development so if there's something specific you're looking for feel free to contact Artos directly and we can discuss what your needs may be for future development.
 
 Today, the following modules are available to you:
 
@@ -8,15 +8,15 @@ Wallet Core:
 
 - Receiving/Displaying Tickets
 - Create Ticket SDK
-- Key Pair Management (tbc)
 
 Wallet Optional:
 
 - Secondary Market functionality
 - Gift Ticket functionality
 - Dynamic QR Code
-- Secure Pin Entry (tbc)
-- On-boarding (tbc)
+- Key Pair Management (upcoming)
+- Secure Pin Entry (upcoming)
+- On-boarding (upcoming)
 
 When thinking about the wallet, consider the following options for delivery:
 
