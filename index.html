@@ -373,11 +373,6 @@ search = c'monnnn
 <h1 id='authentication'>Authentication</h1>
 <p>For operations where the output interacts with consumer held applications within our ecosystem, authentication will be given by Artos. We expect the Aventus API to require a header authorisation key/value pair for each request.</p>
 
-<!---
-USER STORY KLAXON
-As an Artos PO, I want to ensure our product is only accessible to authorized clients as to maintain the integrity of our services and keep gas costs down.
---->
-
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
@@ -963,7 +958,7 @@ ID | The ID of the kitten to delete
 </tr>
 </tbody></table>
 <h1 id='ticket-wallet-modules'>Ticket Wallet Modules</h1>
-<p>As described in the <a href="#introduction">Introduction</a>, our reference application Ticket Wallet is built in a modularised fashion allowing clients to select the parts they need to achieve the functionality required for their product. This section includes a full list of our available modules as well as the core wallet. The list is not exhaustive and in constant development so if there&#39;s something specific you&#39;re looking for feel free to contact Artos directly and we can discuss what your needs may be for future development.</p>
+<p>As described in the <a href="#introduction">Introduction</a>, our reference application Ticket Wallet is built in a modularised fashion allowing clients to select the parts they need to achieve the functionality required for their product. This section includes the core wallet functionality as well as a full list of our available modules. The list is not exhaustive and in constant development so if there&#39;s something specific you&#39;re looking for feel free to contact Artos directly and we can discuss what your needs may be for future development.</p>
 
 <p>Today, the following modules are available to you:</p>
 
@@ -972,7 +967,6 @@ ID | The ID of the kitten to delete
 <ul>
 <li>Receiving/Displaying Tickets</li>
 <li>Create Ticket SDK</li>
-<li>Key Pair Management (tbc)</li>
 </ul>
 
 <p>Wallet Optional:</p>
@@ -981,8 +975,9 @@ ID | The ID of the kitten to delete
 <li>Secondary Market functionality</li>
 <li>Gift Ticket functionality</li>
 <li>Dynamic QR Code</li>
-<li>Secure Pin Entry (tbc)</li>
-<li>On-boarding (tbc)</li>
+<li>Key Pair Management (upcoming)</li>
+<li>Secure Pin Entry (upcoming)</li>
+<li>On-boarding (upcoming)</li>
 </ul>
 
 <p>When thinking about the wallet, consider the following options for delivery:</p>
@@ -1010,7 +1005,7 @@ ID | The ID of the kitten to delete
 
 <p>As a further note on modularisation of our apps, we will in the future modularise the single door version of the Access Control Solution SDK.</p>
 
-<aside class="notice">
+<aside class="warning">
 As of now, this section is still under construction, we will return to this as we approach full modularisation of our Ticket Wallet application.
 </aside>
 <h1 id='metal'>METaL</h1>
@@ -1097,7 +1092,7 @@ As of now, this section is still under construction, we will return to this as w
 
 <p>As we begin to add more high-level SDKs, this will be the place to find them.</p>
 
-<aside class="notice">
+<aside class="warning">
 As of now, this section is a placeholder. As we update our products to include SDKs for developers, we will place them in this section.
 </aside>
 <h1 id='glossary'>Glossary</h1>
