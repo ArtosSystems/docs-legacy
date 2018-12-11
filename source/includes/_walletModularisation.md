@@ -35,6 +35,6 @@ All of our modules will have preset UI/UX requirements and outputs, limited to s
 
 As a further note on modularisation of our apps, we will in the future modularise the single door version of the Access Control Solution SDK.
 
-<aside class="notice">
+<aside class="warning">
 As of now, this section is still under construction, we will return to this as we approach full modularisation of our Ticket Wallet application.
 </aside>

@@ -12,6 +12,6 @@ We will begin to list and provide code snippets for our high-level SDKs in this 
 
 As we begin to add more high-level SDKs, this will be the place to find them.
 
-<aside class="notice">
+<aside class="warning">
 As of now, this section is a placeholder. As we update our products to include SDKs for developers, we will place them in this section.
 </aside>
