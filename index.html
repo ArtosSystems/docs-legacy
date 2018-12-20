@@ -1176,8 +1176,7 @@ Naming format: [function name + authorising role + "Proof"]
 <li><strong>resellTicketResellerProof (&quot;blank ticket&quot; only)</strong> <code>sign(reseller, hash(eventId, ticketId, ticketOwnerProof))</code></li>
 <li><strong>listTicketTicketOwnerProof</strong> <code>sign(ticketOwner, hash(vendorTicketRef))</code></li>
 <li><strong>listTicketVendorProof (&quot;blank ticket&quot; only)</strong> Same as <em>sellTicketVendorProof</em> <code>sign(vendor, hash(eventId, vendorTicketRefHash))</code></li>
-<li><strong>ticketOwnerProof</strong>
-Signed data by ticket owner using Key Pair 1 that brokers can use to interact with the protocol (must contain broker PuK)</li>
+<li><strong>ticketOwnerProof</strong> All ticket owner proofs use Key Pair 1 in the ticket wallet</li>
 </ul>
 <h2 id='tickets'>Tickets</h2>
 <ul>
