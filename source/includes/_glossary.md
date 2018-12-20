@@ -75,8 +75,7 @@ Naming format: [function name + authorising role + "Proof"]
 * **resellTicketResellerProof ("blank ticket" only)** `sign(reseller, hash(eventId, ticketId, ticketOwnerProof))`
 * **listTicketTicketOwnerProof** `sign(ticketOwner, hash(vendorTicketRef))`
 * **listTicketVendorProof ("blank ticket" only)** Same as _sellTicketVendorProof_ `sign(vendor, hash(eventId, vendorTicketRefHash))`
-* **ticketOwnerProof**
-Signed data by ticket owner using Key Pair 1 that brokers can use to interact with the protocol (must contain broker PuK)
+* **ticketOwnerProof** All ticket owner proofs use Key Pair 1 in the ticket wallet
 
 ## Tickets
 * **Sell Ticket** Initial creation of a ticket
