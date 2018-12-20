@@ -1165,33 +1165,26 @@ As of now, this section is a placeholder. As we update our products to include S
 <p>Naming format: [function name + authorising role + &quot;Proof&quot;]</p>
 
 <ul>
-<li><p><strong>createEventEventOwnerProof</strong>
-sign(eventOwner, hash(eventDescHash, urlHash, onSaleTime, offSaleTime, averageTicketPriceInUSCents)</p></li>
-<li><p><strong>cancelEventEventOwnerProof</strong>
-sign(eventOwner, hash(eventId))</p></li>
-<li><p><strong>sellTicketVendorProof</strong>
-“blank ticket” case only
-Same as listTicketVendorProof</p></li>
-</ul>
-
-<p>sign(vendor, hash(eventId, vendorTicketRefHash))</p>
-
-<ul>
-<li><p><strong>cancelTicketVendorProof</strong>
-sign(vendor, hash(eventId, ticketId, ticketOwner))</p></li>
-<li><p><strong>resellTicketTicketOwnerProof</strong>
-sign(currentOwner, hash(eventId, ticketId, currentOwner))</p></li>
-<li><p><strong>resellTicketResellerProof</strong>
-NOTE: “blank ticket” case only
-sign(reseller, hash(eventId, ticketId, ticketOwnerProof))</p></li>
-<li><p><strong>listTicketTicketOwnerProof</strong>
-sign(ticketOwner, hash(vendorTicketRef))</p></li>
-<li><p><strong>listTicketVendorProof</strong>
-Note: “blank ticket” case only
+<li><strong>createEventEventOwnerProof</strong>
+sign(eventOwner, hash(eventDescHash, urlHash, onSaleTime, offSaleTime, averageTicketPriceInUSCents)</li>
+<li><strong>cancelEventEventOwnerProof</strong>
+sign(eventOwner, hash(eventId))</li>
+<li><strong>sellTicketVendorProof</strong> NOTE: “blank ticket” case only
+Same as listTicketVendorProof
+sign(vendor, hash(eventId, vendorTicketRefHash))</li>
+<li><strong>cancelTicketVendorProof</strong>
+sign(vendor, hash(eventId, ticketId, ticketOwner))</li>
+<li><strong>resellTicketTicketOwnerProof</strong>
+sign(currentOwner, hash(eventId, ticketId, currentOwner))</li>
+<li><strong>resellTicketResellerProof</strong> NOTE: “blank ticket” case only
+sign(reseller, hash(eventId, ticketId, ticketOwnerProof))</li>
+<li><strong>listTicketTicketOwnerProof</strong>
+sign(ticketOwner, hash(vendorTicketRef))</li>
+<li><strong>listTicketVendorProof</strong> NOTE: “blank ticket” case only
 Same as sellTicketVendorProof
-sign(vendor, hash(eventId, vendorTicketRefHash))</p></li>
-<li><p><strong>ticketOwnerProof</strong>
-Signed data by ticket owner using Key Pair 1 that brokers can use to interact with the protocol (must contain broker PuK)</p></li>
+sign(vendor, hash(eventId, vendorTicketRefHash))</li>
+<li><strong>ticketOwnerProof</strong>
+Signed data by ticket owner using Key Pair 1 that brokers can use to interact with the protocol (must contain broker PuK)</li>
 </ul>
 <h2 id='tickets'>Tickets</h2>
 <ul>
