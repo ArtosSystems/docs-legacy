@@ -1165,24 +1165,18 @@ As of now, this section is a placeholder. As we update our products to include S
 <p>Naming format: [function name + authorising role + &quot;Proof&quot;]</p>
 
 <ul>
-<li><strong>createEventEventOwnerProof</strong>
-sign(eventOwner, hash(eventDescHash, urlHash, onSaleTime, offSaleTime, averageTicketPriceInUSCents)</li>
-<li><strong>cancelEventEventOwnerProof</strong>
-sign(eventOwner, hash(eventId))</li>
+<li><strong>createEventEventOwnerProof</strong> <code>sign(eventOwner, hash(eventDescHash, urlHash, onSaleTime, offSaleTime, averageTicketPriceInUSCents)</code></li>
+<li><strong>cancelEventEventOwnerProof</strong> <code>sign(eventOwner, hash(eventId))</code></li>
 <li><strong>sellTicketVendorProof</strong> NOTE: “blank ticket” case only
-Same as listTicketVendorProof
-sign(vendor, hash(eventId, vendorTicketRefHash))</li>
-<li><strong>cancelTicketVendorProof</strong>
-sign(vendor, hash(eventId, ticketId, ticketOwner))</li>
-<li><strong>resellTicketTicketOwnerProof</strong>
-sign(currentOwner, hash(eventId, ticketId, currentOwner))</li>
+Same as <em>listTicketVendorProof</em>
+<code>sign(vendor, hash(eventId, vendorTicketRefHash))</code></li>
+<li><strong>cancelTicketVendorProof</strong> <code>sign(vendor, hash(eventId, ticketId, ticketOwner))</code></li>
+<li><strong>resellTicketTicketOwnerProof</strong> <code>sign(currentOwner, hash(eventId, ticketId, currentOwner))</code></li>
 <li><strong>resellTicketResellerProof</strong> NOTE: “blank ticket” case only
 sign(reseller, hash(eventId, ticketId, ticketOwnerProof))</li>
-<li><strong>listTicketTicketOwnerProof</strong>
-sign(ticketOwner, hash(vendorTicketRef))</li>
+<li><strong>listTicketTicketOwnerProof</strong> <code>sign(ticketOwner, hash(vendorTicketRef))</code></li>
 <li><strong>listTicketVendorProof</strong> NOTE: “blank ticket” case only
-Same as sellTicketVendorProof
-sign(vendor, hash(eventId, vendorTicketRefHash))</li>
+Same as <em>sellTicketVendorProof</em> <code>sign(vendor, hash(eventId, vendorTicketRefHash))</code></li>
 <li><strong>ticketOwnerProof</strong>
 Signed data by ticket owner using Key Pair 1 that brokers can use to interact with the protocol (must contain broker PuK)</li>
 </ul>
