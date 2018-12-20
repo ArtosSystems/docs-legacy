@@ -64,24 +64,18 @@ The mandatory, unique proofs required by all Event and Ticket transactions on th
 
 Naming format: [function name + authorising role + "Proof"]
 
-* **createEventEventOwnerProof**
-sign(eventOwner, hash(eventDescHash, urlHash, onSaleTime, offSaleTime, averageTicketPriceInUSCents)
-* **cancelEventEventOwnerProof**
-sign(eventOwner, hash(eventId))
+* **createEventEventOwnerProof** `sign(eventOwner, hash(eventDescHash, urlHash, onSaleTime, offSaleTime, averageTicketPriceInUSCents)`
+* **cancelEventEventOwnerProof** `sign(eventOwner, hash(eventId))`
 * **sellTicketVendorProof** NOTE: “blank ticket” case only
-Same as listTicketVendorProof
-sign(vendor, hash(eventId, vendorTicketRefHash))
-* **cancelTicketVendorProof**
-sign(vendor, hash(eventId, ticketId, ticketOwner))
-* **resellTicketTicketOwnerProof**
-sign(currentOwner, hash(eventId, ticketId, currentOwner))
+Same as _listTicketVendorProof_
+`sign(vendor, hash(eventId, vendorTicketRefHash))`
+* **cancelTicketVendorProof** `sign(vendor, hash(eventId, ticketId, ticketOwner))`
+* **resellTicketTicketOwnerProof** `sign(currentOwner, hash(eventId, ticketId, currentOwner))`
 * **resellTicketResellerProof** NOTE: “blank ticket” case only
 sign(reseller, hash(eventId, ticketId, ticketOwnerProof))
-* **listTicketTicketOwnerProof**
-sign(ticketOwner, hash(vendorTicketRef))
+* **listTicketTicketOwnerProof** `sign(ticketOwner, hash(vendorTicketRef))`
 * **listTicketVendorProof** NOTE: “blank ticket” case only
-Same as sellTicketVendorProof
-sign(vendor, hash(eventId, vendorTicketRefHash))
+Same as _sellTicketVendorProof_ `sign(vendor, hash(eventId, vendorTicketRefHash))`
 * **ticketOwnerProof**
 Signed data by ticket owner using Key Pair 1 that brokers can use to interact with the protocol (must contain broker PuK)
 
