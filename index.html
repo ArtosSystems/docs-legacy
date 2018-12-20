@@ -1165,16 +1165,33 @@ As of now, this section is a placeholder. As we update our products to include S
 <p>Naming format: [function name + authorising role + &quot;Proof&quot;]</p>
 
 <ul>
-<li><strong>createEventEventOwnerProof</strong></li>
-<li><strong>cancelEventEventOwnerProof</strong></li>
-<li><strong>sellTicketVendorProof</strong></li>
-<li><strong>cancelTicketVendorProof</strong></li>
-<li><strong>resellTicketTicketOwnerProof</strong></li>
-<li><strong>resellTicketResellerProof</strong></li>
-<li><strong>listTicketTicketOwnerProof</strong></li>
-<li><strong>listTicketVendorProof</strong></li>
-<li><strong>sendToFriendTicketOwnerProof</strong></li>
-<li><strong>Ticket Owner Proof</strong> Signed data by <em>ticket owner</em> using <em>Key Pair 1 _that _brokers</em> can use to interact with the protocol (must contain broker PuK)</li>
+<li><p><strong>createEventEventOwnerProof</strong>
+sign(eventOwner, hash(eventDescHash, urlHash, onSaleTime, offSaleTime, averageTicketPriceInUSCents)</p></li>
+<li><p><strong>cancelEventEventOwnerProof</strong>
+sign(eventOwner, hash(eventId))</p></li>
+<li><p><strong>sellTicketVendorProof</strong>
+“blank ticket” case only
+Same as listTicketVendorProof</p></li>
+</ul>
+
+<p>sign(vendor, hash(eventId, vendorTicketRefHash))</p>
+
+<ul>
+<li><p><strong>cancelTicketVendorProof</strong>
+sign(vendor, hash(eventId, ticketId, ticketOwner))</p></li>
+<li><p><strong>resellTicketTicketOwnerProof</strong>
+sign(currentOwner, hash(eventId, ticketId, currentOwner))</p></li>
+<li><p><strong>resellTicketResellerProof</strong>
+NOTE: “blank ticket” case only
+sign(reseller, hash(eventId, ticketId, ticketOwnerProof))</p></li>
+<li><p><strong>listTicketTicketOwnerProof</strong>
+sign(ticketOwner, hash(vendorTicketRef))</p></li>
+<li><p><strong>listTicketVendorProof</strong>
+Note: “blank ticket” case only
+Same as sellTicketVendorProof
+sign(vendor, hash(eventId, vendorTicketRefHash))</p></li>
+<li><p><strong>ticketOwnerProof</strong>
+Signed data by ticket owner using Key Pair 1 that brokers can use to interact with the protocol (must contain broker PuK)</p></li>
 </ul>
 <h2 id='tickets'>Tickets</h2>
 <ul>
