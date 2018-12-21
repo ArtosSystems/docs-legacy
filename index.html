@@ -732,7 +732,7 @@ Please note: As of now, these API endpoints and resources are a "Work In Progres
 <p>Example of what is used by a wallet to send to the API</p>
 </blockquote>
 <pre class="highlight plaintext"><code>secret -&gt; very_very_secret,
-payload -&gt; {\"eventName\": \"Stubborn Event\", \"eventTime\": 1543255200, \"eventVenue\": \"Hell\"},
+payload -&gt; {\"eventName\": \"Kendrick Lamar\", \"eventTime\": 1574500752, \"eventVenue\": \"Brixton Academy\"},
 ticketRef -&gt; stubborn-4064,
 eventId -&gt; 1,
 primarySignedSecret -&gt; 0x7a4a1ade9fa66db3227574384fcd20dd244bed5ef36ed7fbab08e92f0ffa3e2949c1df37a5cf0f360bf500c72509f313238a2935158eb940753285505dfff25c00,
@@ -754,12 +754,12 @@ customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd590
 <tr>
 <td>secret</td>
 <td>string</td>
-<td></td>
+<td>the piece of data only known by the <em>primary</em> and the <em>ticket holder</em> used to derive the valid public key associated with a ticket at the door</td>
 </tr>
 <tr>
 <td>payload</td>
 <td>string</td>
-<td>contextual, non-unqiue which is attached to a ticket. includes but not exclusive to: event name, data, time, location</td>
+<td>contextual, non-unique which is attached to a ticket. includes but not exclusive to: event name, data, time, location</td>
 </tr>
 <tr>
 <td>ticketRef</td>
@@ -774,12 +774,12 @@ customerSignedData -&gt; 0x50256df6e9173f1396d018125936efa3b909df0831e7f55cbd590
 <tr>
 <td>primarySignedSecret</td>
 <td>string</td>
-<td></td>
+<td>the secret obscured by the signature of the <em>primary</em></td>
 </tr>
 <tr>
 <td>doublySignedSecret</td>
 <td>string</td>
-<td></td>
+<td>the secret is signed twice - first by the primary (<em>primarySignedSecret</em>) then by the ticket owner - and stored on the blockchain in this state so it is obscured (unless EC Recovered by the relevant parties)</td>
 </tr>
 <tr>
 <td>primarySignedTicketData</td>
