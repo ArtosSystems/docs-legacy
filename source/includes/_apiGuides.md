@@ -244,7 +244,7 @@ status  | string  | _Currently unused_, later will become: status of the link, s
 
 ```
 secret -> very_very_secret,
-payload -> {\"eventName\": \"Stubborn Event\", \"eventTime\": 1543255200, \"eventVenue\": \"Hell\"},
+payload -> {\"eventName\": \"Kendrick Lamar\", \"eventTime\": 1574500752, \"eventVenue\": \"Brixton Academy\"},
 ticketRef -> stubborn-4064,
 eventId -> 1,
 primarySignedSecret -> 0x7a4a1ade9fa66db3227574384fcd20dd244bed5ef36ed7fbab08e92f0ffa3e2949c1df37a5cf0f360bf500c72509f313238a2935158eb940753285505dfff25c00,
@@ -261,14 +261,14 @@ The example provided is what a white label consumer app would send to our API.
 
 Parameter | Type | Description
 --------- | ------- | -----------
-secret  | string  |
-payload  |  string | contextual, non-unqiue which is attached to a ticket. includes but not exclusive to: event name, data, time, location
-ticketRef  | string  | unique identifier for a ticket
-eventId  | string  | a unique identifier used to reference an event on the Protocol
-primarySignedSecret  | string  |
-doublySignedSecret  | string  |
-primarySignedTicketData  | string  |
-customerSignedData  | string  |
+secret | string | the piece of data only known by the _primary_ and the _ticket holder_ used to derive the valid public key associated with a ticket at the door
+payload |  string | contextual, non-unique which is attached to a ticket. includes but not exclusive to: event name, data, time, location
+ticketRef | string | unique identifier for a ticket
+eventId | string | a unique identifier used to reference an event on the Protocol
+primarySignedSecret | string |  the secret obscured by the signature of the _primary_
+doublySignedSecret | string | the secret is signed twice - first by the primary (_primarySignedSecret_) then by the ticket owner - and stored on the blockchain in this state so it is obscured (unless EC Recovered by the relevant parties)
+primarySignedTicketData | string |
+customerSignedData | string | 
 
 Anything that is `primarySigned` is sent from a link generator on completion of a ticket. What has been signed by the customer (including `doublySignedSecret`) comes from a customer device.
 
