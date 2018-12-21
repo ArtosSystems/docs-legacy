@@ -268,7 +268,7 @@ eventId | string | a unique identifier used to reference an event on the Protoco
 primarySignedSecret | string |  the secret obscured by the signature of the _primary_
 doublySignedSecret | string | the secret is signed twice - first by the primary (_primarySignedSecret_) then by the ticket owner - and stored on the blockchain in this state so it is obscured (unless EC Recovered by the relevant parties)
 primarySignedTicketData | string |
-customerSignedData | string | 
+customerSignedData | string |
 
 Anything that is `primarySigned` is sent from a link generator on completion of a ticket. What has been signed by the customer (including `doublySignedSecret`) comes from a customer device.
 
@@ -277,7 +277,6 @@ Anything that is `primarySigned` is sent from a link generator on completion of 
 `customerSignedData = sign(“$payload|$eventId|$ticketRef|${link.secret}|$secretSignature|$doublySignedSecret|$ticketDataSignature”, customerPrivateKey)`
 
 **doublySignedSecret contains:**
-
 
 `doublySignedSecret = sign(primarySecretSignature, customerPrivateKey)`
 
